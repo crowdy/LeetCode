@@ -63,3 +63,8 @@ class Solution(object):
 
     앤스를 리턴
 """
+
+"""
+플이를 128	Longest Consecutive Sequence 의 것을 적어놓았네.
+방식은 비슷하다.
+"""
