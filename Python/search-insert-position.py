@@ -37,3 +37,7 @@ if __name__ == "__main__":
     print Solution().searchInsert([1, 3, 5, 6], 2)
     print Solution().searchInsert([1, 3, 5, 6], 7)
     print Solution().searchInsert([1, 3, 5, 6], 0)
+
+"""
+범위 찾는 문제와 같다. 같으면 왼쪽부분으로 찾으러 가야한다.
+"""
