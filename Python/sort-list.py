@@ -54,3 +54,21 @@ if __name__ == "__main__":
     head.next.next = ListNode(1)
     head.next.next.next= ListNode(2)
     print Solution().sortList(head)
+
+
+"""
+
+링크드리스트를 소트하라는 문제인데 엔로그엔으로 풀어라
+
+Can I think for a second?
+
+엔로그엔 타임으로 풀으라는 것은, 퀵이나 머지소트를 하라는 것인데, 
+링크드리스트이니까 인덱스를 사용할 수 없고, 머지소트를 사용해야 할 것 같다.
+
+중간의 포인트를 구하는 것은 투포인터스(패스트와 슬로우 포인터스)를 사용하면 될 것 같고,
+머지함수를 하나 정의하고, 전체를 재귀하면 될 것 같은데
+리커젼을 사용하면 리커젼은 오로그엔 만큼 일어나고, 스택은 그만큼 사용하게 된다.
+
+Does it look like a good strategy?
+
+"""
