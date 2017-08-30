@@ -51,3 +51,19 @@ class Solution2(object):
         :rtype: bool
         """
         return not collections.Counter(ransomNote) - collections.Counter(magazine)
+
+
+
+"""
+잡지에서 노트를 작성할 수 있는가?
+
+1. Can I think for a second?
+2. Think loud
+
+노트에 있는 알파벳의 각 글자의 수가 잡지에 있는 알파벳의 글자의 수를 넘지 않는다면 노트를 작성할 수 있을 것 같다.
+글자와 수를 저장하기에는 해쉬테이블을 사용하면 될 것 같은데
+오엔 타임에 오원 스페이스로 해결할 수 있을 것 같다.
+
+4. Does it seem like a good strategy?
+
+"""
