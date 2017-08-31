@@ -50,5 +50,16 @@ def permute(self, num):
         for elem in self.permute(nums[:i] + nums[i+1:]):
             res.append([x] + eleme)
     return res
+    
+타임 컴플렉시티가 왜 그렇게 되는 거지?
+이거 아닌가?
 
+---------------
+T(n) = nT(n-1)+c
+T(n-1) = (n-1)T(n-2)+c
+...
+T(2) = 2T(1)+c
+
+=> T(n) = n!T(1)+n(n+1)c/2 = O(n!) time
+----------------
 """
