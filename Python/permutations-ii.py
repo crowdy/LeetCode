@@ -56,3 +56,23 @@ if __name__ == "__main__":
     print Solution().permuteUnique([1, -1, 1, 2, -1, 2, 2, -1])
 
 
+"""
+
+1. Can I think for a second?
+2. Think loud
+
+이 문제는 일반 퍼뮤테이션의 변형이다.
+
+def permute(self, num):
+    if len(nums) <= 1:
+        return [nums]
+    nums.sort()  # <- 여기하고
+    res = []
+    for i, x in enuerate(nums):
+        if i == 0 or nums[i] != nums[i-1]:  # <- 여기, 이렇게 하면 같은 것은 안들어 가겠지
+            for elem in self.permute(nums[:i] + nums[i+1:]):
+                # res.append([x] + eleme)
+                res.append(eleme + [x])  # <- 여기. 이렇게 하면 작은 수가 뒤로간다.
+    return res
+
+"""
