@@ -25,7 +25,7 @@ public:
         int left = 0;
         int right = m;
         // Find a partition of A and B
-        // where min left s.t. A[left] >= B[k - 1 - left]. Thus left is the (k + 1)-th element.
+        // where min left s.t. A[left] >= B[k - 1 - left]. Thus A[left] is the (k+1)-th or above element.
         while (left < right) {
             int mid = left + (right - left) / 2;
             if (0 <= k - 1 - mid && k - 1 - mid < n && A[mid] >= B[k - 1 - mid]) {
@@ -69,22 +69,15 @@ private:
             }
         }
         // left xxxxxxxooooooo right, find first xo or oo
-        while (left + 1 < right) {
+        while (left <= right) {
             const auto mid = left + (right - left) / 2;
             if (match(arrays, mid, k)) {
-                right = mid;
+                right = mid - 1;
             } else {
-                left = mid;
+                left = mid + 1;
             }
         }
-        // case: xoo
-        //        ^^
-        if (match(arrays, left, k)) {
-            return left;
-        }
-        // case: xo
-        //       ^^
-        return right;
+        return left;
     }
 
     bool match(const vector<vector<int> *>& arrays, int num, int target) {

@@ -1,4 +1,4 @@
-# Time:  O(n) ~ O(n^2), O(n) on average.
+# Time:  O(n)
 # Space: O(n)
 
 # Given a non-empty array of integers,
@@ -13,8 +13,7 @@
 # Your algorithm's time complexity must be better
 # than O(n log n), where n is the array's size.
 
-from random import randint
-
+# Bucket Sort Solution
 class Solution(object):
     def topKFrequent(self, nums, k):
         """
@@ -22,13 +21,35 @@ class Solution(object):
         :type k: int
         :rtype: List[int]
         """
-        counts = collections.defaultdict(int)
-        for i in nums:
-            counts[i] += 1
+        counts = collections.Counter(words)
+        buckets = [[] for _ in xrange(len(nums)+1)]
+        for i, count in counts.iteritems():
+            buckets[count].append(i)
+            
+        result = []
+        for i in reversed(xrange(len(buckets))):
+            for j in xrange(len(buckets[i])):
+                result.append(buckets[i][j])
+                if len(result) == k:
+                    return result
+        return result
 
+
+# Time:  O(n) ~ O(n^2), O(n) on average.
+# Space: O(n)
+# Quick Select Solution
+from random import randint
+class Solution2(object):
+    def topKFrequent(self, nums, k):
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: List[int]
+        """
+        counts = collections.Counter(words)
         p = []
         for key, val in counts.iteritems():
-            p.append((val, key))
+            p.append((-val, key))
         self.kthElement(p, k);
 
         result = []
@@ -39,11 +60,11 @@ class Solution(object):
 
     def kthElement(self, nums, k):
         def PartitionAroundPivot(left, right, pivot_idx, nums):
-            pivot_value = nums[pivot_idx][0]
+            pivot_value = nums[pivot_idx]
             new_pivot_idx = left
             nums[pivot_idx], nums[right] = nums[right], nums[pivot_idx]
             for i in xrange(left, right):
-                if nums[i][0] > pivot_value:
+                if nums[i] < pivot_value:
                     nums[i], nums[new_pivot_idx] = nums[new_pivot_idx], nums[i]
                     new_pivot_idx += 1
                 
@@ -64,7 +85,7 @@ class Solution(object):
 
 # Time:  O(nlogk)
 # Space: O(n)
-class Solution2(object):
+class Solution3(object):
     def topKFrequent(self, nums, k):
         """
         :type nums: List[int]
