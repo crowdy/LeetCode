@@ -27,12 +27,14 @@
 # 7
 # Note: You may assume the tree (i.e., the given root node) is not NULL.
 
+
 # Definition for a binary tree node.
-# class TreeNode(object):
-#     def __init__(self, x):
-#         self.val = x
-#         self.left = None
-#         self.right = None
+class TreeNode(object):
+    def __init__(self, x):
+        self.val = x
+        self.left = None
+        self.right = None
+
 
 class Solution(object):
     def findBottomLeftValue(self, root):
@@ -40,13 +42,16 @@ class Solution(object):
         :type root: TreeNode
         :rtype: int
         """
+
         def findBottomLeftValueHelper(root, curr_depth, max_depth, bottom_left_value):
             if not root:
                 return max_depth, bottom_left_value
-            if not root.left and not root.right and curr_depth+1 > max_depth:
-                return curr_depth+1, root.val
-            max_depth, bottom_left_value = findBottomLeftValueHelper(root.left, curr_depth+1, max_depth, bottom_left_value)
-            max_depth, bottom_left_value = findBottomLeftValueHelper(root.right, curr_depth+1, max_depth, bottom_left_value)
+            if not root.left and not root.right and curr_depth + 1 > max_depth:
+                return curr_depth + 1, root.val
+            max_depth, bottom_left_value = findBottomLeftValueHelper(root.left, curr_depth + 1, max_depth,
+                                                                     bottom_left_value)
+            max_depth, bottom_left_value = findBottomLeftValueHelper(root.right, curr_depth + 1, max_depth,
+                                                                     bottom_left_value)
             return max_depth, bottom_left_value
 
         result, max_depth = 0, 0
@@ -56,7 +61,7 @@ class Solution(object):
 # Time:  O(n)
 # Space: O(n)
 class Solution2(object):
-    def findBottomLeftValue(self, root):
+    def findBottomLeftValue(self, root: TreeNode):
         """
         :type root: TreeNode
         :rtype: int

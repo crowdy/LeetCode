@@ -31,7 +31,7 @@ class Solution:
         # Binary search.
         left, right = 2 ** level, 2 ** (level + 1)
         while left < right:
-            mid = left + (right - left) / 2
+            mid = left + (right - left) // 2
             if not self.exist(root, mid):
                 right = mid
             else:

@@ -2,6 +2,10 @@
 # Space: O(n)
 
 # 59ms
+import collections
+from functools import reduce
+
+
 class Solution(object):
     def addBoldTag(self, s, dict):
         """
@@ -15,9 +19,8 @@ class Solution(object):
             while pos != -1:
                 lookup[pos:pos+len(d)] = [1] * len(d)
                 pos = s.find(d, pos + 1)
-
         result = []
-        for i in xrange(len(s)):
+        for i in range(len(s)):
             if lookup[i] and (i == 0 or not lookup[i-1]):
                 result.append("<b>")
             result.append(s[i])
@@ -42,23 +45,23 @@ class Solution2(object):
             reduce(dict.__getitem__, word, trie).setdefault("_end")
 
         lookup = [False] * len(s)
-        for i in xrange(len(s)):
+        for i in range(len(s)):
             curr = trie
             k = -1
-            for j in xrange(i, len(s)):
+            for j in range(i, len(s)):
                 if s[j] not in curr:
                     break
                 curr = curr[s[j]]
                 if "_end" in curr:
                     k = j
-            for j in xrange(i, k+1):
+            for j in range(i, k+1):
                 lookup[j] = True
 
         result = []
-        for i in xrange(len(s)):
+        for i in range(len(s)):
             if lookup[i] and (i == 0 or not lookup[i-1]):
                 result.append("<b>")
             result.append(s[i])
             if lookup[i] and (i == len(s)-1 or not lookup[i+1]):
-                result.append("</b>");
+                result.append("</b>")
         return "".join(result)

@@ -18,10 +18,12 @@
 #         self.left = None
 #         self.right = None
 
+
 class Solution:
     # @param {TreeNode} root
     # @param {integer} k
     # @return {integer}
+
     def kthSmallest(self, root, k):
         s, cur, rank = [], root, 0
 

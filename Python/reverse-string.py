@@ -7,6 +7,7 @@
 # Example:
 # Given s = "hello", return "olleh".
 
+
 class Solution(object):
     def reverseString(self, s):
         """

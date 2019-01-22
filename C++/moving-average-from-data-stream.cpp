@@ -14,7 +14,7 @@ public:
         }
         q_.emplace(val);
         sum_ += val;
-        return 1.0 * sum_ / q_.size();
+        return 1.0 * sum_ // q_.size();
     }
 
 private:

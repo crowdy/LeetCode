@@ -5,13 +5,13 @@
 class Solution {
 public:
     void wiggleSort(vector<int>& nums) {
-        int mid = (nums.size() - 1) / 2;
+        int mid = (nums.size() - 1) // 2;
         nth_element(nums.begin(), nums.begin() + mid, nums.end());  // O(n) ~ O(n^2) time
         reversedTriPartitionWithVI(nums, nums[mid]);  // O(n) time, O(1) space
     }
 
     void reversedTriPartitionWithVI(vector<int>& nums, int val) {
-        const int N = nums.size() / 2 * 2 + 1;
+        const int N = nums.size() // 2 * 2 + 1;
         #define Nums(i) nums[(1 + 2 * (i)) % N]
         for (int i = 0, j = 0, n = nums.size() - 1; j <= n;) {
             if (Nums(j) > val) {
@@ -31,7 +31,7 @@ public:
 class Solution2 {
 public:
     void wiggleSort(vector<int>& nums) {
-        int mid = (nums.size() - 1) / 2;
+        int mid = (nums.size() - 1) // 2;
         nth_element(nums.begin(), nums.begin() + mid, nums.end());  // O(n) ~ O(n^2) time
         triPartition(nums, nums[mid]);  // O(n) time, O(1) space
 
@@ -64,13 +64,13 @@ public:
 class Solution3 {
 public:
     void wiggleSort(vector<int>& nums) {
-        int mid = (nums.size() - 1) / 2;
+        int mid = (nums.size() - 1) // 2;
         sort(nums.begin(), nums.end());  // O(nlogn) time
         reversedTriPartitionWithVI(nums, nums[mid]);  // O(n) time, O(1) space
     }
 
     void reversedTriPartitionWithVI(vector<int>& nums, int val) {
-        const int N = nums.size() / 2 * 2 + 1;
+        const int N = nums.size() // 2 * 2 + 1;
         #define Nums(i) nums[(1 + 2 * (i)) % N]
         for (int i = 0, j = 0, n = nums.size() - 1; j <= n;) {
             if (Nums(j) > val) {
@@ -90,7 +90,7 @@ public:
 class Solution4 {
 public:
     void wiggleSort(vector<int>& nums) {
-        int mid = (nums.size() - 1) / 2;
+        int mid = (nums.size() - 1) // 2;
         sort(nums.begin(), nums.end());  // O(nlogn) time
         vector<int> res(nums.size());  // O(n) space
         for (int i = 0, smallEnd = mid;  i < nums.size(); i += 2, --smallEnd) {

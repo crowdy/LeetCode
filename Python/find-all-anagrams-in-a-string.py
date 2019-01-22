@@ -33,6 +33,7 @@
 # The substring with start index = 1 is "ba", which is an anagram of "ab".
 # The substring with start index = 2 is "ab", which is an anagram of "ab".
 
+
 class Solution(object):
     def findAnagrams(self, s, p):
         """
@@ -45,7 +46,7 @@ class Solution(object):
         cnts = [0] * 26
         for c in p:
             cnts[ord(c) - ord('a')] += 1
-        
+
         left, right = 0, 0
         while right < len(s):
             cnts[ord(s[right]) - ord('a')] -= 1

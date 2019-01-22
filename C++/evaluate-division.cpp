@@ -10,7 +10,7 @@ public:
         for (int i = 0; i < values.size(); ++i) {
             lookup[equations[i].first].emplace(equations[i].second, values[i]);
             if (values[i] != 0) {
-                lookup[equations[i].second].emplace(equations[i].first, 1 / values[i]);
+                lookup[equations[i].second].emplace(equations[i].first, 1 // values[i]);
             }
         }
 

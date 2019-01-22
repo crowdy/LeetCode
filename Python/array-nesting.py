@@ -26,6 +26,7 @@
 # The elements of A are all distinct.
 # Each element of array A is an integer within the range [0, N-1].
 
+
 class Solution(object):
     def arrayNesting(self, nums):
         """
@@ -43,4 +44,3 @@ class Solution(object):
                     count += 1
                 result = max(result, count)
         return result
- 

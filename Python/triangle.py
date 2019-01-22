@@ -15,6 +15,8 @@
 # Note:
 # Bonus point if you are able to do this using only O(n) extra space, where n is the total number of rows in the triangle.
 #
+from functools import reduce
+
 
 class Solution:
     # @param triangle, a list of lists of integers
@@ -22,17 +24,17 @@ class Solution:
     def minimumTotal(self, triangle):
         if not triangle:
             return 0
-        
+
         cur = triangle[0] + [float("inf")]
-        for i in xrange(1, len(triangle)):
+        for i in range(1, len(triangle)):
             next = []
             next.append(triangle[i][0] + cur[0])
-            for j in xrange(1, i + 1):
+            for j in range(1, i + 1):
                 next.append(triangle[i][j] + min(cur[j - 1], cur[j]))
             cur = next + [float("inf")]
-            
+
         return reduce(min, cur)
 
+
 if __name__ == "__main__":
-    print Solution().minimumTotal([[-1], [2, 3], [1, -1, -3]])
-        
+    print(Solution().minimumTotal([[-1], [2, 3], [1, -1, -3]]))

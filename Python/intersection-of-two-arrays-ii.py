@@ -86,7 +86,7 @@ class Solution(object):
 
         def binary_search(compare, nums, left, right, target):
             while left < right:
-                mid = left + (right - left) / 2
+                mid = left + (right - left) // 2
                 if compare(nums[mid], target):
                     right = mid
                 else:

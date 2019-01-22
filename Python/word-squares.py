@@ -9,9 +9,9 @@ class TrieNode(object):
     def insert(self, words, i):
         cur = self
         for c in words[i]:
-            if not cur.children[ord(c)-ord('a')]:
-                cur.children[ord(c)-ord('a')] = TrieNode()
-            cur = cur.children[ord(c)-ord('a')]
+            if not cur.children[ord(c) - ord('a')]:
+                cur.children[ord(c) - ord('a')] = TrieNode()
+            cur = cur.children[ord(c) - ord('a')]
             cur.indices.append(i)
 
 
@@ -24,7 +24,7 @@ class Solution(object):
         result = []
 
         trie = TrieNode()
-        for i in xrange(len(words)):
+        for i in range(len(words)):
             trie.insert(words, i)
 
         curr = []
@@ -34,11 +34,11 @@ class Solution(object):
             curr.pop()
 
         return result
-    
+
     def wordSquaresHelper(self, words, trie, curr, result):
         if len(curr) >= len(words[0]):
             return result.append(list(curr))
-        
+
         node = trie
         for s in curr:
             node = node.children[ord(s[len(curr)]) - ord('a')]

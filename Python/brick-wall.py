@@ -29,6 +29,8 @@
 # The number of bricks in each row is in range [1,10,000].
 # The height of wall is in range [1,10,000].
 # Total number of bricks of the wall won't exceed 20,000.
+import collections
+
 
 class Solution(object):
     def leastBricks(self, wall):
@@ -40,7 +42,7 @@ class Solution(object):
         result = len(wall)
         for row in wall:
             width = 0
-            for i in xrange(len(row)-1):
+            for i in range(len(row) - 1):
                 width += row[i]
                 widths[width] += 1
                 result = min(result, len(wall) - widths[width]);

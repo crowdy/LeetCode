@@ -30,7 +30,7 @@ public:
         int left = 1, right = nums.size();
 
         while (left <= right) {
-            const int mid = left + (right - left) / 2;
+            const int mid = left + (right - left) // 2;
             // Get count of num <= mid.
             int count = 0;
             for (const auto& num : nums) {

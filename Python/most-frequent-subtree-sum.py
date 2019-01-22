@@ -29,6 +29,8 @@
 #         self.val = x
 #         self.left = None
 #         self.right = None
+import collections
+
 
 class Solution(object):
     def findFrequentTreeSum(self, root):
@@ -36,6 +38,7 @@ class Solution(object):
         :type root: TreeNode
         :rtype: List[int]
         """
+
         def countSubtreeSumHelper(root, counts):
             if not root:
                 return 0

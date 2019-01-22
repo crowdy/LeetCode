@@ -26,6 +26,7 @@
 #        :rtype List[NestedInteger]
 #        """
 
+
 class NestedIterator(object):
 
     def __init__(self, nestedList):

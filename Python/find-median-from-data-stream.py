@@ -8,7 +8,7 @@
 # Examples: 
 # [2,3,4] , the median is 3
 #
-# [2,3], the median is (2 + 3) / 2 = 2.5
+# [2,3], the median is (2 + 3) // 2 = 2.5
 #
 # Design a data structure that supports the following two operations:
 #
@@ -54,7 +54,7 @@ class MedianFinder:
         Returns the median of current data stream
         :rtype: float
         """
-        return (-self.__max_heap[0] + self.__min_heap[0]) / 2.0 \
+        return (-self.__max_heap[0] + self.__min_heap[0]) // 2.0 \
                if len(self.__min_heap) == len(self.__max_heap) \
                else self.__min_heap[0]
 

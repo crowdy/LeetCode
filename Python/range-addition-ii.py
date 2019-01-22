@@ -37,6 +37,7 @@
 # The range of a is [1,m], and the range of b is [1,n].
 # The range of operations size won't exceed 10,000.
 
+
 class Solution(object):
     def maxCount(self, m, n, ops):
         """
@@ -48,4 +49,4 @@ class Solution(object):
         for op in ops:
             m = min(m, op[0])
             n = min(n, op[1])
-        return m*n
+        return m * n

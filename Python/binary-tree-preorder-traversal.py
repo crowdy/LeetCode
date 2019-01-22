@@ -15,6 +15,7 @@
 # Note: Recursive solution is trivial, could you do it iteratively?
 #
 
+
 # Definition for a  binary tree node
 class TreeNode:
     def __init__(self, x):
@@ -39,7 +40,7 @@ class Solution(object):
                 node = curr.left
                 while node.right and node.right != curr:
                     node = node.right
-            
+
                 if node.right is None:
                     result.append(curr.val)
                     node.right = curr
@@ -47,7 +48,7 @@ class Solution(object):
                 else:
                     node.right = None
                     curr = curr.right
-                
+
         return result
 
 
@@ -79,4 +80,4 @@ if __name__ == "__main__":
     root.right = TreeNode(2)
     root.right.left = TreeNode(3)
     result = Solution().preorderTraversal(root)
-    print result
+    print(result)

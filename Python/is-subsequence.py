@@ -21,6 +21,7 @@
 #
 # Return false.
 
+
 # Greedy solution.
 class Solution(object):
     def isSubsequence(self, s, t):

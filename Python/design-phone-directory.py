@@ -3,8 +3,8 @@
 # check:    Time: O(1), Space: O(1)
 # release:  Time: O(1), Space: O(1)
 
-class PhoneDirectory(object):
 
+class PhoneDirectory(object):
     def __init__(self, maxNumbers):
         """
         Initialize your data structure here
@@ -14,7 +14,6 @@ class PhoneDirectory(object):
         self.__curr = 0
         self.__numbers = range(maxNumbers)
         self.__used = [False] * maxNumbers
-
 
     def get(self):
         """
@@ -28,7 +27,6 @@ class PhoneDirectory(object):
         self.__curr += 1
         self.__used[number] = True
         return number
-        
 
     def check(self, number):
         """
@@ -38,7 +36,6 @@ class PhoneDirectory(object):
         """
         return 0 <= number < len(self.__numbers) and \
                not self.__used[number]
-        
 
     def release(self, number):
         """
@@ -47,12 +44,11 @@ class PhoneDirectory(object):
         :rtype: void
         """
         if not 0 <= number < len(self.__numbers) or \
-           not self.__used[number]:
+                not self.__used[number]:
             return
         self.__used[number] = False
         self.__curr -= 1
         self.__numbers[self.__curr] = number
-        
 
 # Your PhoneDirectory object will be instantiated and called as such:
 # obj = PhoneDirectory(maxNumbers)

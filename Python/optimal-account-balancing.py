@@ -1,5 +1,7 @@
 # Time:  O(n * 2^n), n is the size of the debt.
 # Space: O(n * 2^n)
+import collections
+
 
 class Solution(object):
     def minTransfers(self, transactions):
@@ -16,15 +18,15 @@ class Solution(object):
         for v in account.values():
             if v:
                 debt.append(v)
-            
+
         if not debt:
             return 0
 
         n = 1 << len(debt)
         dp, subset = [float("inf")] * n, []
-        for i in xrange(1, n):
+        for i in range(1, n):
             net_debt, number = 0, 0
-            for j in xrange(len(debt)):
+            for j in range(len(debt)):
                 if i & 1 << j:
                     net_debt += debt[j]
                     number += 1

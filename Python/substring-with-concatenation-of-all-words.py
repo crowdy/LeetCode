@@ -14,6 +14,9 @@
 # (order does not matter).
 
 # Sliding window solution
+import collections
+
+
 class Solution(object):
     def findSubstring(self, s, words):
         """
@@ -24,15 +27,15 @@ class Solution(object):
         result, m, n, k = [], len(s), len(words), len(words[0])
         if m < n*k:
             return result
-        
+
         lookup = collections.defaultdict(int)
         for i in words:
             lookup[i] += 1                # Space: O(n * k)
 
-        for i in xrange(k):               # Time:  O(k)
+        for i in range(k):               # Time:  O(k)
             left, count = i, 0
             tmp = collections.defaultdict(int)
-            for j in xrange(i, m-k+1, k): # Time:  O(m / k)
+            for j in range(i, m-k+1, k): # Time:  O(m / k)
                 s1 = s[j:j+k];            # Time:  O(k)
                 if s1 in lookup:
                     tmp[s1] += 1
@@ -74,10 +77,28 @@ class Solution2(object):
         for i in words:
             lookup[i] += 1                            # Space: O(n * k)
 
-        for i in xrange(m+1-k*n):                     # Time: O(m)
+        for i in range(m+1-k*n): # Time: O(m)
+            pass
+
+
+class Solution3:
+    # @param S, a string
+    # @param L, a list of string
+    # @return a list of integer
+    def findSubstring(self, S, L):
+        result, word_num, word_len = [], len(L), len(L[0])
+
+        n = len(L)
+        k = len(S[0])
+        words = collections.defaultdict(int)
+        for i in L:
+            words[i] += 1
+
+        lookup = collections.defaultdict(int)
+        for i in range(len(S) + 1 - word_len * word_num):
             cur, j = collections.defaultdict(int), 0
             while j < n:                              # Time: O(n)
-                word = s[i+j*k:i+j*k+k]               # Time: O(k)
+                word = S[i+j*k:i+j*k+k]               # Time: O(k)
                 if word not in lookup: 
                     break
                 cur[word] += 1
@@ -91,4 +112,4 @@ class Solution2(object):
 
 
 if __name__ == "__main__":
-    print Solution().findSubstring("barfoothefoobarman", ["foo", "bar"])
+    print(Solution().findSubstring("barfoothefoobarman", ["foo", "bar"]))

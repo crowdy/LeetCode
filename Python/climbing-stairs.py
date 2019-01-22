@@ -12,10 +12,11 @@ class Solution:
     :type n: int
     :rtype: int
     """
+
     def climbStairs(self, n):
         prev, current = 0, 1
-        for i in xrange(n):
-            prev, current = current, prev + current, 
+        for i in range(n):
+            prev, current = current, prev + current,
         return current
 
     # Time:  O(2^n)
@@ -27,6 +28,7 @@ class Solution:
             return 2
         return self.climbStairs(n - 1) + self.climbStairs(n - 2)
 
+
 if __name__ == "__main__":
     result = Solution().climbStairs(2)
-    print result
+    print(result)

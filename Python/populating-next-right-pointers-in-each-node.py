@@ -37,12 +37,13 @@ class TreeNode:
         self.left = None
         self.right = None
         self.next = None
-    
+
     def __repr__(self):
         if self is None:
             return "Nil"
         else:
             return "{} -> {}".format(self.val, repr(self.next))
+
 
 class Solution:
     # @param root, a tree node
@@ -57,6 +58,7 @@ class Solution:
                     cur.right.next = cur.next.left
                 cur = cur.next
             head = head.left
+
 
 # Time:  O(n)
 # Space: O(logn)
@@ -74,14 +76,16 @@ class Solution2:
         self.connect(root.left)
         self.connect(root.right)
 
+
 if __name__ == "__main__":
     root, root.left, root.right = TreeNode(1), TreeNode(2), TreeNode(3)
-    root.left.left, root.left.right, root.right.left, root.right.right = TreeNode(4), TreeNode(5), TreeNode(6), TreeNode(7)
+    root.left.left, root.left.right, root.right.left, root.right.right = TreeNode(4), TreeNode(5), TreeNode(
+        6), TreeNode(7)
     Solution().connect(root)
-    print root
-    print root.left
-    print root.left.left
-    
+    print(root)
+    print(root.left)
+    print(root.left.left)
+
 """
 오엔 타임
 오원 스페이스

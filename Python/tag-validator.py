@@ -74,12 +74,14 @@
 # For simplicity, you could assume the input code (including the any characters mentioned above)
 # only contain letters, digits, '<','>','/','!','[',']' and ' '.
 
+
 class Solution(object):
     def isValid(self, code):
         """
         :type code: str
         :rtype: bool
         """
+
         def validText(s, i):
             j = i
             i = s.find("<", i)
@@ -91,19 +93,19 @@ class Solution(object):
             j = s.find("]]>", i)
             if j == -1:
                 return False, i
-            return True, j+3
+            return True, j + 3
 
         def parseTagName(s, i):
             if s[i] != '<':
                 return "", i
             j = s.find('>', i)
-            if j == -1 or not (1 <= (j-1-i) <= 9):
+            if j == -1 or not (1 <= (j - 1 - i) <= 9):
                 return "", i
-            tag = s[i+1:j]
+            tag = s[i + 1:j]
             for c in tag:
                 if not (ord('A') <= ord(c) <= ord('Z')):
                     return "", i
-            return tag, j+1
+            return tag, j + 1
 
         def parseContent(s, i):
             while i < len(s):
@@ -124,10 +126,10 @@ class Solution(object):
             if not tag:
                 return False, i
             j = parseContent(s, j)
-            k = j + len(tag) + 2 
-            if k >= len(s) or s[j:k+1] != "</" + tag + ">":
+            k = j + len(tag) + 2
+            if k >= len(s) or s[j:k + 1] != "</" + tag + ">":
                 return False, i
-            return True, k+1
-    
+            return True, k + 1
+
         result, i = validTag(code, 0)
         return result and i == len(code)

@@ -28,5 +28,6 @@ class Solution:
             i, j = i + 1, j - 1
         return True
 
+
 if __name__ == "__main__":
-    print Solution().isPalindrome("A man, a plan, a canal: Panama")
+    print(Solution().isPalindrome("A man, a plan, a canal: Panama")

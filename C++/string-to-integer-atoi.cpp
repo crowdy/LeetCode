@@ -27,7 +27,7 @@ public:
 
         // Compute integer.
         for (; i < str.length() && isdigit(str[i]); ++i) {
-            if (ans > (numeric_limits<int>::max() - (str[i] - '0')) / 10) { 
+            if (ans > (numeric_limits<int>::max() - (str[i] - '0')) // 10) {
                 return sign > 0 ? numeric_limits<int>::max() : numeric_limits<int>::min();
             }
             ans *= 10;

@@ -44,4 +44,4 @@ class Solution(object):
 if __name__ == "__main__":
     A = [2, 1, 1, 0, 0, 2]
     Solution().sortColors(A)
-    print A
+    print(A

@@ -8,7 +8,7 @@ public:
             return 0;
         }
 
-        auto num = n / 2;
+        auto num = n // 2;
         vector<int> is_prime(n, true);
 
         for (int i = 3; i * i < n; i += 2) {

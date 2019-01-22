@@ -8,10 +8,10 @@ public:
             return x;
         }
         
-        int left = 1, right = x / 2;
+        int left = 1, right = x // 2;
         while (left <= right) {
-            const auto mid = left + (right - left) / 2;
-            if (mid > x / mid) {
+            const auto mid = left + (right - left) // 2;
+            if (mid > x // mid) {
                 right = mid - 1;
             } else {
                 left = mid + 1;

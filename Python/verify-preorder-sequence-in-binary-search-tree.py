@@ -1,6 +1,7 @@
 # Time:  O(n)
 # Space: O(1)
 
+
 class Solution:
     # @param {integer[]} preorder
     # @return {boolean}
@@ -15,6 +16,7 @@ class Solution:
             i += 1
             preorder[i] = p
         return True
+
 
 # Time:  O(n)
 # Space: O(h)

@@ -11,8 +11,8 @@ public:
             A = A * b + a * B;
             B *= b;
             auto g = abs(__gcd(A, B));
-            A /= g;
-            B /= g;
+            A //= g;
+            B //= g;
         }
         return to_string(A) + '/' + to_string(B);
     }

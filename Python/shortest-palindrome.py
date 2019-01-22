@@ -22,7 +22,7 @@ class Solution(object):
         def getPrefix(pattern):
             prefix = [-1] * len(pattern)
             j = -1
-            for i in xrange(1, len(pattern)):
+            for i in range(1, len(pattern)):
                 while j > -1 and pattern[j+1] != pattern[i]:
                     j = prefix[j]
                 if pattern[j+1] == pattern[i]:
@@ -62,7 +62,7 @@ class Solution2(object):
         string = preProcess(s)
         palindrome = [0] * len(string) 
         center, right = 0, 0
-        for i in xrange(1, len(string) - 1):
+        for i in range(1, len(string) - 1):
             i_mirror = 2 * center - i
             if right > i:
                 palindrome[i] = min(right - i, palindrome[i_mirror])
@@ -76,7 +76,7 @@ class Solution2(object):
                 center, right = i, i + palindrome[i]       
         
         max_len = 0
-        for i in xrange(1, len(string) - 1):
+        for i in range(1, len(string) - 1):
             if i - palindrome[i] == 1:
                 max_len = palindrome[i]
         return s[len(s)-1:max_len-1:-1] + s

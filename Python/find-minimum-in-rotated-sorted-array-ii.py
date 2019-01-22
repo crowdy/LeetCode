@@ -22,7 +22,7 @@ class Solution(object):
         """
         left, right = 0, len(nums) - 1
         while left < right:
-            mid = left + (right - left) / 2
+            mid = left + (right - left) // 2
 
             if nums[mid] == nums[right]:
                 right -= 1
@@ -42,8 +42,8 @@ class Solution2(object):
         """
         left, right = 0, len(nums) - 1
         while left < right and nums[left] >= nums[right]:
-            mid = left + (right - left) / 2
-            
+            mid = left + (right - left) // 2
+
             if nums[mid] == nums[left]:
                 left += 1
             elif nums[mid] < nums[left]:
@@ -55,5 +55,5 @@ class Solution2(object):
 
 
 if __name__ == "__main__":
-    print Solution().findMin([3, 1, 1, 2, 2, 3])
-    print Solution2().findMin([2, 2, 2, 3, 3, 1])
+    print(Solution().findMin([3, 1, 1, 2, 2, 3]))
+    print(Solution2().findMin([2, 2, 2, 3, 3, 1]))

@@ -28,7 +28,7 @@ class Solution(object):
 
 
 if __name__ == "__main__":
-    print Solution().maxSubArray([-2,1,-3,4,-1,2,1,-5,4])
+    print(Solution().maxSubArray([-2, 1, -3, 4, -1, 2, 1, -5, 4]))
 """
 
 맥시멈 서브어레이

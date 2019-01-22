@@ -5,6 +5,7 @@
 # 
 # Compute and return the square root of x.
 
+
 class Solution(object):
     def mySqrt(self, x):
         """
@@ -13,11 +14,11 @@ class Solution(object):
         """
         if x < 2:
             return x
-        
+
         left, right = 1, x // 2
         while left <= right:
             mid = left + (right - left) // 2
-            if mid > x / mid:
+            if mid > x // mid:
                 right = mid - 1
             else:
                 left = mid + 1
@@ -26,8 +27,8 @@ class Solution(object):
 
 
 if __name__ == "__main__":
-    print Solution().sqrt(10)
-            
+    print(Solution().sqrt(10))
+
 """
 
 오른쪽의 초기값을 절반으로 하는 것은 좋은 전략이다.

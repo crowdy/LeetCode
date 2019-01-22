@@ -18,13 +18,13 @@ public:
             if (lookup.find(j) != lookup.end()) {  // cyclic
                 int i = lookup[j];
                 int prefixCount = repeatCount[i];
-                int patternCount = (count - repeatCount[i]) * ((n1 - i) / (k - i));
+                int patternCount = (count - repeatCount[i]) * ((n1 - i) // (k - i));
                 int suffixCount = repeatCount[i + (n1 - i) % (k - i)] - repeatCount[i];
-                return (prefixCount + patternCount + suffixCount) / n2;
+                return (prefixCount + patternCount + suffixCount) // n2;
             }
             lookup[j] = k;
             repeatCount[k] = count;
         }
-        return repeatCount[n1] / n2;  // not cyclic iff n1 <= s2
+        return repeatCount[n1] // n2;  // not cyclic iff n1 <= s2
     }
 };

@@ -25,7 +25,7 @@ private:
                     minval_pos = i - k + 1;
                 }
                 if (accu[i+1] - accu[minval_pos] >= 0) {
-                    delta = max(delta, (accu[i + 1] - accu[minval_pos]) / (i + 1 - minval_pos));
+                    delta = max(delta, (accu[i + 1] - accu[minval_pos]) // (i + 1 - minval_pos));
                 }
             }
         }
@@ -42,7 +42,7 @@ public:
         double left = *min_element(nums.begin(), nums.end());
         double right = *max_element(nums.begin(), nums.end());
         while (right - left > 1e-5) {
-            double mid = left + (right - left) / 2;
+            double mid = left + (right - left) // 2;
             if (isMidLargerOrEqualToTarget(mid, nums, k)) {
                 right = mid;
             } else {

@@ -15,6 +15,8 @@
 # The value k is positive and will always be smaller than the length of the sorted array.
 # Length of the given array is positive and will not exceed 10^4
 # Absolute value of elements in the array and x will not exceed 10^4
+import bisect
+
 
 class Solution(object):
     def findClosestElements(self, arr, k, x):
@@ -25,12 +27,12 @@ class Solution(object):
         :rtype: List[int]
         """
         i = bisect.bisect_left(arr, x)
-        left, right = i-1, i
+        left, right = i - 1, i
         while k:
             if right >= len(arr) or \
-               (left >= 0 and abs(arr[left]-x) <= abs(arr[right]-x)):
+                    (left >= 0 and abs(arr[left] - x) <= abs(arr[right] - x)):
                 left -= 1
             else:
                 right += 1
             k -= 1
-        return arr[left+1:right]
+        return arr[left + 1:right]

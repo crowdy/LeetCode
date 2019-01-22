@@ -60,12 +60,21 @@
 # 1. The given d is in range [1, maximum depth of the given tree + 1].
 # 2. The given binary tree has at least one tree node.
 
+
 # Definition for a binary tree node.
-# class TreeNode(object):
-#     def __init__(self, x):
-#         self.val = x
-#         self.left = None
-#         self.right = None
+class TreeNode(object):
+    def __init__(self, x):
+        self.val = x
+        self.left = None
+        self.right = None
+
+
+class TreeNode(object):
+    def __init__(self, x):
+        self.val = x
+        self.left = None
+        self.right = None
+
 
 class Solution(object):
     def addOneRow(self, root, v, d):
@@ -83,6 +92,6 @@ class Solution(object):
                 node.right = root
             return node
         if root and d >= 2:
-            root.left  = self.addOneRow(root.left,  v, d-1 if d > 2 else 1)
-            root.right = self.addOneRow(root.right, v, d-1 if d > 2 else 0)
+            root.left = self.addOneRow(root.left, v, d - 1 if d > 2 else 1)
+            root.right = self.addOneRow(root.right, v, d - 1 if d > 2 else 0)
         return root

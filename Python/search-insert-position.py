@@ -14,6 +14,7 @@
 # [1,3,5,6], 0 -> 0
 #
 
+
 class Solution(object):
     def searchInsert(self, nums, target):
         """
@@ -23,7 +24,7 @@ class Solution(object):
         """
         left, right = 0, len(nums) - 1
         while left <= right:
-            mid = left + (right - left) / 2
+            mid = left + (right - left) // 2
             if nums[mid] >= target:
                 right = mid - 1
             else:
@@ -33,10 +34,10 @@ class Solution(object):
 
 
 if __name__ == "__main__":
-    print Solution().searchInsert([1, 3, 5, 6], 5)
-    print Solution().searchInsert([1, 3, 5, 6], 2)
-    print Solution().searchInsert([1, 3, 5, 6], 7)
-    print Solution().searchInsert([1, 3, 5, 6], 0)
+    print(Solution().searchInsert([1, 3, 5, 6], 5))
+    print(Solution().searchInsert([1, 3, 5, 6], 2))
+    print(Solution().searchInsert([1, 3, 5, 6], 7))
+    print(Solution().searchInsert([1, 3, 5, 6], 0))
 
 """
 범위 찾는 문제와 같다. 같으면 왼쪽부분으로 찾으러 가야한다.

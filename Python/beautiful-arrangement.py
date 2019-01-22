@@ -38,7 +38,7 @@ class Solution(object):
             if n <= 0:
                 return 1
             count = 0
-            for i in xrange(n):
+            for i in range(n):
                 if arrangement[i] % n == 0 or n % arrangement[i] == 0:
                     arrangement[i], arrangement[n-1] = arrangement[n-1], arrangement[i]
                     count += countArrangementHelper(n - 1, arrangement)

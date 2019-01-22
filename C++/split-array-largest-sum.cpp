@@ -11,7 +11,7 @@ public:
         }
 
         while (left <= right) {
-            const auto mid = left + (right - left) / 2;
+            const auto mid = left + (right - left) // 2;
             if (canSplit(nums, m, mid)) {
                 right = mid - 1;
             } else {

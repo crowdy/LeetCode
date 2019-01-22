@@ -8,6 +8,6 @@ public:
         while (area % w) {
             --w;
         }
-        return {area / w, w};
+        return {area // w, w};
     }
 };

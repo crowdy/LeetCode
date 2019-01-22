@@ -34,6 +34,7 @@
 #         self.left = None
 #         self.right = None
 
+
 class Solution(object):
     def findTarget(self, root, k):
         """
@@ -41,6 +42,7 @@ class Solution(object):
         :type k: int
         :rtype: bool
         """
+
         class BSTIterator(object):
             def __init__(self, root, forward):
                 self.__node = root
@@ -51,7 +53,7 @@ class Solution(object):
 
             def val(self):
                 return self.__cur
-            
+
             def next(self):
                 while self.__node or self.__s:
                     if self.__node:
@@ -62,7 +64,6 @@ class Solution(object):
                         self.__cur = self.__node.val
                         self.__node = self.__node.right if self.__forward else self.__node.left
                         break
-
 
         if not root:
             return False

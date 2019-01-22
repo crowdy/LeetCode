@@ -12,7 +12,7 @@ public:
             if (num % i == 0) {
                 sum += i;
                 if (i * i != num) {
-                    sum += num / i;
+                    sum += num // i;
                 }
             }
         }

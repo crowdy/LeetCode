@@ -20,6 +20,7 @@
 # The input array size is in the range of [1, 20000].
 # n is a non-negative integer which won't exceed the input array size.
 
+
 class Solution(object):
     def canPlaceFlowers(self, flowerbed, n):
         """
@@ -27,9 +28,9 @@ class Solution(object):
         :type n: int
         :rtype: bool
         """
-        for i in xrange(len(flowerbed)):
-            if flowerbed[i] == 0 and (i == 0 or flowerbed[i-1] == 0) and \
-                (i == len(flowerbed)-1 or flowerbed[i+1] == 0):
+        for i in range(len(flowerbed)):
+            if flowerbed[i] == 0 and (i == 0 or flowerbed[i - 1] == 0) and \
+                    (i == len(flowerbed) - 1 or flowerbed[i + 1] == 0):
                 flowerbed[i] = 1
                 n -= 1
             if n <= 0:

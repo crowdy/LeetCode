@@ -20,15 +20,26 @@ class Solution:
         if x < 0:
             return False
         copy, reverse = x, 0
-        
+
         while copy:
             reverse *= 10
             reverse += copy % 10
             copy //= 10
+<<<<<<< Updated upstream
         
+=======
+
+>>>>>>> Stashed changes
         return x == reverse
 
+
 if __name__ == "__main__":
+<<<<<<< Updated upstream
     print Solution().isPalindrome(12321)
     print Solution().isPalindrome(12320)
     print Solution().isPalindrome(-12321)
+=======
+    print(Solution().isPalindrome(12321))
+    print(Solution().isPalindrome(12320))
+    print(Solution().isPalindrome(-12321))
+>>>>>>> Stashed changes

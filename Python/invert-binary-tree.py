@@ -16,28 +16,33 @@
 # 9   6 3   1
 #
 
+
 # Time:  O(n)
 # Space: O(w), w is the max number of the nodes of the levels.
 # BFS solution.
+import collections
+
+
 class Queue:
     def __init__(self):
         self.data = collections.deque()
-        
+
     def push(self, x):
         self.data.append(x)
-    
+
     def peek(self):
         return self.data[0]
-    
+
     def pop(self):
         return self.data.popleft()
-    
+
     def size(self):
         return len(self.data)
-    
+
     def empty(self):
         return len(self.data) == 0
-        
+
+
 # Definition for a binary tree node.
 # class TreeNode:
 #     def __init__(self, x):
@@ -59,9 +64,10 @@ class Solution:
                     nodes.push(node.left)
                 if node.right is not None:
                     nodes.push(node.right)
-        
+
         return root
-  
+
+
 # Time:  O(n)
 # Space: O(h)
 # Stack solution.
@@ -79,9 +85,10 @@ class Solution2:
                     nodes.append(node.left)
                 if node.right is not None:
                     nodes.append(node.right)
-        
+
         return root
-  
+
+
 # Time:  O(n)
 # Space: O(h)
 # DFS, Recursive solution.
@@ -92,5 +99,5 @@ class Solution3:
         if root is not None:
             root.left, root.right = self.invertTree(root.right), \
                                     self.invertTree(root.left)
-        
+
         return root

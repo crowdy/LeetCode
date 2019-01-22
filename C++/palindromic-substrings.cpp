@@ -6,7 +6,7 @@ public:
     int countSubstrings(string s) {
         auto result = 0;
         for (const auto& max_len : manacher(s)) {
-            result += (max_len + 1) / 2;
+            result += (max_len + 1) // 2;
         }
         return result;
     }

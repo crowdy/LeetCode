@@ -24,7 +24,7 @@ class Solution(object):
         ranges = []
         pre = lower - 1
         
-        for i in xrange(len(nums) + 1):
+        for i in range(len(nums) + 1):
             if i == len(nums):
                 cur = upper + 1
             else:
@@ -38,4 +38,4 @@ class Solution(object):
 
 
 if __name__ == "__main__":
-    print Solution().findMissingRanges([0, 1, 3, 50, 75], 0, 99)
+    print(Solution().findMissingRanges([0, 1, 3, 50, 75], 0, 99)

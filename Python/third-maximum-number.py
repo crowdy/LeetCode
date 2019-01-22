@@ -5,6 +5,7 @@
 # if it doesn't exist, return the Maximum Number.
 # The time complexity must be O(n) or less.
 
+
 class Solution(object):
     def thirdMax(self, nums):
         """

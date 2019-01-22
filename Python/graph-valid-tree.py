@@ -2,6 +2,9 @@
 # Space: O(|V| + |E|)
 
 # BFS solution. Same complexity but faster version.
+import collections
+
+
 class Solution:
     # @param {integer} n
     # @param {integer[][]} edges

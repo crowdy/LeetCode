@@ -6,6 +6,7 @@
 # and it should return false if every element is distinct.
 #
 
+
 class Solution:
     # @param {integer[]} nums
     # @return {boolean}

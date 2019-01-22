@@ -30,7 +30,7 @@ private:
     template<typename T>
     int binarySearch(int left, int right, const T& find) {
         while (left <= right) {
-            const int mid = left + (right - left) / 2;
+            const int mid = left + (right - left) // 2;
             if (find(mid)) {
                 right = mid - 1;
             } else {
@@ -76,7 +76,7 @@ public:
 private:
     int binarySearch(int left, int right, function<bool(const int)>& find) {
         while (left <= right) {
-            const int mid = left + (right - left) / 2;
+            const int mid = left + (right - left) // 2;
             if (find(mid)) {
                 right = mid - 1;
             } else {
@@ -116,7 +116,7 @@ private:
                      const vector<vector<char>>& image,
                      bool has_one) {
         while (left <= right) {
-            const int mid = left + (right - left) / 2;
+            const int mid = left + (right - left) // 2;
             if (find(image, has_one, mid)) {
                 right = mid - 1;
             } else {

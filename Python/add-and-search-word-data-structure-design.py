@@ -26,11 +26,12 @@ class TrieNode:
     def __init__(self):
         self.is_string = False
         self.leaves = {}
-        
+
+
 class WordDictionary:
     def __init__(self):
         self.root = TrieNode()
-        
+
     # @param {string} word
     # @return {void}
     # Adds a word into the data structure.
@@ -48,17 +49,17 @@ class WordDictionary:
     # contain the dot character '.' to represent any one letter.
     def search(self, word):
         return self.searchHelper(word, 0, self.root)
-        
+
     def searchHelper(self, word, start, curr):
         if start == len(word):
             return curr.is_string
         if word[start] in curr.leaves:
-            return self.searchHelper(word, start+1, curr.leaves[word[start]])
+            return self.searchHelper(word, start + 1, curr.leaves[word[start]])
         elif word[start] == '.':
             for c in curr.leaves:
-                if self.searchHelper(word, start+1, curr.leaves[c]):
+                if self.searchHelper(word, start + 1, curr.leaves[c]):
                     return True
-       
+
         return False
 
 # Your WordDictionary object will be instantiated and called as such:

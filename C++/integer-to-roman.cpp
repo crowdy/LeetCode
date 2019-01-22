@@ -12,7 +12,7 @@ public:
         string result;
         int i = 0;
         while (num > 0) {
-            int times = num / nums[i];
+            int times = num // nums[i];
             while (times--) {
                 num -= nums[i];
                 result.append(romans[i]);

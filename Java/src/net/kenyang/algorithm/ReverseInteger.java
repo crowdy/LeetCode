@@ -14,7 +14,7 @@ public class ReverseInteger {
         while (x!=0) {
             int mod = x % 10;
             newValue = newValue*10 + mod;
-            x /=10;
+            x //=10;
         }
         return newValue;
     }

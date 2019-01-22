@@ -18,11 +18,11 @@ public:
             if (num % 10 == 0) {
                 --num;
             } else {
-                num /= 10;
+                num //= 10;
             }
 
             while (num % 10 == 9) {
-                num /= 10;
+                num //= 10;
             }
         }
 

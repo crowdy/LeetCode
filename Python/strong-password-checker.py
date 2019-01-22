@@ -37,7 +37,7 @@ class Solution(object):
                     length += 1
                     i += 1
                     
-                total_change_cnt += length / 3
+                total_change_cnt += length // 3
                 if length % 3 == 0:
                     one_change_cnt += 1
                 elif length % 3 == 1:
@@ -54,8 +54,8 @@ class Solution(object):
         else:
             delete_cnt = len(s) - 20
             
-            total_change_cnt -= min(delete_cnt, one_change_cnt * 1) / 1
-            total_change_cnt -= min(max(delete_cnt - one_change_cnt, 0), two_change_cnt * 2) / 2
-            total_change_cnt -= min(max(delete_cnt - one_change_cnt - 2 * two_change_cnt, 0), three_change_cnt * 3) / 3
+            total_change_cnt -= min(delete_cnt, one_change_cnt * 1) // 1
+            total_change_cnt -= min(max(delete_cnt - one_change_cnt, 0), two_change_cnt * 2) // 2
+            total_change_cnt -= min(max(delete_cnt - one_change_cnt - 2 * two_change_cnt, 0), three_change_cnt * 3) // 3
                 
             return delete_cnt + max(missing_type_cnt, total_change_cnt)

@@ -9,7 +9,7 @@ public:
         }
         for (const auto& i : {2, 3, 5}) {
             while (num % i == 0) {
-                num /= i;
+                num //= i;
             }
         }
         return num == 1;

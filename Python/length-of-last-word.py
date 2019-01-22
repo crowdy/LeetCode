@@ -12,6 +12,7 @@
 # return 5.
 #
 
+
 class Solution:
     # @param s, a string
     # @return an integer
@@ -34,5 +35,5 @@ class Solution2:
         return len(s.strip().split(" ")[-1])
 
 if __name__ == "__main__":
-    print Solution().lengthOfLastWord("Hello World")
-    print Solution2().lengthOfLastWord("")
+    print(Solution().lengthOfLastWord("Hello World"))
+    print(Solution2().lengthOfLastWord(""))

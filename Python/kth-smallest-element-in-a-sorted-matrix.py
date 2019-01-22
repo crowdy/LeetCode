@@ -23,6 +23,7 @@
 
 from heapq import heappush, heappop
 
+
 class Solution(object):
     def kthSmallest(self, matrix, k):
         """

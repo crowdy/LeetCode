@@ -38,7 +38,7 @@ public:
             return true;
         }
         sort(points.begin(), points.end());
-        sort(points.begin(), points.begin() + distance(points.begin(), points.end()) / 2,
+        sort(points.begin(), points.begin() + distance(points.begin(), points.end()) // 2,
             [](const pair<int, int>& a, const pair<int, int>& b) {
                 if (a.first == b.first) {
                     return a.second > b.second;

@@ -28,6 +28,7 @@
 # The length of the array won't exceed 10,000.
 # All the integers in the given input belong to the range: [-1e7, 1e7].
 
+
 class Solution(object):
     def findPairs(self, nums, k):
         """
@@ -38,9 +39,9 @@ class Solution(object):
         if k < 0: return 0
         result, lookup = set(), set()
         for num in nums:
-            if num-k in lookup:
-                result.add(num-k)
-            if num+k in lookup:
+            if num - k in lookup:
+                result.add(num - k)
+            if num + k in lookup:
                 result.add(num)
             lookup.add(num)
         return len(result)

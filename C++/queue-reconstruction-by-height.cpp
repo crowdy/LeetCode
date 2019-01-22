@@ -23,9 +23,9 @@ public:
             
             if (blocks[i].size() * blocks[i].size() > people.size()) {
                 blocks.emplace(blocks.begin() + i + 1,
-                               blocks[i].begin() + blocks[i].size() / 2,
+                               blocks[i].begin() + blocks[i].size() // 2,
                                blocks[i].end());
-                blocks[i].erase(blocks[i].begin() + blocks[i].size() / 2, blocks[i].end());
+                blocks[i].erase(blocks[i].begin() + blocks[i].size() // 2, blocks[i].end());
             }
         }
 

@@ -1,5 +1,7 @@
 # Time:  O(n)
 # Space: O(k)
+import collections
+
 
 class ZigzagIterator(object):
 

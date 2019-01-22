@@ -37,15 +37,14 @@
 
 from random import randint
 
-class RandomizedSet(object):
 
+class RandomizedSet(object):
     def __init__(self):
         """
         Initialize your data structure here.
         """
         self.__set = []
         self.__used = {}
-        
 
     def insert(self, val):
         """
@@ -57,10 +56,9 @@ class RandomizedSet(object):
             return False
 
         self.__set += val,
-        self.__used[val] = len(self.__set)-1
+        self.__used[val] = len(self.__set) - 1
 
         return True
-        
 
     def remove(self, val):
         """
@@ -84,8 +82,7 @@ class RandomizedSet(object):
         Get a random element from the set.
         :rtype: int
         """
-        return self.__set[randint(0, len(self.__set)-1)]
-
+        return self.__set[randint(0, len(self.__set) - 1)]
 
 # Your RandomizedSet object will be instantiated and called as such:
 # obj = RandomizedSet()

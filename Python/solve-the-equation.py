@@ -26,6 +26,7 @@
 # Input: "x=x+2"
 # Output: "No solution"
 
+
 class Solution(object):
     def solveEquation(self, equation):
         """

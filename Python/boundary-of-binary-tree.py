@@ -8,12 +8,14 @@
 #         self.left = None
 #         self.right = None
 
+
 class Solution(object):
     def boundaryOfBinaryTree(self, root):
         """
         :type root: TreeNode
         :rtype: List[int]
         """
+
         def leftBoundary(root, nodes):
             if not root or (not root.left and not root.right):
                 return
@@ -31,7 +33,7 @@ class Solution(object):
             else:
                 rightBoundary(root.right, nodes)
             nodes.append(root.val)
-    
+
         def leaves(root, nodes):
             if not root:
                 return
@@ -43,7 +45,7 @@ class Solution(object):
 
         if not root:
             return []
-        
+
         nodes = [root.val]
         leftBoundary(root.left, nodes)
         leaves(root.left, nodes)

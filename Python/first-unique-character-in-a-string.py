@@ -16,6 +16,7 @@
 
 from collections import defaultdict
 
+
 class Solution(object):
     def firstUniqChar(self, s):
         """
@@ -28,7 +29,7 @@ class Solution(object):
             if lookup[c]:
                 candidtates.discard(lookup[c])
             else:
-                lookup[c] = i+1
-                candidtates.add(i+1)
+                lookup[c] = i + 1
+                candidtates.add(i + 1)
 
-        return min(candidtates)-1 if candidtates else -1
+        return min(candidtates) - 1 if candidtates else -1

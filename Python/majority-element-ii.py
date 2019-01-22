@@ -39,7 +39,7 @@ class Solution(object):
         # Selects the integer which occurs > [n / k] times.
         result = []
         for i in cnts.keys():
-            if cnts[i] > n / k:
+            if cnts[i] > n // k:
                 result.append(i)
 
         return result
@@ -49,4 +49,4 @@ class Solution(object):
         :type nums: List[int]
         :rtype: List[int]
         """
-        return [i[0] for i in collections.Counter(nums).items() if i[1] > len(nums) / 3]
+        return [i[0] for i in collections.Counter(nums).items() if i[1] > len(nums) // 3]

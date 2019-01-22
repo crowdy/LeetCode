@@ -9,7 +9,7 @@ public:
             return -1;
         }
         
-        int result = 0, target = sum / machines.size(), curr = 0;
+        int result = 0, target = sum // machines.size(), curr = 0;
         for (const auto& n : machines) {
             curr += n - target;
             result = max(result, max(n - target, abs(curr)));

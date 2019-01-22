@@ -25,10 +25,10 @@ class Solution:
     # @param word, a string
     # @return a boolean
     def exist(self, board, word):
-        visited = [[False for j in xrange(len(board[0]))] for i in xrange(len(board))]
+        visited = [[False for j in range(len(board[0]))] for i in range(len(board))]
         
-        for i in xrange(len(board)):
-            for j in xrange(len(board[0])):
+        for i in range(len(board)):
+            for j in range(len(board[0])):
                 if self.existRecu(board, word, 0, i, j, visited):
                     return True
         
@@ -56,6 +56,6 @@ if __name__ == "__main__":
               "SFCS",
               "ADEE"
             ]
-    print Solution().exist(board, "ABCCED")
-    print Solution().exist(board, "SFCS")
-    print Solution().exist(board, "ABCB")
+    print(Solution().exist(board, "ABCCED")
+    print(Solution().exist(board, "SFCS")
+    print(Solution().exist(board, "ABCB")

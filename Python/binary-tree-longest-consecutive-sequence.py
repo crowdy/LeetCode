@@ -8,6 +8,7 @@
 #         self.left = None
 #         self.right = None
 
+
 class Solution(object):
     def longestConsecutive(self, root):
         """
@@ -19,10 +20,10 @@ class Solution(object):
         def longestConsecutiveHelper(root):
             if not root:
                 return 0
-    
+
             left_len = longestConsecutiveHelper(root.left)
             right_len = longestConsecutiveHelper(root.right)
-    
+
             cur_len = 1
             if root.left and root.left.val == root.val + 1:
                 cur_len = max(cur_len, left_len + 1);
@@ -35,6 +36,7 @@ class Solution(object):
 
         longestConsecutiveHelper(root)
         return self.max_len
+
 
 """
 가장 긴 연속된 요소의 수를 구하는 문제, 소팅되어 있지 않다.

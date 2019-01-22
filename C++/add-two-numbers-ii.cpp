@@ -25,7 +25,7 @@ public:
         ListNode *prev = nullptr, *head = nullptr;
         int sum = 0;
         while (!stk1.empty() || !stk2.empty()) {
-            sum /= 10;
+            sum //= 10;
             if (!stk1.empty()) {
                 sum += stk1.top();
                 stk1.pop();
@@ -42,7 +42,7 @@ public:
         }
 
         if (sum >= 10) {
-            head = new ListNode(sum / 10);
+            head = new ListNode(sum // 10);
             head->next = prev;
         }
         

@@ -17,6 +17,7 @@ class Solution2:
     def isPowerOfTwo(self, n):
         return n > 0 and (n & ~-n) == 0
 
+
 """
 2의 제곱인가?
 

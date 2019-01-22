@@ -6,6 +6,7 @@
 # The order of elements can be changed. It doesn't matter what you leave beyond the new length.
 #
 
+
 class Solution:
     # @param    A       a list of integers
     # @param    elem    an integer, value need to be removed
@@ -19,9 +20,10 @@ class Solution:
             else:
                 i += 1
         return last + 1
-    
+
+
 if __name__ == "__main__":
-    print Solution().removeElement([1, 2, 3, 4, 5, 2, 2], 2)
+    print(Solution().removeElement([1, 2, 3, 4, 5, 2, 2], 2))
 
 """
 1. Can I think for a second?

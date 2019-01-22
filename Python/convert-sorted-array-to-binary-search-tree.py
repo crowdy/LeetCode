@@ -4,6 +4,8 @@
 # Given an array where elements are sorted in ascending order, 
 # convert it to a height balanced BST.
 #
+
+
 # Definition for a  binary tree node
 class TreeNode:
     def __init__(self, x):
@@ -11,12 +13,13 @@ class TreeNode:
         self.left = None
         self.right = None
 
+
 class Solution:
     # @param num, a list of integers
     # @return a tree node
     def sortedArrayToBST(self, num):
         return self.sortedArrayToBSTRecu(num, 0, len(num))
-    
+
     @staticmethod
     def perfect_tree_pivot(n):
         """
@@ -32,8 +35,8 @@ class Solution:
             return x - 1  # case 1: the left subtree of the root is perfect and the right subtree has less nodes
         else:
             return n - x // 2  # case 2 == n - (x//2 - 1) - 1 : the left subtree of the root
-                               # has more nodes and the right subtree is perfect.
-    
+            # has more nodes and the right subtree is perfect.
+
     def sortedArrayToBSTRecu(self, num, start, end):
         if start == end:
             return None
@@ -42,10 +45,11 @@ class Solution:
         node.left = self.sortedArrayToBSTRecu(num, start, mid)
         node.right = self.sortedArrayToBSTRecu(num, mid + 1, end)
         return node
-    
+
+
 if __name__ == "__main__":
     num = [1, 2, 3]
     result = Solution().sortedArrayToBST(num)
-    print result.val
-    print result.left.val
-    print result.right.val
+    print(result.val)
+    print(result.left.val)
+    print(result.right.val)

@@ -59,8 +59,8 @@ private:
             return root;
         }
 
-        int mid_x = (start.first + end.first) / 2;
-        int mid_y = (start.second + end.second) / 2;
+        int mid_x = (start.first + end.first) // 2;
+        int mid_y = (start.second + end.second) // 2;
         root->neighbor.emplace_back(buildHelper(matrix, start, make_pair(mid_x, mid_y)));
         root->neighbor.emplace_back(buildHelper(matrix, make_pair(start.first, mid_y + 1), make_pair(mid_x, end.second)));
         root->neighbor.emplace_back(buildHelper(matrix, make_pair(mid_x + 1, start.second), make_pair(end.first, mid_y)));

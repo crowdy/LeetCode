@@ -21,7 +21,7 @@ class Solution(object):
         :rtype: void Do not return anything, modify nums in-place instead.
         """
         nums.sort()
-        med = (len(nums) - 1) / 2
+        med = (len(nums) - 1) // 2
         nums[::2], nums[1::2] = nums[med::-1], nums[:med:-1]
 
 # Time:  O(n) ~ O(n^2)
@@ -50,7 +50,7 @@ class Solution2(object):
             pivot_value = nums[pivot_idx]
             new_pivot_idx = left
             nums[pivot_idx], nums[right] = nums[right], nums[pivot_idx]
-            for i in xrange(left, right):
+            for i in range(left, right):
                 if nums[i] > pivot_value:
                     nums[i], nums[new_pivot_idx] = nums[new_pivot_idx], nums[i]
                     new_pivot_idx += 1
@@ -61,7 +61,7 @@ class Solution2(object):
             def idx(i, N):
                 return (1 + 2 * (i)) % N
 
-            N = len(nums) / 2 * 2 + 1
+            N = len(nums) // 2 * 2 + 1
             i, j, n = 0, 0, len(nums) - 1
             while j <= n:
                 if nums[idx(j, N)] > val:
@@ -74,6 +74,6 @@ class Solution2(object):
                 else:
                     j += 1
 
-        mid = (len(nums) - 1) / 2
+        mid = (len(nums) - 1) // 2
         findKthLargest(nums, mid + 1)
         reversedTriPartitionWithVI(nums, nums[mid])

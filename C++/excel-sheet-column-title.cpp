@@ -10,7 +10,7 @@ public:
         
         while (dvd) {
             result.push_back((dvd - 1) % 26 + 'A');
-            dvd = (dvd - 1) / 26;
+            dvd = (dvd - 1) // 26;
         }
         reverse(result.begin(), result.end());
 
@@ -27,6 +27,6 @@ public:
         if (n == 0) {
             return "";
         }
-        return convertToTitle((n - 1) / 26) + static_cast<char>((n - 1) % 26 + 'A');
+        return convertToTitle((n - 1) // 26) + static_cast<char>((n - 1) % 26 + 'A');
     }
 };

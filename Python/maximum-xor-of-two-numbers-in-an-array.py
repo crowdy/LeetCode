@@ -15,6 +15,7 @@
 #
 # Explanation: The maximum result is 5 ^ 25 = 28.
 
+
 class Solution(object):
     def findMaximumXOR(self, nums):
         """
@@ -22,8 +23,8 @@ class Solution(object):
         :rtype: int
         """
         result = 0
-        
-        for i in reversed(xrange(32)):
+
+        for i in reversed(range(32)):
             result <<= 1
             prefixes = set()
             for n in nums:

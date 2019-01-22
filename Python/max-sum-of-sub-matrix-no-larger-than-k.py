@@ -38,7 +38,8 @@
 
 # Time:  O(min(m, n)^2 * max(m, n)^2)
 # Space: O(max(m, n))
-from bisect import bisect_left, insort 
+from bisect import bisect_left, insort
+
 
 class Solution(object):
     def maxSumSubmatrix(self, matrix, k):
@@ -54,12 +55,12 @@ class Solution(object):
         n = max(len(matrix), len(matrix[0]))
         result = float("-inf")
 
-        for i in xrange(m):
+        for i in range(m):
             sums = [0] * n
-            for j in xrange(i, m):
-                for l in xrange(n):
+            for j in range(i, m):
+                for l in range(n):
                     sums[l] += matrix[j][l] if m == len(matrix) else matrix[l][j]
-    
+
                 # Find the max subarray no more than K.
                 accu_sum_set, accu_sum = [0], 0
                 for sum in sums:
@@ -81,12 +82,13 @@ class Solution_TLE(object):
         :type k: int
         :rtype: int
         """
+
         class BST(object):  # not avl, rbtree
             def __init__(self, val):
                 self.val = val
                 self.left = None
                 self.right = None
-        
+
             def insert(self, val):  # Time: O(h) = O(logn) ~ O(n)
                 curr = self
                 while curr:
@@ -102,7 +104,7 @@ class Solution_TLE(object):
                         else:
                             curr.right = BST(val)
                             return
-        
+
             def lower_bound(self, val):  # Time: O(h) = O(logn) ~ O(n)
                 result, curr = None, self
                 while curr:
@@ -112,7 +114,6 @@ class Solution_TLE(object):
                         curr = curr.right
                 return result
 
-
         if not matrix:
             return 0
 
@@ -120,12 +121,12 @@ class Solution_TLE(object):
         n = max(len(matrix), len(matrix[0]))
         result = float("-inf")
 
-        for i in xrange(m):
+        for i in range(m):
             sums = [0] * n
-            for j in xrange(i, m):
-                for l in xrange(n):
+            for j in range(i, m):
+                for l in range(n):
                     sums[l] += matrix[j][l] if m == len(matrix) else matrix[l][j]
-    
+
                 # Find the max subarray no more than K.
                 accu_sum_set = BST(0)
                 accu_sum = 0

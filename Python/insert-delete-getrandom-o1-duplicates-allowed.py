@@ -32,18 +32,17 @@
 # // getRandom should return 1 and 2 both equally likely.
 # collection.getRandom();
 
-from random import randint
 from collections import defaultdict
+from random import randint
+
 
 class RandomizedCollection(object):
-
     def __init__(self):
         """
         Initialize your data structure here.
         """
         self.__list = []
         self.__used = defaultdict(list)
-        
 
     def insert(self, val):
         """
@@ -54,10 +53,9 @@ class RandomizedCollection(object):
         has = val in self.__used
 
         self.__list += val,
-        self.__used[val] += len(self.__list)-1,
+        self.__used[val] += len(self.__list) - 1,
 
         return not has
-
 
     def remove(self, val):
         """
@@ -83,8 +81,7 @@ class RandomizedCollection(object):
         Get a random element from the collection.
         :rtype: int
         """
-        return self.__list[randint(0, len(self.__list)-1)]
-
+        return self.__list[randint(0, len(self.__list) - 1)]
 
 # Your RandomizedCollection object will be instantiated and called as such:
 # obj = RandomizedCollection()

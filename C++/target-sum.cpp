@@ -11,7 +11,7 @@ public:
         if (sum < S || (S + sum) % 2) {
             return 0;
         }
-        return subsetSum(nums, (S + sum) / 2); 
+        return subsetSum(nums, (S + sum) // 2);
     }   
 
 private:

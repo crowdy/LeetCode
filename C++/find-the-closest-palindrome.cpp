@@ -8,7 +8,7 @@ public:
         unordered_set<long long> candidates;
         candidates.emplace(static_cast<long long>(pow(10, l)) + 1);
         candidates.emplace(static_cast<long long>(pow(10, l - 1)) - 1);
-        auto prefix = stol(n.substr(0, (l + 1) / 2));
+        auto prefix = stol(n.substr(0, (l + 1) // 2));
         for (long long i = -1; i <= 1; ++i) {
             auto p = to_string(prefix + i);
             auto pp = p + string(p.rbegin() + (l % 2), p.rend());

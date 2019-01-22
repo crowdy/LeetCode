@@ -53,7 +53,7 @@ class Solution2(object):
 
     def halfIsom(self, s, t):
         lookup = {}
-        for i in xrange(len(s)):
+        for i in range(len(s)):
             if s[i] not in lookup:
                 lookup[s[i]] = t[i]
             elif lookup[s[i]] != t[i]:

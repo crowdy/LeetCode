@@ -18,6 +18,7 @@
 # Output:
 # [[5,0], [7,0], [5,2], [6,1], [4,4], [7,1]]
 
+
 class Solution(object):
     def reconstructQueue(self, people):
         """
@@ -29,7 +30,7 @@ class Solution(object):
         blocks = [[]]
         for p in people:
             index = p[1]
-    
+
             for i, block in enumerate(blocks):
                 if index <= len(block):
                     break
@@ -37,9 +38,9 @@ class Solution(object):
             block.insert(index, p)
 
             if len(block) * len(block) > len(people):
-                blocks.insert(i+1, block[len(block)/2:])
-                del block[len(block)/2:]
-    
+                blocks.insert(i + 1, block[len(block) // 2:])
+                del block[len(block) / 2:]
+
         return [p for block in blocks for p in block]
 
 

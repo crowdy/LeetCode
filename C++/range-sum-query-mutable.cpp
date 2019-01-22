@@ -106,11 +106,11 @@ private:
             return root;
         }
 
-        // Left child: start=numsleft, end=(numsleft + numsright) / 2.
-        root->left = buildHelper(nums, start, (start + end) / 2);
+        // Left child: start=numsleft, end=(numsleft + numsright) // 2.
+        root->left = buildHelper(nums, start, (start + end) // 2);
 
-        // Right child: start=(numsleft + numsright) / 2 + 1, end=numsright.
-        root->right = buildHelper(nums, (start + end) / 2 + 1, end);
+        // Right child: start=(numsleft + numsright) // 2 + 1, end=numsright.
+        root->right = buildHelper(nums, (start + end) // 2 + 1, end);
 
         // Update sum.
         root->sum = (root->left != nullptr ? root->left->sum : 0) +

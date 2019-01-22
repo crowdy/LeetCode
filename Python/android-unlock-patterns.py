@@ -9,6 +9,7 @@ class Solution(object):
         :type n: int
         :rtype: int
         """
+
         def merge(used, i):
             return used | (1 << i)
 
@@ -27,34 +28,34 @@ class Solution(object):
 
         # dp[i][j]: i is the set of the numbers in binary representation,
         #           dp[i][j] is the number of ways ending with the number j.
-        dp = [[0] * 9 for _ in xrange(1 << 9)]
-        for i in xrange(9):
+        dp = [[0] * 9 for _ in range(1 << 9)]
+        for i in range(9):
             dp[merge(0, i)][i] = 1
 
         res = 0
-        for used in xrange(len(dp)):
+        for used in range(len(dp)):
             number = number_of_keys(used)
             if number > n:
                 continue
 
-            for i in xrange(9):
+            for i in range(9):
                 if not contain(used, i):
                     continue
 
                 if m <= number <= n:
                     res += dp[used][i]
 
-                x1, y1 = i / 3, i % 3
-                for j in xrange(9):
+                x1, y1 = i // 3, i % 3
+                for j in range(9):
                     if contain(used, j):
                         continue
-    
-                    x2, y2 = j / 3, j % 3
-                    if ((x1 == x2 and abs(y1 - y2) == 2) or \
-                        (y1 == y2 and abs(x1 - x2) == 2) or \
-                        (abs(x1 - x2) == 2 and abs(y1 - y2) == 2)) and \
-                       not contain(used, convert((x1 + x2) / 2, (y1 + y2) / 2)):
-                             continue
+
+                    x2, y2 = j // 3, j % 3
+                    if ((x1 == x2 and abs(y1 - y2) == 2) or
+                            (y1 == y2 and abs(x1 - x2) == 2) or
+                            (abs(x1 - x2) == 2 and abs(y1 - y2) == 2)) and \
+                            not contain(used, convert((x1 + x2) // 2, (y1 + y2) // 2)):
+                        continue
 
                     dp[merge(used, j)][j] += dp[used][i]
 
@@ -71,6 +72,7 @@ class Solution2(object):
         :type n: int
         :rtype: int
         """
+
         def merge(used, i):
             return used | (1 << i)
 
@@ -92,31 +94,31 @@ class Solution2(object):
 
         # dp[i][j]: i is the set of the numbers in binary representation,
         #            d[i][j] is the number of ways ending with the number j.
-        dp = [[0] * 9 for _ in xrange(1 << 9)]
-        for i in xrange(9):
+        dp = [[0] * 9 for _ in range(1 << 9)]
+        for i in range(9):
             dp[merge(0, i)][i] = 1
 
         res = 0
-        for used in xrange(len(dp)):
+        for used in range(len(dp)):
             number = number_of_keys(used)
             if number > n:
                 continue
 
-            for i in xrange(9):
+            for i in range(9):
                 if not contain(used, i):
                     continue
 
-                x1, y1 = i / 3, i % 3
-                for j in xrange(9):
+                x1, y1 = i // 3, i % 3
+                for j in range(9):
                     if i == j or not contain(used, j):
                         continue
-    
-                    x2, y2 = j / 3, j % 3
-                    if ((x1 == x2 and abs(y1 - y2) == 2) or \
-                        (y1 == y2 and abs(x1 - x2) == 2) or \
-                        (abs(x1 - x2) == 2 and abs(y1 - y2) == 2)) and \
-                       not contain(used, convert((x1 + x2) / 2, (y1 + y2) / 2)):
-                             continue
+
+                    x2, y2 = j // 3, j % 3
+                    if ((x1 == x2 and abs(y1 - y2) == 2) or
+                            (y1 == y2 and abs(x1 - x2) == 2) or
+                            (abs(x1 - x2) == 2 and abs(y1 - y2) == 2)) and \
+                            not contain(used, convert((x1 + x2) // 2, (y1 + y2) // 2)):
+                        continue
 
                     dp[used][i] += dp[exclude(used, i)][j]
 
@@ -136,6 +138,7 @@ class Solution_TLE(object):
         :type n: int
         :rtype: int
         """
+
         def merge(used, i):
             return used | (1 << i)
 
@@ -153,22 +156,21 @@ class Solution_TLE(object):
             if m <= level <= n:
                 number += 1
 
-            x1, y1 = i / 3, i % 3
-            for j in xrange(9):
+            x1, y1 = i // 3, i % 3
+            for j in range(9):
                 if contain(used, j):
                     continue
 
-                x2, y2 = j / 3, j % 3
-                if ((x1 == x2 and abs(y1 - y2) == 2) or \
-                    (y1 == y2 and abs(x1 - x2) == 2) or \
-                    (abs(x1 - x2) == 2 and abs(y1 - y2) == 2)) and \
-                   not contain(used, convert((x1 + x2) / 2, (y1 + y2) / 2)):
-                         continue
+                x2, y2 = j // 3, j % 3
+                if ((x1 == x2 and abs(y1 - y2) == 2) or
+                        (y1 == y2 and abs(x1 - x2) == 2) or
+                        (abs(x1 - x2) == 2 and abs(y1 - y2) == 2)) and \
+                        not contain(used, convert((x1 + x2) // 2, (y1 + y2) // 2)):
+                    continue
 
                 number += numberOfPatternsHelper(m, n, level + 1, merge(used, j), j)
-    
-            return number
 
+            return number
 
         number = 0
         # 1, 3, 7, 9

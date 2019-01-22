@@ -26,4 +26,4 @@ class Solution:
             self.generateParenthesisRecu(result, current + ")", left, right - 1)
 
 if __name__ == "__main__":
-    print Solution().generateParenthesis(3)
+    print(Solution().generateParenthesis(3))

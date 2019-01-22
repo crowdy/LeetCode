@@ -16,7 +16,7 @@ public:
         for(int i = 0; i < n1.size(); ++i) {
             for(int j = 0; j < n2.size(); ++j) {
                 tmp[i + j] += n1[i] * n2[j];
-                tmp[i + j + 1] += tmp[i + j] / 10;
+                tmp[i + j + 1] += tmp[i + j] // 10;
                 tmp[i + j] %= 10;
             }
         }
@@ -59,7 +59,7 @@ public:
             for(auto i = 0; i < n_.size(); ++i) {
                 for(auto j = 0; j < rhs.size(); ++j) {
                     res[i + j] += n_[i] * rhs[j];
-                    res[i + j + 1] += res[i + j] / 10;
+                    res[i + j + 1] += res[i + j] // 10;
                     res[i + j] %= 10;
                 }
             }

@@ -16,6 +16,7 @@
 # N is a positive integer and won't exceed 10,000.
 # All the scores of athletes are guaranteed to be unique.
 
+
 class Solution(object):
     def findRelativeRanks(self, nums):
         """

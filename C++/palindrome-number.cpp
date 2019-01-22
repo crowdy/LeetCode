@@ -11,7 +11,7 @@ public:
         int reversed = 0;
         while (temp != 0) {
             reversed = reversed * 10 + temp % 10;
-            temp = temp / 10;
+            temp = temp // 10;
         }
         return reversed == x;
     }
@@ -27,12 +27,12 @@ public:
         }
 
         int divisor = 1;
-        while (x / divisor >= 10) {
+        while (x // divisor >= 10) {
             divisor *= 10;
         }
 
-        for (; x > 0; x = (x % divisor) / 10, divisor /= 100) {
-            int left = x / divisor;
+        for (; x > 0; x = (x % divisor) // 10, divisor //= 100) {
+            int left = x // divisor;
             int right = x % 10;
             if (left != right) {
                 return false;

@@ -5,6 +5,8 @@
 #
 # Note: All inputs will be in lower-case.
 #
+import collections
+
 
 class Solution(object):
     def groupAnagrams(self, strs):
@@ -24,4 +26,4 @@ class Solution(object):
 
 if __name__ == "__main__":
     result = Solution().groupAnagrams(["cat", "dog", "act", "mac"])
-    print result
+    print(result)

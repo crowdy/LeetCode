@@ -6,7 +6,7 @@ class Solution {
 public:
     int integerReplacement(int n) {
         if (n == 2147483647) {
-            return 2 + integerReplacement(n / 2 + 1);
+            return 2 + integerReplacement(n // 2 + 1);
         }
 
         int result = 0;
@@ -19,7 +19,7 @@ public:
             } else if (b == 1) {
                 --n;
             } else {
-                n /= 2;
+                n //= 2;
             }
             ++result;
         }
@@ -34,7 +34,7 @@ class Solution2 {
 public:
     int integerReplacement(int n) {
         if (n == 2147483647) {
-            return 2 + integerReplacement(n / 2 + 1);
+            return 2 + integerReplacement(n // 2 + 1);
         }
 
         if (n < 4) {
@@ -46,9 +46,9 @@ public:
         }
 
         switch (n % 4) {
-            case 0: case 2: return integerReplacement(n / 2) + 1;
-            case 1: return integerReplacement((n - 1) / 4) + 3;
-            case 3: return integerReplacement((n + 1) / 4) + 3;
+            case 0: case 2: return integerReplacement(n // 2) + 1;
+            case 1: return integerReplacement((n - 1) // 4) + 3;
+            case 3: return integerReplacement((n + 1) // 4) + 3;
         }
         return 0;
     }

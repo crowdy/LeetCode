@@ -32,7 +32,7 @@ class Solution:
         dummy.next = head
         slow, fast = dummy, dummy
         
-        for i in xrange(n):
+        for i in range(n):
             fast = fast.next
             
         while fast.next:
@@ -49,4 +49,4 @@ if __name__ == "__main__":
     head.next.next.next = ListNode(4)
     head.next.next.next.next = ListNode(5)
     
-    print Solution().removeNthFromEnd(head, 2)
+    print(Solution().removeNthFromEnd(head, 2)

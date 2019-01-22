@@ -24,6 +24,7 @@
 # All elements in nums1 and nums2 are unique.
 # The length of both nums1 and nums2 would not exceed 1000.
 
+
 class Solution(object):
     def nextGreaterElement(self, findNums, nums):
         """
@@ -38,4 +39,4 @@ class Solution(object):
             stk.append(num)
         while stk:
             lookup[stk.pop()] = -1
-        return map(lambda x : lookup[x], findNums)
+        return map(lambda x: lookup[x], findNums)

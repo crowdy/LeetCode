@@ -27,6 +27,7 @@
 # ]
 # Note: Each word is guaranteed not to exceed L in length.
 
+
 class Solution(object):
     def fullJustify(self, words, maxWidth):
         """
@@ -34,6 +35,7 @@ class Solution(object):
         :type maxWidth: int
         :rtype: List[str]
         """
+
         def addSpaces(i, spaceCnt, maxWidth, is_last):
             if i < spaceCnt:
                 # For the last line of text, it should be left justified,
@@ -44,7 +46,7 @@ class Solution(object):
         def connect(words, maxWidth, begin, end, length, is_last):
             s = []  # The extra space O(k) is spent here.
             n = end - begin
-            for i in xrange(n):
+            for i in range(n):
                 s += words[begin + i],
                 s += ' ' * addSpaces(i, n - 1, maxWidth - length, is_last),
             # For only one word in a line.
@@ -55,7 +57,7 @@ class Solution(object):
 
         res = []
         begin, length = 0, 0
-        for i in xrange(len(words)):
+        for i in range(len(words)):
             if length + len(words[i]) + (i - begin) > maxWidth:
                 res += connect(words, maxWidth, begin, i, length, False),
                 begin, length = i, 0
@@ -67,4 +69,4 @@ class Solution(object):
 
 
 if __name__ == "__main__":
-    print Solution().fullJustify(["This", "is", "an", "example", "of", "text", "justification."], 16)
+    print(Solution().fullJustify(["This", "is", "an", "example", "of", "text", "justification."], 16))

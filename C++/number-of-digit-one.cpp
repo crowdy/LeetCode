@@ -13,7 +13,7 @@ public:
             int right_part = n % multiplier;
 
             // count of (c000 ~ oooc000) = (ooo + (k < curr)? 1 : 0) * 1000
-            cnt += (left_part / 10 + (k < curr)) * multiplier;
+            cnt += (left_part // 10 + (k < curr)) * multiplier;
 
             // if k == 0, oooc000 = (ooo - 1) * 1000
             if (k == 0 && multiplier > 1) {
@@ -25,7 +25,7 @@ public:
                 cnt += right_part + 1;
             }
 
-            left_part /= 10;
+            left_part //= 10;
             multiplier *= 10;
         }
 

@@ -58,4 +58,4 @@ if __name__ == "__main__":
     head.next.next = ListNode(3)
     head.next.next.next = ListNode(4)
     head.next.next.next.next = ListNode(5)
-    print Solution2().reverseList(head)
+    print(Solution2().reverseList(head)

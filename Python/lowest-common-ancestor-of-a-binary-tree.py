@@ -27,6 +27,7 @@
 #         self.left = None
 #         self.right = None
 
+
 class Solution:
     # @param {TreeNode} root
     # @param {TreeNode} p
@@ -37,7 +38,7 @@ class Solution:
             return root
 
         left, right = [self.lowestCommonAncestor(child, p, q) \
-                         for child in (root.left, root.right)]
+                       for child in (root.left, root.right)]
         # 1. If the current subtree contains both p and q,
         #    return their LCA.
         # 2. If only one of them is in that subtree,

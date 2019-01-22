@@ -11,6 +11,9 @@
 # This is not the best solution 
 # since there is no built-in bst structure in Python.
 # The better solution could be found in C++ solution.
+import collections
+
+
 class Solution:
     # @param {integer[]} nums
     # @param {integer} k
@@ -24,7 +27,7 @@ class Solution:
             # Make sure window size
             if len(window) > k:
                 window.popitem(False)
-                
+
             bucket = n if not t else n // t
             # At most 2t items.
             for m in (window.get(bucket - 1), window.get(bucket), window.get(bucket + 1)):
@@ -32,6 +35,8 @@ class Solution:
                     return True
             window[bucket] = n
         return False
+
+
 """
 어느 일정 거리범위를 찾는 것은 큐의 길이로 찾는다
 
@@ -49,7 +54,7 @@ class Solution:
 
 # 이건 jikai tang의 풀이이다.
 
-class Solution:
+class Solution2:
     # @param {integer[]} nums
     # @param {integer} k
     # @param {integer} t
@@ -57,20 +62,18 @@ class Solution:
     def containsNearbyAlmostDuplicate(self, nums, k, t):
         if k < 1 or t < 0:
             return False
-            
+
         dic = collections.OrderedDict()
-        
+
         for i in range(len(nums)):
-            key = nums[i] / max(1, t)
-            
+            key = nums[i] // max(1, t)
+
             for m in (key, key - 1, key + 1):
                 if m in dic and abs(nums[i] - dic[m]) <= t:
                     return True
-                
+
             dic[key] = nums[i]
-            
+
             if i >= k:
                 dic.popitem(last=False)
         return False
-    
-    

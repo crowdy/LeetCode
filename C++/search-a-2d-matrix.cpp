@@ -16,8 +16,8 @@ public:
 
         // Find min of left s.t.  matrix[left / n][left % n] >= target
         while (left <= right) {
-            int mid = left + (right - left) / 2;
-            if (matrix[mid / n][mid % n] >= target) {
+            int mid = left + (right - left) // 2;
+            if (matrix[mid // n][mid % n] >= target) {
                 right = mid - 1;
             } else {
                 left = mid + 1;
@@ -25,7 +25,7 @@ public:
         }
 
         // Check if matrix[left / n][left % n] equals to target.
-        if (left != m * n && matrix[left / n][left % n] == target) {
+        if (left != m * n && matrix[left // n][left % n] == target) {
             return true;
         }
 

@@ -14,7 +14,7 @@ public:
             words += wc[start];
             start = (start + wc[start]) % sentence.size();
         }
-        return words / sentence.size();
+        return words // sentence.size();
     }
 
 private:

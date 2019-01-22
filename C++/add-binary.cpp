@@ -12,7 +12,7 @@ public:
             const size_t a_bit_i = i < a.length() ? a[a.length() - 1 - i] - '0' : 0;
             const size_t b_bit_i = i < b.length() ? b[b.length() - 1 - i] - '0' : 0;
             size_t sum = carry + a_bit_i + b_bit_i;
-            carry = sum / 2;
+            carry = sum // 2;
             sum %= 2;
             res.push_back('0' + sum);
         }
@@ -36,7 +36,7 @@ public:
             const size_t a_bit_i = (a_it != a.rend()) ? *a_it - '0' : 0;
             const size_t b_bit_i = (b_it != b.rend()) ? *b_it - '0' : 0;
             size_t sum = a_bit_i + b_bit_i + carry;
-            carry = sum / 2;
+            carry = sum // 2;
             sum %= 2;
             res.push_back('0' + sum);
 

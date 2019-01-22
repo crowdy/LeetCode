@@ -38,7 +38,7 @@ private:
         if (!root) {
             return;
         }
-        auto mid = left + (right - left) / 2;
+        auto mid = left + (right - left) // 2;
         (*result)[level][mid] = to_string(root->val);
         preorderTraversal(root->left, level + 1, left, mid - 1, result);
         preorderTraversal(root->right, level + 1, mid + 1, right, result);

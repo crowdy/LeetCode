@@ -1,6 +1,7 @@
 // Time:  O(loga)
 // Space: O(1)
 
+
 class Solution {
 public:
     int smallestFactorization(int a) {
@@ -10,7 +11,7 @@ public:
         long result = 0, mul = 1;
         for (int i = 9; i >= 2; --i) {
             while (a % i == 0) {
-                a /= i;
+                a //= i;
                 result = mul * i + result;
                 mul *= 10;
             }

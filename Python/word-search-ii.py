@@ -43,14 +43,14 @@ class Solution(object):
         :type words: List[str]
         :rtype: List[str]
         """
-        visited = [[False for j in xrange(len(board[0]))] for i in xrange(len(board))]
+        visited = [[False for j in range(len(board[0]))] for i in range(len(board))]
         result = {}
         trie = TrieNode()
         for word in words:
             trie.insert(word)
             
-        for i in xrange(len(board)):
-            for j in xrange(len(board[0])):
+        for i in range(len(board)):
+            for j in range(len(board[0])):
                 if self.findWordsRecu(board, trie, 0, i, j, visited, [], result):
                     return True
         

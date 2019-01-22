@@ -1,6 +1,7 @@
 # Time:  O(max(r, c) * w)
 # Space: O(w)
 
+
 class Solution(object):
     def hasPath(self, maze, start, destination):
         """

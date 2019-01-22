@@ -8,6 +8,7 @@
 # Please optimize your algorithm to use less time and space.
 # The input size may be as large as 5,000,000.
 
+
 class Solution(object):
     def lexicalOrder(self, n):
         result = []
@@ -15,10 +16,10 @@ class Solution(object):
         i = 1
         while len(result) < n:
             k = 0
-            while i * 10**k <= n:
-                result.append(i * 10**k)
+            while i * 10 ** k <= n:
+                result.append(i * 10 ** k)
                 k += 1
-            
+
             num = result[-1] + 1
             while num <= n and num % 10:
                 result.append(num)
@@ -27,11 +28,11 @@ class Solution(object):
             if not num % 10:
                 num -= 1
             else:
-                num /= 10
+                num //= 10
 
             while num % 10 == 9:
-                num /= 10
-            
-            i = num+1
+                num //= 10
+
+            i = num + 1
 
         return result

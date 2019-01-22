@@ -52,7 +52,7 @@ class Solution(object):
             in_degree[i].add(j)
             out_degree[j].add(i)
         
-        for i in xrange(numCourses):
+        for i in range(numCourses):
             if i not in in_degree:
                 zero_in_degree_queue.append(i)
         

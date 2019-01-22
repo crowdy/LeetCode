@@ -18,6 +18,7 @@
 # (for example, no pop or peek operations will be called on an empty queue).
 #
 
+
 class Queue:
     # initialize your data structure here.
     def __init__(self):
@@ -32,14 +33,14 @@ class Queue:
     def pop(self):
         self.peek()
         return self.B.pop()
-        
+
     # @return an integer
     def peek(self):
         if not self.B:
             while self.A:
                 self.B.append(self.A.pop())
         return self.B[-1]
-        
+
     # @return an boolean
     def empty(self):
         return not self.A and not self.B

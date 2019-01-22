@@ -8,6 +8,6 @@ public:
         for (const auto& candy: candies) {
             lookup.emplace(candy);
         }
-        return min(lookup.size(), candies.size() / 2);
+        return min(lookup.size(), candies.size() // 2);
     }
 };

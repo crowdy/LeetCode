@@ -24,7 +24,7 @@ class Solution(object):
             result = "-"  
 
         dvd, dvs = abs(numerator), abs(denominator)
-        result += str(dvd / dvs)
+        result += str(dvd // dvs)
         dvd %= dvs
 
         if dvd > 0:
@@ -34,7 +34,7 @@ class Solution(object):
         while dvd and dvd not in lookup:
             lookup[dvd] = len(result)
             dvd *= 10
-            result += str(dvd / dvs)
+            result += str(dvd // dvs)
             dvd %= dvs
 
         if dvd in lookup:
@@ -44,7 +44,7 @@ class Solution(object):
 
 
 if __name__ == "__main__":
-    print Solution().fractionToDecimal(1, 9)
-    print Solution().fractionToDecimal(-50, 8)
-    print Solution().fractionToDecimal(22, 2)
-    print Solution().fractionToDecimal(-22, -2)
+    print(Solution().fractionToDecimal(1, 9)
+    print(Solution().fractionToDecimal(-50, 8)
+    print(Solution().fractionToDecimal(22, 2)
+    print(Solution().fractionToDecimal(-22, -2)

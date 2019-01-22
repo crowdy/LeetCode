@@ -13,15 +13,13 @@
 
 from collections import defaultdict
 
-class TwoSum(object):
 
+class TwoSum(object):
     def __init__(self):
         """
         initialize your data structure here
         """
         self.lookup = defaultdict(int)
-        
-
 
     def add(self, number):
         """
@@ -29,7 +27,6 @@ class TwoSum(object):
         :rtype: nothing
         """
         self.lookup[number] += 1
-
 
     def find(self, value):
         """
@@ -46,10 +43,9 @@ class TwoSum(object):
 
 if __name__ == "__main__":
     Sol = TwoSum()
-    
+
     for i in (1, 3, 5):
         Sol.add(i)
-    
+
     for i in (4, 7):
-        print Sol.find(i)
-                
+        print(Sol.find(i))

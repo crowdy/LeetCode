@@ -11,6 +11,7 @@
 # possible value of int.
 #
 
+
 class Solution:
     # @param {integer} A
     # @param {integer} B

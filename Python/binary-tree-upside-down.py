@@ -24,6 +24,7 @@
 #    3   1  
 #
 
+
 # Definition for a  binary tree node
 class TreeNode:
     def __init__(self, x):
@@ -31,12 +32,13 @@ class TreeNode:
         self.left = None
         self.right = None
 
+
 class Solution:
     # @param root, a tree node
     # @return root of the upside down tree
     def upsideDownBinaryTree(self, root):
         p, parent, parent_right = root, None, None
-        
+
         while p:
             left = p.left
             p.left = parent_right
@@ -44,8 +46,9 @@ class Solution:
             p.right = parent
             parent = p
             p = left
-            
+
         return parent
+
 
 # Time:  O(n)
 # Space: O(n)
@@ -54,16 +57,16 @@ class Solution2:
     # @return root of the upside down tree
     def upsideDownBinaryTree(self, root):
         return self.upsideDownBinaryTreeRecu(root, None)
-    
+
     def upsideDownBinaryTreeRecu(self, p, parent):
         if p is None:
             return parent
-        
+
         root = self.upsideDownBinaryTreeRecu(p.left, p)
         if parent:
             p.left = parent.right
         else:
             p.left = None
         p.right = parent
-        
+
         return root

@@ -22,20 +22,20 @@ class Solution:
             return 0
 
         m, n = len(matrix), len(matrix[0])
-        size = [[0 for j in xrange(n)] for i in xrange(2)]
+        size = [[0 for j in range(n)] for i in range(2)]
         max_size = 0
         
-        for j in xrange(n):
+        for j in range(n):
             if matrix[0][j] == '1':
                 size[0][j] = 1
             max_size = max(max_size, size[0][j])
             
-        for i in xrange(1, m):
+        for i in range(1, m):
             if matrix[i][0] == '1':
                 size[i % 2][0] = 1
             else:
                 size[i % 2][0] = 0
-            for j in xrange(1, n):
+            for j in range(1, n):
                 if matrix[i][j] == '1':
                     size[i % 2][j] = min(size[i % 2][j - 1], \
                                          size[(i - 1) % 2][j], \
@@ -58,20 +58,20 @@ class Solution2:
             return 0
 
         m, n = len(matrix), len(matrix[0])
-        size = [[0 for j in xrange(n)] for i in xrange(m)]
+        size = [[0 for j in range(n)] for i in range(m)]
         max_size = 0
         
-        for j in xrange(n):
+        for j in range(n):
             if matrix[0][j] == '1':
                 size[0][j] = 1
             max_size = max(max_size, size[0][j])
             
-        for i in xrange(1, m):
+        for i in range(1, m):
             if matrix[i][0] == '1':
                 size[i][0] = 1
             else:
                 size[i][0] = 0
-            for j in xrange(1, n):
+            for j in range(1, n):
                 if matrix[i][j] == '1':
                     size[i][j] = min(size[i][j - 1],  \
                                      size[i - 1][j],  \
@@ -95,8 +95,8 @@ class Solution3:
         
         H, W = 0, 1
         # DP table stores (h, w) for each (i, j).
-        table = [[[0, 0] for j in xrange(len(matrix[0]))] \
-                         for i in xrange(len(matrix))]
+        table = [[[0, 0] for j in range(len(matrix[0]))] \
+                         for i in range(len(matrix))]
         for i in reversed(xrange(len(matrix))):
             for j in reversed(xrange(len(matrix[i]))):
                 # Find the largest h such that (i, j) to (i + h - 1, j) are feasible.
@@ -110,8 +110,8 @@ class Solution3:
                     table[i][j] = [h, w]
         
         # A table stores the length of largest square for each (i, j).
-        s = [[0 for j in xrange(len(matrix[0]))] \
-                for i in xrange(len(matrix))]
+        s = [[0 for j in range(len(matrix[0]))] \
+                for i in range(len(matrix))]
         max_square_area = 0
         for i in reversed(xrange(len(matrix))):
             for j in reversed(xrange(len(matrix[i]))):

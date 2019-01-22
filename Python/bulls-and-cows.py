@@ -30,8 +30,10 @@
 #
 
 # One pass solution.
+import operator
 from collections import defaultdict
 from itertools import izip
+
 
 class Solution(object):
     def getHint(self, secret, guess):
@@ -56,13 +58,14 @@ class Solution(object):
                     B += 1
                 else:
                     s_lookup[s] += 1
-                    
+
         return "%dA%dB" % (A, B)
 
 
 # Two pass solution.
 from collections import Counter
 from itertools import imap
+
 
 class Solution2(object):
     def getHint(self, secret, guess):
@@ -74,4 +77,3 @@ class Solution2(object):
         A = sum(imap(operator.eq, secret, guess))
         B = sum((Counter(secret) & Counter(guess)).values()) - A
         return "%dA%dB" % (A, B)
-  

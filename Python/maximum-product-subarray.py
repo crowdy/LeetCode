@@ -16,6 +16,7 @@ class Solution:
             global_max = max(global_max, local_max)
         return global_max
 
+
 class Solution2:
     # @param A, a list of integers
     # @return an integer
@@ -30,6 +31,7 @@ class Solution2:
             global_max = max(global_max, local_max)
         return global_max
 
+
 if __name__ == "__main__":
-    print Solution().maxProduct([2, 3, -2, 4])
-    print Solution().maxProduct([-4,-3])
+    print(Solution().maxProduct([2, 3, -2, 4]))
+    print(Solution().maxProduct([-4, -3]))

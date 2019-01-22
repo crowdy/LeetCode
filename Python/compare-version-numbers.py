@@ -58,9 +58,9 @@ class Solution2(object):
         v1, v2 = version1.split("."), version2.split(".")
         
         if len(v1) > len(v2):
-            v2 += ['0' for _ in xrange(len(v1) - len(v2))]
+            v2 += ['0' for _ in range(len(v1) - len(v2))]
         elif len(v1) < len(v2):
-            v1 += ['0' for _ in xrange(len(v2) - len(v1))]
+            v1 += ['0' for _ in range(len(v2) - len(v1))]
         
         i = 0
         while i < len(v1):
@@ -99,6 +99,6 @@ class Solution2(object):
 
 
 if __name__ == "__main__":
-    print Solution().compareVersion("21.0", "121.1.0")
-    print Solution().compareVersion("01", "1")
-    print Solution().compareVersion("1", "1.0")
+    print(Solution().compareVersion("21.0", "121.1.0")
+    print(Solution().compareVersion("01", "1")
+    print(Solution().compareVersion("1", "1.0")

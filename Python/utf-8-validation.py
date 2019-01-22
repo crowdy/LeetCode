@@ -37,6 +37,7 @@
 # The next byte is a continuation byte which starts with 10 and that's correct.
 # But the second continuation byte does not start with 10, so it is invalid.
 
+
 class Solution(object):
     def validUtf8(self, data):
         """

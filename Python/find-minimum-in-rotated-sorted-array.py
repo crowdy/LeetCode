@@ -10,6 +10,7 @@
 # You may assume no duplicate exists in the array.
 #
 
+
 class Solution(object):
     def findMin(self, nums):
         """
@@ -22,7 +23,7 @@ class Solution(object):
         target = nums[-1]
 
         while left < right: # and nums[l] > nums[r] 조건도 빠져있다.
-            mid = left + (right - left) / 2
+            mid = left + (right - left) // 2
 
             if nums[mid] <= target:
                 right = mid
@@ -44,7 +45,7 @@ class Solution2(object):
         """
         left, right = 0, len(nums) - 1
         while left < right and nums[left] >= nums[right]:  # 중복을 허용하지 않는다면 같을 경우가 없다.
-            mid = left + (right - left) / 2
+            mid = left + (right - left) // 2
 
             if nums[mid] < nums[left]:
                 right = mid
@@ -55,8 +56,8 @@ class Solution2(object):
 
 
 if __name__ == "__main__":
-    print Solution().findMin([1])
-    print Solution().findMin([1, 2])
-    print Solution().findMin([2, 1])
-    print Solution().findMin([3, 1, 2])
-    print Solution().findMin([2, 3, 1])
+    print(Solution().findMin([1]))
+    print(Solution().findMin([1, 2]))
+    print(Solution().findMin([2, 1]))
+    print(Solution().findMin([3, 1, 2]))
+    print(Solution().findMin([2, 3, 1]))

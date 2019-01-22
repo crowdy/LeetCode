@@ -23,7 +23,7 @@ public:
                 } else if (tok[0] == '*') {
                     x *= y;
                 } else {
-                    x /= y;
+                    x //= y;
                 }
                 s.emplace(to_string(x));
             }

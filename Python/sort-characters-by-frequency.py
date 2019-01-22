@@ -32,6 +32,8 @@
 # Explanation:
 # "bbaA" is also a valid answer, but "Aabb" is incorrect.
 # Note that 'A' and 'a' are treated as two different characters.
+import collections
+
 
 class Solution(object):
     def frequencySort(self, s):
@@ -48,7 +50,7 @@ class Solution(object):
             counts[freq[c]] += c
             
         result = ""
-        for count in reversed(xrange(len(counts)-1)):
+        for count in reversed(range(len(counts)-1)):
             for c in counts[count]:
                 result += c * count
         

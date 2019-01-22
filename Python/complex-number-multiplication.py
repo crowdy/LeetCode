@@ -20,6 +20,7 @@
 # where the integer a and b will both belong to the range of [-100, 100].
 # And the output should be also in this form.
 
+
 class Solution(object):
     def complexNumberMultiply(self, a, b):
         """

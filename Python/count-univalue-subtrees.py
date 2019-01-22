@@ -8,6 +8,7 @@
 #         self.left = None
 #         self.right = None
 
+
 class Solution:
     # @param {TreeNode} root
     # @return {integer}
@@ -22,11 +23,11 @@ class Solution:
         [left, count] = self.isUnivalSubtrees(root.left, count)
         [right, count] = self.isUnivalSubtrees(root.right, count)
         if self.isSame(root, root.left, left) and \
-           self.isSame(root, root.right, right):
-                count += 1
-                return [True, count]
+                self.isSame(root, root.right, right):
+            count += 1
+            return [True, count]
 
         return [False, count]
-    
+
     def isSame(self, root, child, is_uni):
         return not child or (is_uni and root.val == child.val)

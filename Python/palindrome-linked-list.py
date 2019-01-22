@@ -13,6 +13,7 @@
 #         self.next = None
 #
 
+
 class Solution:
     # @param {ListNode} head
     # @return {boolean}

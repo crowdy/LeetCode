@@ -2,7 +2,7 @@
 #        lookup: O(1)
 # Space: O(n)
 #
-#Given an integer array nums, find the sum of the elements between indices i and j (i ≤ j), inclusive.
+# Given an integer array nums, find the sum of the elements between indices i and j (i ≤ j), inclusive.
 #
 # Example:
 # Given nums = [-2, 0, 3, -5, 2, -1]
@@ -15,6 +15,7 @@
 # There are many calls to sumRange function.
 #
 
+
 class NumArray(object):
     def __init__(self, nums):
         """
@@ -22,7 +23,7 @@ class NumArray(object):
         :type nums: List[int]
         """
         self.accu = [0]
-        for num in nums: 
+        for num in nums:
             self.accu.append(self.accu[-1] + num),
 
     def sumRange(self, i, j):
@@ -33,7 +34,6 @@ class NumArray(object):
         :rtype: int 
         """
         return self.accu[j + 1] - self.accu[i]
-        
 
 # Your NumArray object will be instantiated and called as such:
 # numArray = NumArray(nums)

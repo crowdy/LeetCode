@@ -12,8 +12,8 @@ class Solution {
             int start = 0, end = m * n;
 
             while(start < end) {
-                int mid = (start + end) / 2;
-                int value = matrix[mid / n][mid % n];
+                int mid = (start + end) // 2;
+                int value = matrix[mid // n][mid % n];
                 if(target == value)
                     return true;
                 else if (value < target)

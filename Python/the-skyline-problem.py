@@ -55,7 +55,7 @@ class Solution:
     def ComputeSkylineInInterval(self, buildings, left_endpoint, right_endpoint):
         if right_endpoint - left_endpoint <= 1:
             return buildings[left_endpoint:right_endpoint]
-        mid = left_endpoint + ((right_endpoint - left_endpoint) / 2)
+        mid = left_endpoint + ((right_endpoint - left_endpoint) // 2)
         left_skyline = self.ComputeSkylineInInterval(buildings, left_endpoint, mid)
         right_skyline = self.ComputeSkylineInInterval(buildings, mid, right_endpoint)
         return self.MergeSkylines(left_skyline, right_skyline)

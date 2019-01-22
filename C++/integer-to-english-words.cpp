@@ -26,7 +26,7 @@ public:
             if (num % 1000) {
                 res.emplace_back(threeDigits(cur, lookup, unit[i]));
             }
-            num /= 1000;
+            num //= 1000;
             ++i;
         }
         reverse(res.begin(), res.end());
@@ -44,8 +44,8 @@ public:
 
     string threeDigits(const int& num, const unordered_map<int, string>& lookup, const string& unit) {
         vector<string> res;
-        if (num / 100) {
-            res.emplace_back(lookup.find(num / 100)->second + " " + "Hundred");
+        if (num // 100) {
+            res.emplace_back(lookup.find(num // 100)->second + " " + "Hundred");
         }
         if (num % 100) {
             res.emplace_back(twoDigits(num % 100, lookup));
@@ -60,6 +60,6 @@ public:
         if (lookup.find(num) != lookup.end()) {
             return lookup.find(num)->second;
         }
-        return lookup.find((num / 10) * 10)->second + " " + lookup.find(num % 10)->second; 
+        return lookup.find((num // 10) * 10)->second + " " + lookup.find(num % 10)->second;
     }
 };

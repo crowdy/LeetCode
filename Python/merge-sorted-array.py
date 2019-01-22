@@ -16,7 +16,7 @@ class Solution:
     # @return nothing
     def merge(self, A, m, B, n):
         last, i, j = m + n - 1, m - 1, n - 1
-        
+
         while i >= 0 and j >= 0:
             if A[i] > B[j]:
                 A[last] = A[i]
@@ -24,17 +24,18 @@ class Solution:
             else:
                 A[last] = B[j]
                 last, j = last - 1, j - 1
-        
+
         while j >= 0:
-                A[last] = B[j]
-                last, j = last - 1, j - 1
+            A[last] = B[j]
+            last, j = last - 1, j - 1
+
 
 if __name__ == "__main__":
     A = [1, 3, 5, 0, 0, 0, 0]
     B = [2, 4, 6, 7]
     Solution().merge(A, 3, B, 4)
-    print A
-    
+    print(A)
+
 
 # Time:  O(n)
 # Space: O(n)
@@ -54,14 +55,14 @@ class Solution2:
         :rtype: void Do not return anything, modify nums1 in-place instead.
         """
         while m > 0 and n > 0:
-            if nums1[m-1] > nums2[n-1]:
-                nums1[m+n-1] = nums1[m-1]
+            if nums1[m - 1] > nums2[n - 1]:
+                nums1[m + n - 1] = nums1[m - 1]
                 m -= 1
             else:
-                nums1[m+n-1] = nums2[n-1]
+                nums1[m + n - 1] = nums2[n - 1]
                 n -= 1
         if n > 0:
             nums1[:n] = nums2[:n]  # Space: O(n),
-                                   # Reference:
-                                   # - https://stackoverflow.com/questions/4948293/python-slice-assignment-memory-usage
-                                   # - https://stackoverflow.com/questions/10623302/how-assignment-works-with-python-list-slice
+            # Reference:
+            # - https://stackoverflow.com/questions/4948293/python-slice-assignment-memory-usage
+            # - https://stackoverflow.com/questions/10623302/how-assignment-works-with-python-list-slice

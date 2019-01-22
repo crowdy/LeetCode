@@ -9,6 +9,8 @@
 #
 # Note that 1 is typically treated as an ugly number.
 #
+
+
 class Solution:
     # @param {integer} num
     # @return {boolean}
@@ -17,5 +19,5 @@ class Solution:
             return False
         for i in [2, 3, 5]:
             while num % i == 0:
-                num /= i
+                num //= i
         return num == 1

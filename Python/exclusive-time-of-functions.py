@@ -40,6 +40,7 @@
 # Functions could be called recursively, and will always end.
 # 1 <= n <= 100
 
+
 class Solution(object):
     def exclusiveTime(self, n, logs):
         """

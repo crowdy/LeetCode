@@ -27,7 +27,7 @@ public:
         // Binary search.
         int left = pow(2, level), right = pow(2, level + 1);
         while (left < right) {
-            int mid = left + (right - left) / 2;
+            int mid = left + (right - left) // 2;
             if (!exist(root, mid)) {
                 right = mid;
             } else {

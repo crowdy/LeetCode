@@ -10,7 +10,7 @@ public:
         string result;
         while (num) {
             result.append(to_string(num % 7));
-            num /= 7;
+            num //= 7;
         }
         reverse(result.begin(), result.end());
         return result.empty() ? "0" : result;
@@ -26,6 +26,6 @@ public:
         if (num < 7) {
             return to_string(num);
         }
-        return convertToBase7(num / 7).append(to_string(num % 7));
+        return convertToBase7(num // 7).append(to_string(num % 7));
     }
 };

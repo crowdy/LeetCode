@@ -10,6 +10,7 @@
 #  1, 10, 11, 12, 13.
 #
 
+
 class Solution:
     # @param {integer} n
     # @return {integer}
@@ -23,7 +24,7 @@ class Solution:
             right_part = n % multiplier
 
             # count of (c000 ~ oooc000) = (ooo + (k < curr)? 1 : 0) * 1000
-            cnt += (left_part / 10 + (k < curr)) * multiplier
+            cnt += (left_part // 10 + (k < curr)) * multiplier
 
             # if k == 0, oooc000 = (ooo - 1) * 1000
             if k == 0 and multiplier > 1:
@@ -33,7 +34,7 @@ class Solution:
             if curr == k:
                 cnt += right_part + 1
 
-            left_part /= 10
+            left_part //= 10
             multiplier *= 10
 
         return cnt

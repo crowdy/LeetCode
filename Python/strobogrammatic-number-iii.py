@@ -1,8 +1,9 @@
 # Time:  O(5^(n/2))
 # Space: O(n)
 
+
 class Solution:
-    lookup = {'0':'0', '1':'1', '6':'9', '8':'8', '9':'6'}
+    lookup = {'0': '0', '1': '1', '6': '9', '8': '8', '9': '6'}
     cache = {}
 
     # @param {string} low
@@ -14,7 +15,7 @@ class Solution:
                 self.isStrobogrammatic(low)
         return count if count >= 0 else 0
 
-    def countStrobogrammaticUntil(self, num,  can_start_with_0):
+    def countStrobogrammaticUntil(self, num, can_start_with_0):
         if can_start_with_0 and num in self.cache:
             return self.cache[num]
 
@@ -25,7 +26,7 @@ class Solution:
                     count += 1
             self.cache[num] = count
             return count
-        
+
         for key, val in self.lookup.iteritems():
             if can_start_with_0 or key != '0':
                 if num[0] > key:
@@ -36,7 +37,7 @@ class Solution:
                 elif num[0] == key:
                     if len(num) == 2:  # num is like 12".
                         if num[-1] >= val:
-                            count += 1 
+                            count += 1
                     else:
                         if num[-1] >= val:  # num is like "102".
                             count += self.countStrobogrammaticUntil(self.getMid(num), True);
@@ -44,8 +45,8 @@ class Solution:
                             count += self.countStrobogrammaticUntil(self.getMid(num), True) - \
                                      self.isStrobogrammatic(self.getMid(num))
 
-        if not can_start_with_0: # Sum up each length.
-            for i in xrange(len(num) - 1, 0, -1):
+        if not can_start_with_0:  # Sum up each length.
+            for i in range(len(num) - 1, 0, -1):
                 count += self.countStrobogrammaticByLength(i)
         else:
             self.cache[num] = count
@@ -67,8 +68,8 @@ class Solution:
 
     def isStrobogrammatic(self, num):
         n = len(num)
-        for i in xrange((n+1) / 2):
-            if num[n-1-i] not in self.lookup or \
-               num[i] != self.lookup[num[n-1-i]]:
+        for i in range((n + 1) // 2):
+            if num[n - 1 - i] not in self.lookup or \
+                            num[i] != self.lookup[num[n - 1 - i]]:
                 return False
         return True

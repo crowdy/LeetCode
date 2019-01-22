@@ -35,7 +35,7 @@ class Solution(object):
         cur.next = head
 
         cur, tail = head, cur
-        for _ in xrange(n - k % n):
+        for _ in range(n - k % n):
             tail = cur
             cur = cur.next
         tail.next = None
@@ -49,4 +49,4 @@ if __name__ == "__main__":
     head.next.next = ListNode(3)
     head.next.next.next = ListNode(4)
     head.next.next.next.next = ListNode(5)
-    print Solution().rotateRight(head, 2)
+    print(Solution().rotateRight(head, 2)

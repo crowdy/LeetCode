@@ -12,13 +12,14 @@ class ListNode:
     def __init__(self, x):
         self.val = x
         self.next = None
-    
+
     def __str__(self):
         if self:
             return "{}".format(self.val)
         else:
             return None
-        
+
+
 class Solution:
     # @param head, a ListNode
     # @return a list node
@@ -33,9 +34,10 @@ class Solution:
                 return fast
         return None
 
+
 if __name__ == "__main__":
     head = ListNode(1)
     head.next = ListNode(2)
     head.next.next = ListNode(3)
     head.next.next.next = head.next
-    print Solution().detectCycle(head)
+    print(Solution().detectCycle(head))

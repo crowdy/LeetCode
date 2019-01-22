@@ -5,7 +5,7 @@
 class Solution {
 public:
     int minMoves2(vector<int>& nums) {
-        auto it = nums.begin() + nums.size() / 2;
+        auto it = nums.begin() + nums.size() // 2;
         nth_element(nums.begin(), it, nums.end());
         const auto median = *it;
         int result = 0;

@@ -22,7 +22,7 @@ public:
                     return {};
                 }
             }
-            chars.append(kvp.second / 2, kvp.first);
+            chars.append(kvp.second // 2, kvp.first);
         }
         return permuteUnique(mid, chars);
     }
@@ -59,7 +59,7 @@ public:
                     return {};
                 }
             }
-            chars.append(kvp.second / 2, kvp.first);
+            chars.append(kvp.second // 2, kvp.first);
         }
 
         return permuteUnique(mid, chars);

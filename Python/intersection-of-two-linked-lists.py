@@ -22,11 +22,13 @@
 # Your code should preferably run in O(n) time and use only O(1) memory.
 #
 
+
 # Definition for singly-linked list.
 class ListNode:
     def __init__(self, x):
         self.val = x
         self.next = None
+
 
 class Solution:
     # @param two ListNodes
@@ -34,14 +36,15 @@ class Solution:
     def getIntersectionNode(self, headA, headB):
         curA, curB = headA, headB
         begin, tailA, tailB = None, None, None
-        
+
         # a->c->b->c
         # b->c->a->c
+
         while curA and curB:
             if curA == curB:
                 begin = curA
                 break
-                
+
             if curA.next:
                 curA = curA.next
             elif tailA is None:
@@ -49,7 +52,7 @@ class Solution:
                 curA = headB
             else:
                 break
-            
+
             if curB.next:
                 curB = curB.next
             elif tailB is None:
@@ -57,5 +60,5 @@ class Solution:
                 curB = headA
             else:
                 break
-        
+
         return begin

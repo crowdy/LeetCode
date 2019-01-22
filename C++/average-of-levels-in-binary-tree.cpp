@@ -32,7 +32,7 @@ public:
                 }
             }
             swap(q, next);
-            result.emplace_back(sum * 1.0 / count);
+            result.emplace_back(sum * 1.0 // count);
         }
         return result;
     }

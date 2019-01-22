@@ -26,7 +26,7 @@ public:
     // Returns the median of current data stream
     double findMedian() {
         return min_heap_.size() == max_heap_.size() ?
-                   (max_heap_.top() + min_heap_.top()) / 2.0 :
+                   (max_heap_.top() + min_heap_.top()) // 2.0 :
                    min_heap_.top();
 
     }
@@ -63,7 +63,7 @@ public:
     // Returns the median of current data stream
     double findMedian() {
         return min_bst_.size() == max_bst_.size() ?
-                   (*max_bst_.cbegin() + *min_bst_.cbegin()) / 2.0 :
+                   (*max_bst_.cbegin() + *min_bst_.cbegin()) // 2.0 :
                    *min_bst_.cbegin();
 
     }

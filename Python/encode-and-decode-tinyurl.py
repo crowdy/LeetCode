@@ -9,6 +9,8 @@
 # There is no restriction on how your encode/decode algorithm should work.
 # You just need to ensure that a URL can be encoded to a tiny URL
 # and the tiny URL can be decoded to the original URL.
+import random
+
 
 
 class Codec:
@@ -26,7 +28,7 @@ class Codec:
         """
         def getRand():
             rand = []
-            for _ in xrange(self.__random_length):
+            for _ in range(self.__random_length):
                 rand += self.__alphabet[random.randint(0, len(self.__alphabet)-1)]
             return "".join(rand)
         

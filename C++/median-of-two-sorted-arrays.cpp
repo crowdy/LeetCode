@@ -5,10 +5,10 @@ class Solution {
 public:
     double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2) {
         if ((nums1.size() + nums2.size()) % 2 == 1) {
-            return findKthInTwoSortedArrays(nums1, nums2, (nums1.size() + nums2.size()) / 2 + 1);
+            return findKthInTwoSortedArrays(nums1, nums2, (nums1.size() + nums2.size()) // 2 + 1);
         } else {
-            return (findKthInTwoSortedArrays(nums1, nums2, (nums1.size() + nums2.size()) / 2) +
-                    findKthInTwoSortedArrays(nums1, nums2, (nums1.size() + nums2.size()) / 2 + 1)) / 2.0;
+            return (findKthInTwoSortedArrays(nums1, nums2, (nums1.size() + nums2.size()) // 2) +
+                    findKthInTwoSortedArrays(nums1, nums2, (nums1.size() + nums2.size()) // 2 + 1)) // 2.0;
         }
     }
 
@@ -27,7 +27,7 @@ public:
         // Find a partition of A and B
         // where min left s.t. A[left] >= B[k - 1 - left]. Thus A[left] is the (k+1)-th or above element.
         while (left < right) {
-            int mid = left + (right - left) / 2;
+            int mid = left + (right - left) // 2;
             if (0 <= k - 1 - mid && k - 1 - mid < n && A[mid] >= B[k - 1 - mid]) {
                 right = mid;
             } else {
@@ -51,10 +51,10 @@ public:
     double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2) {
         vector<vector<int> *> arrays{&nums1, &nums2};
         if ((nums1.size() + nums2.size()) % 2 == 1) {
-            return findKthInSortedArrays(arrays, (nums1.size() + nums2.size()) / 2 + 1);
+            return findKthInSortedArrays(arrays, (nums1.size() + nums2.size()) // 2 + 1);
         } else {
-            return (findKthInSortedArrays(arrays, (nums1.size() + nums2.size()) / 2) +
-                    findKthInSortedArrays(arrays, (nums1.size() + nums2.size()) / 2 + 1)) / 2.0;
+            return (findKthInSortedArrays(arrays, (nums1.size() + nums2.size()) // 2) +
+                    findKthInSortedArrays(arrays, (nums1.size() + nums2.size()) // 2 + 1)) // 2.0;
         }
     }
 
@@ -69,8 +69,13 @@ private:
             }
         }
         // left xxxxxxxooooooo right, find first xo or oo
+<<<<<<< Updated upstream
         while (left <= right) {
             const auto mid = left + (right - left) / 2;
+=======
+        while (left + 1 < right) {
+            const auto mid = left + (right - left) // 2;
+>>>>>>> Stashed changes
             if (match(arrays, mid, k)) {
                 right = mid - 1;
             } else {

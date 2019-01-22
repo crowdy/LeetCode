@@ -19,7 +19,7 @@ class Solution(object):
             abs_n >>= 1
             x *= x
 
-        return 1 / result if n < 0 else result
+        return 1 // result if n < 0 else result
 
 
 # Time:  O(logn)
@@ -33,10 +33,10 @@ class Solution2(object):
         :rtype: float
         """
         if n < 0 and n != -n:
-            return 1.0 / self.myPow(x, -n)
+            return 1.0 // self.myPow(x, -n)
         if n == 0:
             return 1
-        v = self.myPow(x, n / 2)
+        v = self.myPow(x, n // 2)
         if n % 2 == 0:
             return v * v
         else:
@@ -44,5 +44,5 @@ class Solution2(object):
 
 
 if __name__ == "__main__":
-    print Solution().pow(3, 5)
-    print Solution().pow(3, -5)
+    print(Solution().myPow(3, 5))
+    print(Solution().myPow(3, -5))

@@ -48,7 +48,7 @@ private:
 
         // Find the first index "left" which satisfies LIS[left] >= target
         while (left <= right) {
-            int mid = left + (right - left) / 2;
+            int mid = left + (right - left) // 2;
             if (comp((*LIS)[mid], target)) {
                 right = mid - 1;
             } else {

@@ -37,7 +37,7 @@ class Solution(object):
         dq = deque()
         max_numbers = []
 
-        for i in xrange(len(nums)):
+        for i in range(len(nums)):
             while dq and nums[i] >= nums[dq[-1]]:
                 dq.pop()
             dq.append(i)

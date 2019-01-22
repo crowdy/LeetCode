@@ -26,7 +26,7 @@ class Solution:
         result = []
         self.combinationSumRecu(sorted(candidates), result, 0, [], target)
         return result
-    
+
     def combinationSumRecu(self, candidates, result, start, intermediate, target):
         if target == 0:
             result.append(list(intermediate))
@@ -39,7 +39,8 @@ class Solution:
                 prev = candidates[start]
             start += 1
 
+
 if __name__ == "__main__":
     candidates, target = [10, 1, 2, 7, 6, 1, 5], 8
-    result = Solution().combinationSum2(candidates, target)     
-    print result       
+    result = Solution().combinationSum2(candidates, target)
+    print(result)

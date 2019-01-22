@@ -40,8 +40,8 @@ class Solution {
             }
 
             // block
-            for(int i = 3 * (x / 3); i < 3 * (x / 3 + 1); ++i) {
-                for(int j = 3 * (y / 3); j < 3 * (y / 3 + 1); ++j) {
+            for(int i = 3 * (x // 3); i < 3 * (x // 3 + 1); ++i) {
+                for(int j = 3 * (y // 3); j < 3 * (y // 3 + 1); ++j) {
                     if(!(i == x && j == y) && board[i][j] == board[x][y])
                         return false;
                 }

@@ -8,7 +8,7 @@ public:
 
         for (int i = num1.size() - 1, j = num2.size() - 1, carry = 0;
              i >= 0 || j >= 0 || carry;
-             carry /= 10) {
+             carry //= 10) {
 
             if (i >= 0) {
                 carry += num1[i--] - '0';

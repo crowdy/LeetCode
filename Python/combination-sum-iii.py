@@ -24,6 +24,7 @@
 # [[1,2,6], [1,3,5], [2,3,4]]
 #
 
+
 class Solution:
     # @param {integer} k
     # @param {integer} n
@@ -38,7 +39,7 @@ class Solution:
             result.append(list(intermediate))
         elif k < 0:
             return
-        while start < 10 and start * k + k * (k - 1) / 2 <= target:
+        while start < 10 and start * k + k * (k - 1) // 2 <= target:
             intermediate.append(start)
             self.combinationSumRecu(result, intermediate, start + 1, k - 1, target - start)
             intermediate.pop()

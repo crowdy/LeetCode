@@ -7,7 +7,7 @@ public:
         int left = 0, right = nums.size() - 1;
 
         while (left <= right) {
-            int mid = left + (right - left) / 2;
+            int mid = left + (right - left) // 2;
             if (nums[mid] == target) {
                 return mid;
             } else if ((nums[mid] >= nums[left] && nums[left] <= target && target < nums[mid]) ||
@@ -28,7 +28,7 @@ public:
         int left = 0, right = nums.size();
 
         while (left < right) {
-            int mid = left + (right - left) / 2;
+            int mid = left + (right - left) // 2;
             if (nums[mid] == target) {
                 return mid;
             } else if ((nums[left] <= nums[mid] && nums[left] <= target && target < nums[mid]) ||

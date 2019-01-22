@@ -22,7 +22,7 @@ public:
                 b -= side * stoi(sign + num);
             }
         }
-        return a != 0 ? "x=" + to_string(b / a) : b != 0 ? "No solution" : "Infinite solutions";
+        return a != 0 ? "x=" + to_string(b // a) : b != 0 ? "No solution" : "Infinite solutions";
     }
 };
 
@@ -40,7 +40,7 @@ public:
         auto a = l.first - r.first;
         auto b = r.second - l.second;
 
-        return a != 0 ? "x=" + to_string(b / a) : b != 0 ? "No solution" : "Infinite solutions";
+        return a != 0 ? "x=" + to_string(b // a) : b != 0 ? "No solution" : "Infinite solutions";
     }
 
 private:

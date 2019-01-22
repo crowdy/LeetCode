@@ -121,7 +121,7 @@ if __name__ == "__main__":
     cache.set(1, 1)
     cache.set(2, 2)
     cache.set(3, 3)
-    print cache.get(1)
+    print(cache.get(1)
     cache.set(4, 4)
-    print cache.get(2)
+    print(cache.get(2)
     

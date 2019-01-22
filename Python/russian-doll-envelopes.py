@@ -22,7 +22,7 @@ class Solution(object):
         def insert(target):
             left, right = 0, len(result) - 1
             while left <= right:
-                mid = left + (right - left) / 2
+                mid = left + (right - left) // 2
                 if result[mid] >= target:
                     right = mid - 1
                 else:

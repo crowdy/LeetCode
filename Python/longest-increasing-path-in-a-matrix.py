@@ -52,9 +52,9 @@ class Solution(object):
             return max_lengths[i][j]
 
         res = 0
-        max_lengths = [[0 for _ in xrange(len(matrix[0]))] for _ in xrange(len(matrix))]
-        for i in xrange(len(matrix)):
-            for j in xrange(len(matrix[0])):
+        max_lengths = [[0 for _ in range(len(matrix[0]))] for _ in range(len(matrix))]
+        for i in range(len(matrix)):
+            for j in range(len(matrix[0])):
                 res = max(res, longestpath(matrix, i, j, max_lengths))
     
         return res

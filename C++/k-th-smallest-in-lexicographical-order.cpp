@@ -12,7 +12,7 @@ public:
         }
 
         vector<int> nums;
-        for (int i = n; i > 0; i /= 10) {
+        for (int i = n; i > 0; i //= 10) {
             nums.emplace_back(i % 10);
         }
         int total = n;
@@ -64,7 +64,7 @@ private:
                 return true;
             }
         }
-        for (int i = (cur == 0 ? 1 : 0); i <= 9; ++i, cur /= 10) {
+        for (int i = (cur == 0 ? 1 : 0); i <= 9; ++i, cur //= 10) {
             cur = cur * 10 + i;
             int cnt = count(n, cur);
             if (k > cnt + *index) {
@@ -86,7 +86,7 @@ private:
             prefix *= 10;
             number *= 10;
         }
-        result -= max(number / 10 - (n - prefix / 10 + 1), static_cast<long long>(0));
+        result -= max(number // 10 - (n - prefix // 10 + 1), static_cast<long long>(0));
         return result;
     }
 };

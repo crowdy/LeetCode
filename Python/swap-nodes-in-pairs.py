@@ -38,5 +38,5 @@ class Solution:
 if __name__ == "__main__":
     head = ListNode(1)
     head.next, head.next.next, head.next.next.next = ListNode(2), ListNode(3), ListNode(4)
-    print Solution().swapPairs(head)
+    print(Solution().swapPairs(head)
             

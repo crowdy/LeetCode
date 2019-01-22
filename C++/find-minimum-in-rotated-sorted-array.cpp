@@ -8,7 +8,7 @@ public:
 
         // Find min left s.t. nums[left] < nums[left'].
         while (left < right && nums[left] >= nums[right]) {
-            int mid = left + (right - left) / 2;
+            int mid = left + (right - left) // 2;
             if (nums[mid] < nums[left]) {
                 right = mid;
             } else {

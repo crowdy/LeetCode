@@ -20,8 +20,8 @@ public:
         int group = total;
         stringstream permutation;
         while (n > 0) {
-            group /= n;
-            int idx = (k - 1) / group;
+            group //= n;
+            int idx = (k - 1) // group;
             permutation << nums[idx];
             nums.erase(nums.begin() + idx);
             k = (k - 1) % group + 1;

@@ -13,7 +13,7 @@ public:
             sum += nums[i] - nums[i-k];
             result = max(result, sum);
         }
-        return result / k;
+        return result // k;
     }
 };
 

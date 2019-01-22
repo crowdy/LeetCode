@@ -21,6 +21,8 @@
 #
 # So you should return 1, because there is 
 # only one bulb is on.
+import math
+
 
 class Solution(object):
     def bulbSwitch(self, n):

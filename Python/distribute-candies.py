@@ -33,5 +33,7 @@ class Solution(object):
         :type candies: List[int]
         :rtype: int
         """
-        lookup = set(candies)
-        return min(len(lookup), len(candies)/2)
+        lookup = set()
+        for candy in candies:
+            lookup.add(candy)
+        return min(len(lookup), len(candies) // 2)

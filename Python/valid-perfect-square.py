@@ -23,12 +23,13 @@ class Solution(object):
         """
         left, right = 1, num
         while left <= right:
-            mid = left + (right - left) / 2
+            mid = left + (right - left) // 2
             if mid >= num / mid:
                 right = mid - 1
             else:
                 left = mid + 1
         return left == num / left and num % left == 0
+
 
 """
 퍼펙스 스퀘어는 그냥 제곱수이다. 어떤 수의 제곱수인지를 조사하는 문제이다.

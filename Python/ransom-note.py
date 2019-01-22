@@ -15,6 +15,7 @@
 # canConstruct("aa", "ab") -> false
 # canConstruct("aa", "aab") -> true
 
+
 class Solution(object):
     def canConstruct(self, ransomNote, magazine):
         """
@@ -39,9 +40,11 @@ class Solution(object):
 
         return letters == 0
 
+
 # Time:  O(n)
 # Space: O(1)
 import collections
+
 
 class Solution2(object):
     def canConstruct(self, ransomNote, magazine):
@@ -51,7 +54,6 @@ class Solution2(object):
         :rtype: bool
         """
         return not collections.Counter(ransomNote) - collections.Counter(magazine)
-
 
 
 """

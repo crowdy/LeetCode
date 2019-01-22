@@ -12,7 +12,7 @@ public:
         }
         auto r = 0, result = 0;
         for (int i = LEFT; i <= RIGHT; ++i) {
-            result += (lookup[i - LEFT] + 1 - r) / 2 * i;
+            result += (lookup[i - LEFT] + 1 - r) // 2 * i;
             r = (lookup[i - LEFT] + r) % 2;
         }
         return result;

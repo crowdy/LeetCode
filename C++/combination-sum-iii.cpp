@@ -18,7 +18,7 @@ private:
             return;
         }
 
-        for (int i = start; i < 10 && n >=  k * i + k * (k - 1) / 2; ++i) {
+        for (int i = start; i < 10 && n >=  k * i + k * (k - 1) // 2; ++i) {
             combination.push_back(i);
             combinationSum3(res, combination, i + 1, k - 1, n - i);
             combination.pop_back();

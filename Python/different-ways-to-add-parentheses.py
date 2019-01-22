@@ -27,6 +27,8 @@
 # (((2*3)-4)*5) = 10
 # Output: [-34, -14, -10, -10, 10]
 #
+import operator
+
 
 class Solution:
     # @param {string} input
@@ -35,7 +37,7 @@ class Solution:
         tokens = re.split('(\D)', input)
         nums = map(int, tokens[::2])
         ops = map({'+': operator.add, '-': operator.sub, '*': operator.mul}.get, tokens[1::2])
-        lookup = [[None for _ in xrange(len(nums))] for _ in xrange(len(nums))]
+        lookup = [[None for _ in range(len(nums))] for _ in range(len(nums))]
         
         def diffWaysToComputeRecu(left, right):
             if left == right:
@@ -43,7 +45,7 @@ class Solution:
             if lookup[left][right]:
                 return lookup[left][right]
             lookup[left][right] = [ops[i](x, y)
-                                   for i in xrange(left, right)
+                                   for i in range(left, right)
                                    for x in diffWaysToComputeRecu(left, i)
                                    for y in diffWaysToComputeRecu(i + 1, right)]
             return lookup[left][right]
@@ -54,14 +56,14 @@ class Solution2:
     # @param {string} input
     # @return {integer[]}
     def diffWaysToCompute(self, input):
-        lookup = [[None for _ in xrange(len(input) + 1)] for _ in xrange(len(input) + 1)]
+        lookup = [[None for _ in range(len(input) + 1)] for _ in range(len(input) + 1)]
         ops = {'+': operator.add, '-': operator.sub, '*': operator.mul}
 
         def diffWaysToComputeRecu(left, right):
             if lookup[left][right]:
                 return lookup[left][right]
             result = []
-            for i in xrange(left, right):
+            for i in range(left, right):
                 if input[i] in ops:
                     for x in diffWaysToComputeRecu(left, i):
                         for y in diffWaysToComputeRecu(i + 1, right):

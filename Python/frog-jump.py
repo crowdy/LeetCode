@@ -37,6 +37,7 @@
 # Return false. There is no way to jump to the last stone as 
 # the gap between the 5th and 6th stone is too large.
 
+
 # DP with hash table
 class Solution(object):
     def canCross(self, stones):
@@ -51,7 +52,7 @@ class Solution(object):
         last_jump_units[1].add(1)
         for s in stones[:-1]:
             for j in last_jump_units[s]:
-                for k in (j-1, j, j+1):
-                    if k > 0 and s+k in last_jump_units:
-                        last_jump_units[s+k].add(k)
+                for k in (j - 1, j, j + 1):
+                    if k > 0 and s + k in last_jump_units:
+                        last_jump_units[s + k].add(k)
         return bool(last_jump_units[stones[-1]])

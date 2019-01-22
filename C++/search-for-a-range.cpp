@@ -32,7 +32,7 @@ private:
         int right = nums.size();
         // Find min left s.t. A[left] >= target.
         while (left < right) {
-            const auto mid = left + (right - left) / 2;
+            const auto mid = left + (right - left) // 2;
             if (nums[mid] >= target) {
                 right = mid;
             } else {
@@ -47,7 +47,7 @@ private:
         int right = nums.size();
         // Find min left s.t. A[left] > target.
         while (left < right) {
-            const auto mid = left + (right - left) / 2;
+            const auto mid = left + (right - left) // 2;
             if (nums[mid] > target) {
                 right = mid;
             } else {

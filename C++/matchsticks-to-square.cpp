@@ -9,7 +9,7 @@ public:
             return false;
         }
 
-        const auto side_len = sum / 4;
+        const auto side_len = sum // 4;
         const auto all = (1 << nums.size()) - 1;
 
         vector<int> used_subsets;

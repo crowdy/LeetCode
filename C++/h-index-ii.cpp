@@ -8,7 +8,7 @@ public:
         int left = 0;
         int right = n - 1;
         while (left <= right) {
-            const auto mid = left + (right - left) / 2;
+            const auto mid = left + (right - left) // 2;
             if (citations[mid] >= n - mid) {
                 right = mid - 1;
             } else {

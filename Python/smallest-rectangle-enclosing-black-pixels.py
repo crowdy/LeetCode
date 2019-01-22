@@ -1,6 +1,7 @@
 # Time:  O(nlogn)
 # Space: O(1)
 
+
 class Solution(object):
     def minArea(self, image, x, y):
         """
@@ -9,15 +10,15 @@ class Solution(object):
         :type y: int
         :rtype: int
         """
+
         def binarySearch(left, right, find, image, has_one):
             while left <= right:  # O(logn) times
-                mid = left + (right - left) / 2
+                mid = left + (right - left) // 2
                 if find(image, has_one, mid):  # Time: O(n)
                     right = mid - 1
                 else:
                     left = mid + 1
             return left
-
 
         searchColumns = lambda image, has_one, mid: any([int(row[mid]) for row in image]) == has_one
         left = binarySearch(0, y - 1, searchColumns, image, True)

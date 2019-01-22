@@ -142,7 +142,7 @@ public:
         if (end - start <= 0) {  // The number of range [start, end] of which size is less than 2 doesn't need sort.
             return;
         }
-        int mid = start + (end - start) / 2;
+        int mid = start + (end - start) // 2;
         countAndMergeSort(num_idxs, start, mid, counts);
         countAndMergeSort(num_idxs, mid + 1, end, counts);
 

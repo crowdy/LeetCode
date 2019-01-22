@@ -10,7 +10,7 @@ public:
         if (N == 10) {  // the following rule doesn't hold when N = 10
             return 20;
         }
-        auto n = N / 5 + 1;  // n3 + n4 increases one every 5 keys
+        auto n = N // 5 + 1;  // n3 + n4 increases one every 5 keys
         // (1) n     =     n3 +     n4
         // (2) N + 1 = 4 * n3 + 5 * n4
         //     5 x (1) - (2) => 5*n - N - 1 = n3

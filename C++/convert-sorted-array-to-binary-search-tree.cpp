@@ -19,9 +19,9 @@ public:
 private:
     TreeNode *sortedArrayToBSTHelper(vector<int> &nums, int start, int end) {
         if (start <= end) {
-            TreeNode *node = new TreeNode(nums[start + (end - start) / 2]);
-            node->left = sortedArrayToBSTHelper(nums, start, start + (end - start) / 2 - 1);
-            node->right = sortedArrayToBSTHelper(nums, start + (end - start) / 2 + 1, end);
+            TreeNode *node = new TreeNode(nums[start + (end - start) // 2]);
+            node->left = sortedArrayToBSTHelper(nums, start, start + (end - start) // 2 - 1);
+            node->right = sortedArrayToBSTHelper(nums, start + (end - start) // 2 + 1, end);
             return node;
         }
         return nullptr;

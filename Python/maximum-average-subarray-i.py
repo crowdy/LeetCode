@@ -13,6 +13,7 @@
 # 1 <= k <= n <= 30,000.
 # Elements of the given array will be in the range [-10,000, 10,000].
 
+
 class Solution(object):
     def findMaxAverage(self, nums, k):
         """
@@ -21,10 +22,10 @@ class Solution(object):
         :rtype: float
         """
         total = 0
-        for i in xrange(k):
+        for i in range(k):
             total += nums[i]
         result = total
-        for i in xrange(k, len(nums)):
-            total += nums[i] - nums[i-k]
+        for i in range(k, len(nums)):
+            total += nums[i] - nums[i - k]
             result = max(result, total)
-        return float(result) / k
+        return float(result) // k

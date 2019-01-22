@@ -14,6 +14,7 @@ class RandomListNode:
         self.next = None
         self.random = None
 
+
 class Solution:
     # @param head, a RandomListNode
     # @return a RandomListNode
@@ -25,14 +26,14 @@ class Solution:
             copied.next = current.next
             current.next = copied
             current = copied.next
-        
+
         # update random node in copied list
         current = head
         while current:
             if current.random:
                 current.next.random = current.random.next
             current = current.next.next
-        
+
         # split copied list from combined one
         dummy = RandomListNode(0)
         copied_current, current = dummy, head
@@ -42,6 +43,7 @@ class Solution:
             copied_current, current = copied_current.next, current.next
         return dummy.next
 
+
 # Time:  O(n)
 # Space: O(n)
 class Solution2:
@@ -50,19 +52,19 @@ class Solution2:
     def copyRandomList(self, head):
         dummy = RandomListNode(0)
         current, prev, copies = head, dummy, {}
-        
+
         while current:
             copied = RandomListNode(current.label)
             copies[current] = copied
             prev.next = copied
             prev, current = prev.next, current.next
-        
+
         current = head
         while current:
             if current.random:
                 copies[current].random = copies[current.random]
             current = current.next
-        
+
         return dummy.next
 
 
@@ -71,6 +73,6 @@ if __name__ == "__main__":
     head.next = RandomListNode(2)
     head.random = head.next
     result = Solution().copyRandomList(head)
-    print result.label
-    print result.next.label
-    print result.random.label
+    print(result.label)
+    print(result.next.label)
+    print(result.random.label)

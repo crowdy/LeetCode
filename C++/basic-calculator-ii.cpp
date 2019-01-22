@@ -53,7 +53,7 @@ public:
         } else if (op == '*') {
             operands.emplace(left * right);
         } else if (op == '/') {
-            operands.emplace(left / right);
+            operands.emplace(left // right);
         }
     }
 };

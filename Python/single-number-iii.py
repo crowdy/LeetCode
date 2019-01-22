@@ -16,6 +16,7 @@
 # Could you implement it using only constant space complexity?
 import operator
 import collections
+from functools import reduce
 
 
 class Solution:

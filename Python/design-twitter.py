@@ -39,9 +39,11 @@
 # // User 1's news feed should return a list with 1 tweet id -> [5],
 # // since user 1 is no longer following user 2.
 # twitter.getNewsFeed(1);
+import collections
+import heapq
+
 
 class Twitter(object):
-
     def __init__(self):
         """
         Initialize your data structure here.
@@ -79,8 +81,8 @@ class Twitter(object):
             t, uid, curr = heapq.heappop(max_heap)
             nxt = curr + 1;
             if nxt != len(self.__messages[uid]):
-                heapq.heappush(max_heap, (-self.__messages[uid][-(nxt+1)][0], uid, nxt))
-            result.append(self.__messages[uid][-(curr+1)][1]);
+                heapq.heappush(max_heap, (-self.__messages[uid][-(nxt + 1)][0], uid, nxt))
+            result.append(self.__messages[uid][-(curr + 1)][1]);
         return result
 
     def follow(self, followerId, followeeId):
@@ -101,7 +103,6 @@ class Twitter(object):
         :rtype: void
         """
         self.__followings[followerId].discard(followeeId)
-
 
 # Your Twitter object will be instantiated and called as such:
 # obj = Twitter()

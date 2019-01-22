@@ -12,7 +12,7 @@ private:
         if (end - begin <= 1) {
             return 0;
         }
-        auto mid = begin + (end - begin) / 2;
+        auto mid = begin + (end - begin) // 2;
         int count = countAndMergeSort(begin, mid) + countAndMergeSort(mid, end);
         for (auto i = begin, j = mid; i != mid; ++i) {
             while (j != end && *i > 2L * *j) {

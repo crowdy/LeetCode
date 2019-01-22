@@ -20,13 +20,14 @@ def read4(buf):
     while i < len(file_content) and i < 4:
         buf[i] = file_content[i]
         i += 1
-    
+
     if len(file_content) > 4:
         file_content = file_content[4:]
     else:
         file_content = ""
     return i
-        
+
+
 # The read4 API is already defined for you.
 # @param buf, a list of characters
 # @return an integer
@@ -37,7 +38,7 @@ class Solution(object):
         self.__buf4 = [''] * 4
         self.__i4 = 0
         self.__n4 = 0
-        
+
     def read(self, buf, n):
         """
         :type buf: Destination buffer (List[str])
@@ -56,13 +57,14 @@ class Solution(object):
                     self.__i4 = 0
                 else:  # Buffer has been empty.
                     break
-        
+
         return i
+
 
 if __name__ == "__main__":
     global file_content
     sol = Solution()
-    buf = ['' for _ in xrange(100)]
+    buf = ['' for _ in range(100)]
     file_content = "ab"
-    print buf[:sol.read(buf, 1)]
-    print buf[:sol.read(buf, 2)]    
+    print(buf[:sol.read(buf, 1)])
+    print(buf[:sol.read(buf, 2)])

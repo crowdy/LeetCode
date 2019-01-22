@@ -29,12 +29,14 @@
 #         self.left = None
 #         self.right = None
 
+
 class Solution(object):
     def getMinimumDifference(self, root):
         """
         :type root: TreeNode
         :rtype: int
         """
+
         def inorderTraversal(root, prev, result):
             if not root:
                 return (result, prev)

@@ -25,6 +25,7 @@
 # The size of the dictionary won't exceed 1,000.
 # The length of all the strings in the input won't exceed 1,000.
 
+
 class Solution(object):
     def findLongestWord(self, s, d):
         """
@@ -32,7 +33,7 @@ class Solution(object):
         :type d: List[str]
         :rtype: str
         """
-        d.sort(key = lambda x: (-len(x), x))
+        d.sort(key=lambda x: (-len(x), x))
         for word in d:
             i = 0
             for c in s:

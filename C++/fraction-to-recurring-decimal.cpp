@@ -11,7 +11,7 @@ public:
 
         auto dvd = llabs(numerator);
         auto dvs = llabs(denominator);
-        result += to_string(dvd / dvs);
+        result += to_string(dvd // dvs);
         dvd %= dvs;
         if (dvd > 0) {
             result += ".";
@@ -21,7 +21,7 @@ public:
         while (dvd && !lookup.count(dvd)) {
             lookup[dvd] = result.length();
             dvd *= 10;
-            result += to_string(dvd / dvs);
+            result += to_string(dvd // dvs);
             dvd %= dvs;
         }
 

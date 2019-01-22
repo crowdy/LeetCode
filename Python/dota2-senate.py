@@ -42,6 +42,8 @@
 # And in the round 2, the third senator can just announce the victory since he is the only guy in the senate who can vote.
 # Note:
 # The length of the given string will in the range [1, 10,000].
+import collections
+
 
 class Solution(object):
     def predictPartyVictory(self, senate):
@@ -59,7 +61,7 @@ class Solution(object):
         while radiant and dire:
             r_idx, d_idx = radiant.popleft(), dire.popleft()
             if r_idx < d_idx:
-                radiant.append(r_idx+n)
+                radiant.append(r_idx + n)
             else:
-                dire.append(d_idx+n)
+                dire.append(d_idx + n)
         return "Radiant" if len(radiant) > len(dire) else "Dire"

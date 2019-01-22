@@ -24,6 +24,8 @@
 # Note:
 # The integer 1 <= d, t, n <= 10,000.
 # You can't take two courses simultaneously.
+import heapq
+
 
 class Solution(object):
     def scheduleCourse(self, courses):
@@ -31,7 +33,7 @@ class Solution(object):
         :type courses: List[List[int]]
         :rtype: int
         """
-        courses.sort(key=lambda(t, end): end)
+        courses.sort(key=lambda (t, end): end)
         max_heap = []
         now = 0
         for t, end in courses:

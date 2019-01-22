@@ -26,6 +26,7 @@
 # The length sum of the given matchsticks is in the range of 0 to 10^9.
 # The length of the given matchstick array will not exceed 15.
 
+
 class Solution(object):
     def makesquare(self, nums):
         """
@@ -36,15 +37,15 @@ class Solution(object):
         if total_len % 4:
             return False
 
-        side_len = total_len / 4
+        side_len = total_len // 4
         fullset = (1 << len(nums)) - 1
 
         used_subsets = []
         valid_half_subsets = [0] * (1 << len(nums))
 
-        for subset in xrange(fullset+1):
+        for subset in range(fullset + 1):
             subset_total_len = 0
-            for i in xrange(len(nums)): 
+            for i in range(len(nums)):
                 if subset & (1 << i):
                     subset_total_len += nums[i]
 
@@ -56,5 +57,5 @@ class Solution(object):
                         if valid_half_subsets[fullset ^ valid_half_subset]:
                             return True
                 used_subsets.append(subset)
-            
+
         return False

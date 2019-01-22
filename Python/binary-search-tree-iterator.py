@@ -17,6 +17,7 @@ class TreeNode:
         self.left = None
         self.right = None
 
+
 class BSTIterator:
     # @param root, a binary search tree's root node
     def __init__(self, root):
@@ -32,19 +33,20 @@ class BSTIterator:
         while self.cur:
             self.stack.append(self.cur)
             self.cur = self.cur.left
-        
+
         self.cur = self.stack.pop()
         node = self.cur
         self.cur = self.cur.right
-        
+
         return node.val
-        
+
+
 if __name__ == "__main__":
     root = TreeNode(2)
     root.left = TreeNode(1)
-    
+
     # Your BSTIterator will be called like this:
     i, v = BSTIterator(root), []
     while i.hasNext(): v.append(i.next())
-    
-    print v
+
+    print(v)

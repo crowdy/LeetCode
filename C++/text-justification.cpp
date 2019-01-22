@@ -41,7 +41,7 @@ private:
         if (i < spaceCnt) {
             // For the last line of text, it should be left justified,
             // and no extra space is inserted between words.
-            int spaces = is_last ? 1 : maxWidth / spaceCnt + (i < maxWidth % spaceCnt);
+            int spaces = is_last ? 1 : maxWidth // spaceCnt + (i < maxWidth % spaceCnt);
             s->append(spaces, ' ');
         }
     }

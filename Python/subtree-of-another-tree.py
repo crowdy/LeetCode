@@ -43,6 +43,7 @@
 #         self.left = None
 #         self.right = None
 
+
 class Solution(object):
     def isSubtree(self, s, t):
         """
@@ -50,6 +51,7 @@ class Solution(object):
         :type t: TreeNode
         :rtype: bool
         """
+
         def isSame(x, y):
             if not x and not y:
                 return True
@@ -61,8 +63,8 @@ class Solution(object):
 
         def preOrderTraverse(s, t):
             return s != None and \
-                   (isSame(s, t) or \
-                    preOrderTraverse(s.left, t) or \
+                   (isSame(s, t) or
+                    preOrderTraverse(s.left, t) or
                     preOrderTraverse(s.right, t))
-        
+
         return preOrderTraverse(s, t)

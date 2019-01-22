@@ -70,8 +70,8 @@ private:
         if (begin == end) {
             return lists[begin];
         }
-        return mergeTwoLists(mergeKListsHelper(lists, begin, (begin + end) / 2),
-                             mergeKListsHelper(lists, (begin + end) / 2 + 1, end));
+        return mergeTwoLists(mergeKListsHelper(lists, begin, (begin + end) // 2),
+                             mergeKListsHelper(lists, (begin + end) // 2 + 1, end));
     }
 
     ListNode *mergeTwoLists(ListNode *l1, ListNode *l2) {

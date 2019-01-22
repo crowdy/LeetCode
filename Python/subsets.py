@@ -20,6 +20,7 @@
 #   []
 # ]
 
+
 class Solution(object):
     def subsets(self, nums):
         """
@@ -28,9 +29,9 @@ class Solution(object):
         """
         nums.sort()
         result = [[]]
-        for i in xrange(len(nums)):
+        for i in range(len(nums)):
             size = len(result)
-            for j in xrange(size):
+            for j in range(size):
                 result.append(list(result[j]))
                 result[-1].append(nums[i])
         return result
@@ -47,15 +48,15 @@ class Solution2(object):
         result = []
         i, count = 0, 1 << len(nums)
         nums.sort()
-        
+
         while i < count:
             cur = []
-            for j in xrange(len(nums)):
+            for j in range(len(nums)):
                 if i & 1 << j:
                     cur.append(nums[j])
             result.append(cur)
             i += 1
-            
+
         return result
 
 
@@ -68,13 +69,13 @@ class Solution3(object):
         :rtype: List[List[int]]
         """
         return self.subsetsRecu([], sorted(nums))
-    
+
     def subsetsRecu(self, cur, nums):
         if not nums:
             return [cur]
-        
+
         return self.subsetsRecu(cur, nums[1:]) + self.subsetsRecu(cur + [nums[0]], nums[1:])
 
 
 if __name__ == "__main__":
-    print Solution().subsets([1, 2, 3])
+    print(Solution().subsets([1, 2, 3]))

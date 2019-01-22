@@ -11,7 +11,7 @@
 # Some examples:
 # "3+2*2" = 7
 # " 3/2 " = 1
-# " 3+5 / 2 " = 5
+# " 3+5 // 2 " = 5
 # Note: Do not use the eval built-in library function.
 #
 
@@ -21,7 +21,7 @@ class Solution:
     def calculate(self, s):
         operands, operators = [], []
         operand = ""
-        for i in reversed(xrange(len(s))):
+        for i in reversed(range(len(s))):
             if s[i].isdigit():
                 operand += s[i]
                 if i == 0  or not s[i-1].isdigit():

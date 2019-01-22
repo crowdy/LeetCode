@@ -21,12 +21,14 @@
 #         self.left = None
 #         self.right = None
 
+
 class Solution(object):
     def largestValues(self, root):
         """
         :type root: TreeNode
         :rtype: List[int]
         """
+
         def largestValuesHelper(root, depth, result):
             if not root:
                 return
@@ -34,8 +36,8 @@ class Solution(object):
                 result.append(root.val)
             else:
                 result[depth] = max(result[depth], root.val)
-            largestValuesHelper(root.left, depth+1, result)
-            largestValuesHelper(root.right, depth+1, result)
+            largestValuesHelper(root.left, depth + 1, result)
+            largestValuesHelper(root.right, depth + 1, result)
 
         result = []
         largestValuesHelper(root, 0, result)
@@ -56,4 +58,3 @@ class Solution2(object):
             result.append(max(node.val for node in curr))
             curr = [child for node in curr for child in (node.left, node.right) if child]
         return result
- 

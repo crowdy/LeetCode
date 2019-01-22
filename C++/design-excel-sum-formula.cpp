@@ -75,7 +75,7 @@ private:
                     int k, count;
                     tie(k, count) = *it;
                     q.emplace(make_pair(k, diff * count));
-                    Exl_[k / 26][k % 26] += diff * count;
+                    Exl_[k // 26][k % 26] += diff * count;
                 }
             }
         }

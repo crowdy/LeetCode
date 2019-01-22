@@ -21,6 +21,8 @@
 # Note:
 # The given area won't exceed 10,000,000 and is a positive integer
 # The web page's width and length you designed must be positive integers.
+import math
+
 
 class Solution(object):
     def constructRectangle(self, area):

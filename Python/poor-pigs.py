@@ -14,6 +14,8 @@
 # If there are n buckets and a pig drinking poison will die within m minutes,
 # how many pigs (x) you need to figure out the "poison" bucket within p minutes?
 # There is exact one bucket with poison.
+import math
+
 
 class Solution(object):
     def poorPigs(self, buckets, minutesToDie, minutesToTest):
@@ -23,4 +25,4 @@ class Solution(object):
         :type minutesToTest: int
         :rtype: int
         """
-        return int(math.ceil(math.log(buckets) / math.log(minutesToTest / minutesToDie + 1)))
+        return int(math.ceil(math.log(buckets) // math.log(minutesToTest // minutesToDie + 1)))

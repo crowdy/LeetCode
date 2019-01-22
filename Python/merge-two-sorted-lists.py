@@ -41,6 +41,6 @@ if __name__ == "__main__":
     l1.next = ListNode(1)
     l2 = ListNode (2)
     l2.next = ListNode(3)
-    print Solution().mergeTwoLists(l1, l2)
+    print(Solution().mergeTwoLists(l1, l2)
     
         

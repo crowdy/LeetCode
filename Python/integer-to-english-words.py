@@ -22,6 +22,7 @@
 # (middle chunk is zero and should not be printed out)
 #
 
+
 class Solution(object):
     def numberToWords(self, num):
         """
@@ -50,8 +51,8 @@ class Solution(object):
 
     def threeDigits(self, num, lookup, unit):
         res = []
-        if num / 100:
-            res = [lookup[num / 100] + " " + "Hundred"]
+        if num // 100:
+            res = [lookup[num // 100] + " " + "Hundred"]
         if num % 100:
             res.append(self.twoDigits(num % 100, lookup))
         if unit != "":
@@ -61,4 +62,4 @@ class Solution(object):
     def twoDigits(self, num, lookup):
         if num in lookup:
             return lookup[num]
-        return lookup[(num / 10) * 10] + " " + lookup[num % 10]
+        return lookup[(num // 10) * 10] + " " + lookup[num % 10]

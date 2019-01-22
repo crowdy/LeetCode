@@ -15,13 +15,13 @@ class Solution:
     # @return a string
     def addBinary(self, a, b):
         result, carry, val = "", 0, 0
-        for i in xrange(max(len(a), len(b))):
+        for i in range(max(len(a), len(b))):
             val = carry
             if i < len(a):
                 val += int(a[-(i + 1)])
             if i < len(b): 
                 val += int(b[-(i + 1)])
-            carry, val = val / 2, val % 2
+            carry, val = val // 2, val % 2
             result += str(val)
         if carry:
             result += str(carry)
@@ -29,4 +29,4 @@ class Solution:
 
 if __name__ == '__main__':
     result = Solution().addBinary('11', '1')
-    print result
+    print(result)

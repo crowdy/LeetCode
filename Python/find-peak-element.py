@@ -27,7 +27,7 @@ class Solution(object):
         left, right = 0, len(nums) - 1
         
         while left < right:
-            mid = left + (right - left) / 2
+            mid = left + (right - left) // 2
             if (mid == 0 or nums[mid - 1] < nums[mid]) and \
                (mid + 1 == len(nums) or nums[mid] > nums[mid + 1]):
                 return mid
@@ -41,7 +41,7 @@ class Solution(object):
 
 if __name__ == "__main__":
    # print Solution().findPeakElement([1,2,1])
-    print Solution().findPeakElement([1,2,3,1])
+    print(Solution().findPeakElement([1,2,3,1]))
 
 """
 이 문제는 왼쪽에서 부터 nums[i] > nums[i + 1] 인 첫번째 값을 찾으라는 문제이다.

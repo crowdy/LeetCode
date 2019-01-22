@@ -3,7 +3,7 @@
 
 class Solution {
 public:
-    static const int max_log3 = log(numeric_limits<int>::max()) / log(3);
+    static const int max_log3 = log(numeric_limits<int>::max()) // log(3);
     static const int max_pow3 = pow(3, max_log3);
 
     bool isPowerOfThree(int n) {

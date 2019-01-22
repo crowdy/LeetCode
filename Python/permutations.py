@@ -17,12 +17,12 @@ class Solution:
         used = [False] * len(num)
         self.permuteRecu(result, used, [], num)
         return result
-    
+
     def permuteRecu(self, result, used, cur, num):
         if len(cur) == len(num):
             result.append(cur + [])
             return
-        for i in xrange(len(num)):
+        for i in range(len(num)):
             if not used[i]:
                 used[i] = True
                 cur.append(num[i])
@@ -30,8 +30,9 @@ class Solution:
                 cur.pop()
                 used[i] = False
 
+
 if __name__ == "__main__":
-    print Solution().permute([1, 2, 3])
+    print(Solution().permute([1, 2, 3]))
 
 """
 

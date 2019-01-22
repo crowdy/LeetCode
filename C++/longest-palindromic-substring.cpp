@@ -35,7 +35,7 @@ public:
             }
         }
 
-        return s.substr((max_i - P[max_i]) / 2, P[max_i]);
+        return s.substr((max_i - P[max_i]) // 2, P[max_i]);
     }
 
 private:

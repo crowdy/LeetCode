@@ -25,6 +25,8 @@
 # Output: 1
 # Explanation: The two heater was placed in the position 1 and 4. We need to use radius 1 standard,
 # then all the houses can be warmed.
+import bisect
+
 
 class Solution(object):
     def findRadius(self, houses, heaters):
@@ -36,13 +38,12 @@ class Solution(object):
         heaters.sort()
         min_radius = 0
         for house in houses:
-        	equal_or_larger = bisect.bisect_left(heaters, house)
-        	curr_radius = float("inf")
-        	if equal_or_larger != len(heaters):
-        	    curr_radius = heaters[equal_or_larger] - house
-        	if equal_or_larger != 0:
-        	    smaller = equal_or_larger-1
-        	    curr_radius = min(curr_radius, house - heaters[smaller])
-        	min_radius = max(min_radius, curr_radius)
+            equal_or_larger = bisect.bisect_left(heaters, house)
+            curr_radius = float("inf")
+            if equal_or_larger != len(heaters):
+                curr_radius = heaters[equal_or_larger] - house
+            if equal_or_larger != 0:
+                smaller = equal_or_larger - 1
+                curr_radius = min(curr_radius, house - heaters[smaller])
+            min_radius = max(min_radius, curr_radius)
         return min_radius
- 

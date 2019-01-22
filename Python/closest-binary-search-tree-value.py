@@ -8,6 +8,7 @@
 #         self.left = None
 #         self.right = None
 
+
 class Solution(object):
     def closestValue(self, root, target):
         """

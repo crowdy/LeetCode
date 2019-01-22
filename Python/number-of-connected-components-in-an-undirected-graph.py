@@ -1,15 +1,16 @@
 # Time:  O(nlog*n) ~= O(n), n is the length of the positions
 # Space: O(n)
 
+
 class UnionFind(object):
     def __init__(self, n):
         self.set = range(n)
         self.count = n
 
     def find_set(self, x):
-       if self.set[x] != x:
-           self.set[x] = self.find_set(self.set[x])  # path compression.
-       return self.set[x]
+        if self.set[x] != x:
+            self.set[x] = self.find_set(self.set[x])  # path compression.
+        return self.set[x]
 
     def union_set(self, x, y):
         x_root, y_root = map(self.find_set, (x, y))

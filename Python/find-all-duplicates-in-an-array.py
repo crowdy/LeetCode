@@ -15,6 +15,7 @@
 #
 # [2,3]
 
+
 class Solution(object):
     def findDuplicates(self, nums):
         """
@@ -41,13 +42,13 @@ class Solution2(object):
         result = []
         i = 0
         while i < len(nums):
-            if nums[i] != nums[nums[i]-1]:
-                nums[nums[i]-1], nums[i] = nums[i], nums[nums[i]-1] 
+            if nums[i] != nums[nums[i] - 1]:
+                nums[nums[i] - 1], nums[i] = nums[i], nums[nums[i] - 1]
             else:
                 i += 1
 
-        for i in xrange(len(nums)):
-            if i != nums[i]-1:
+        for i in range(len(nums)):
+            if i != nums[i] - 1:
                 result.append(nums[i])
         return result
 

@@ -42,7 +42,7 @@ class Solution(object):
         :rtype: str
         """
         result = []
-        for i in reversed(xrange(len(S))):
+        for i in reversed(range(len(S))):
             if S[i] == '-':
                 continue
             if len(result) % (K + 1) == K:

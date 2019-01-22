@@ -17,6 +17,7 @@
 
 from itertools import izip  # Generator version of zip.
 
+
 class Solution(object):
     def wordPattern(self, pattern, str):
         """

@@ -20,13 +20,14 @@ def read4(buf):
     while i < len(file_content) and i < 4:
         buf[i] = file_content[i]
         i += 1
-    
+
     if len(file_content) > 4:
         file_content = file_content[4:]
     else:
         file_content = ""
     return i
-        
+
+
 class Solution(object):
     def read(self, buf, n):
         """
@@ -36,19 +37,20 @@ class Solution(object):
         """
         read_bytes = 0
         buffer = [''] * 4
-        for i in xrange(n / 4 + 1):
+        for i in range(n / 4 + 1):
             size = read4(buffer)
             if size:
-                buf[read_bytes:read_bytes+size] = buffer
+                buf[read_bytes:read_bytes + size] = buffer
                 read_bytes += size
             else:
                 break
         return min(read_bytes, n)
 
+
 if __name__ == "__main__":
     global file_content
-    buf = ['' for _ in xrange(100)]
+    buf = ['' for _ in range(100)]
     file_content = "a"
-    print buf[:Solution().read(buf, 9)]    
+    print(buf[:Solution().read(buf, 9)])
     file_content = "abcdefghijklmnop"
-    print buf[:Solution().read(buf, 9)]
+    print(buf[:Solution().read(buf, 9)])

@@ -39,7 +39,7 @@ class SummaryRanges(object):
         def upper_bound(nums, target):
             left, right = 0, len(nums) - 1
             while left <= right:
-                mid = left + (right - left) / 2
+                mid = left + (right - left) // 2
                 if nums[mid].start > target:
                     right = mid - 1
                 else:

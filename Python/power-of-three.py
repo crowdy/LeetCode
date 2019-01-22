@@ -11,7 +11,7 @@ import math
 
 class Solution(object):
     def __init__(self):
-        self.__max_log3 = int(math.log(0x7fffffff) / math.log(3))
+        self.__max_log3 = int(math.log(0x7fffffff) // math.log(3))
         self.__max_pow3 = 3 ** self.__max_log3
 
     def isPowerOfThree(self, n):

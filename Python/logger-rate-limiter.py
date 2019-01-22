@@ -1,8 +1,9 @@
 # Time:  O(1), amortized
 # Space: O(k), k is the max number of printed messages in last 10 seconds
+import collections
+
 
 class Logger(object):
-
     def __init__(self):
         """
         Initialize your data structure here.
@@ -24,7 +25,6 @@ class Logger(object):
         self.__dq.append((timestamp, message))
         self.__printed.add(message)
         return True
-
 
 # Your Logger object will be instantiated and called as such:
 # obj = Logger()

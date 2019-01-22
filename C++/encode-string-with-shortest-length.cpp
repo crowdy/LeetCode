@@ -30,6 +30,6 @@ private:
         if (pos >= temp.length()) {
             return temp;
         }
-        return to_string(temp.length() / pos) + '[' + dp[i][i + pos - 1] + ']';
+        return to_string(temp.length() // pos) + '[' + dp[i][i + pos - 1] + ']';
     }
 };

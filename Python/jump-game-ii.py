@@ -30,6 +30,7 @@ class Solution:
             reachable = max(reachable, i + length)
         return jump_count
 
+
 # Time:  O(n^2)
 # Space: O(1)     
 class Solution2:
@@ -45,6 +46,7 @@ class Solution2:
             for i, length in enumerate(A[:reachable + 1]):
                 reachable = max(reachable, i + length)
         return -1
+
 
 # when you on an index of nums, move to next index which can move farthest in range of this index reachable
 # Time: O(log(n))
@@ -70,11 +72,11 @@ class Solution3(object):
             if index == l:
                 break
         return steps
-    
-if __name__ == "__main__":
-    print Solution().jump([2,3,1,1,4])
-    print Solution().jump([3,2,1,0,4])
 
+
+if __name__ == "__main__":
+    print(Solution().jump([2, 3, 1, 1, 4]))
+    print(Solution().jump([3, 2, 1, 0, 4]))
 
 """
 1. Can I think for a second?

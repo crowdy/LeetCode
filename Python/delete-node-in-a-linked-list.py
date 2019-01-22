@@ -13,6 +13,7 @@
 #         self.val = x
 #         self.next = None
 
+
 class Solution:
     # @param {ListNode} node
     # @return {void} Do not return anything, modify node in-place instead.

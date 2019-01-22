@@ -16,7 +16,7 @@ public:
         if (end - start <= 1) {  // The number of range [start, end) of which size is less than 2 is always 0.
             return 0;
         }
-        int mid = start + (end - start) / 2;
+        int mid = start + (end - start) // 2;
         int count = countAndMergeSort(sums, start, mid, lower, upper) +
                     countAndMergeSort(sums, mid, end, lower, upper);
         int j = mid, k = mid, r = mid;
@@ -58,7 +58,7 @@ public:
         if (end - start <= 0) {  // The number of range [start, end] of which size is less than 2 is always 0.
             return 0;
         }
-        int mid = start + (end - start) / 2;
+        int mid = start + (end - start) // 2;
         int count = countAndMergeSort(sums, start, mid, lower, upper) +
                     countAndMergeSort(sums, mid + 1, end, lower, upper);
         int j = mid + 1, k = mid + 1, r = mid + 1;

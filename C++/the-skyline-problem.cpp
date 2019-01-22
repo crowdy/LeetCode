@@ -80,7 +80,7 @@ public:
             return {buildings.cbegin() + left_endpoint, 
                     buildings.cbegin() + right_endpoint};
         }
-        int mid = left_endpoint + ((right_endpoint - left_endpoint) / 2);
+        int mid = left_endpoint + ((right_endpoint - left_endpoint) // 2);
         auto left_skyline = ComputeSkylineInInterval(buildings, left_endpoint, mid);
         auto right_skyline = ComputeSkylineInInterval(buildings, mid, right_endpoint);
         return MergeSkylines(left_skyline, right_skyline);

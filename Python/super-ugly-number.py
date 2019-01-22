@@ -28,7 +28,7 @@ class Solution(object):
         for k, p in enumerate(primes):
             heapq.heappush(heap, (p, k))
 
-        for i in xrange(1, n):
+        for i in range(1, n):
             uglies[i], k = heapq.heappop(heap)
             ugly_by_last_prime[i] = k
             idx[k] += 1
@@ -37,6 +37,7 @@ class Solution(object):
             heapq.heappush(heap, (primes[k] * uglies[idx[k]], k))
 
         return uglies[-1]
+
 
 # Time:  O(n * k)
 # Space: O(n + k)
@@ -55,7 +56,7 @@ class Solution2(object):
             heapq.heappush(heap, (p, k))
             ugly_set.add(p)
 
-        for i in xrange(1, n):
+        for i in range(1, n):
             uglies[i], k = heapq.heappop(heap)
             while (primes[k] * uglies[idx[k]]) in ugly_set:
                 idx[k] += 1
@@ -63,6 +64,7 @@ class Solution2(object):
             ugly_set.add(primes[k] * uglies[idx[k]])
 
         return uglies[-1]
+
 
 # Time:  O(n * logk) ~ O(n * klogk)
 # Space: O(n + k)
@@ -77,7 +79,7 @@ class Solution3(object):
         for k, p in enumerate(primes):
             heapq.heappush(heap, (p, k))
 
-        for i in xrange(1, n):
+        for i in range(1, n):
             min_val, k = heap[0]
             uglies += [min_val]
 
@@ -87,6 +89,7 @@ class Solution3(object):
                 heapq.heappush(heap, (primes[k] * uglies[idx[k]], k))
 
         return uglies[-1]
+
 
 # Time:  O(n * k)
 # Space: O(n + k)
@@ -103,14 +106,15 @@ class Solution4(object):
         ugly_by_prime = list(primes)
         idx = [0] * len(primes)
 
-        for i in xrange(1, n):
+        for i in range(1, n):
             uglies[i] = min(ugly_by_prime)
-            for k in xrange(len(primes)):
+            for k in range(len(primes)):
                 if uglies[i] == ugly_by_prime[k]:
                     idx[k] += 1
                     ugly_by_prime[k] = primes[k] * uglies[idx[k]]
-    
+
         return uglies[-1]
+
 
 # Time:  O(n * logk) ~ O(n * klogk)
 # Space: O(k^2)
@@ -128,11 +132,11 @@ class Solution5(object):
         heapq.heappush(heap, 1)
         for p in primes:
             heapq.heappush(heap, p)
-        for _ in xrange(n):
+        for _ in range(n):
             ugly_number = heapq.heappop(heap)
-            for i in xrange(len(primes)):
+            for i in range(len(primes)):
                 if ugly_number % primes[i] == 0:
-                    for j in xrange(i + 1):
+                    for j in range(i + 1):
                         heapq.heappush(heap, ugly_number * primes[j])
                     break
 

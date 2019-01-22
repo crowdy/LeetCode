@@ -55,6 +55,7 @@
 
 from collections import defaultdict
 
+
 class Solution(object):
     def isRectangleCover(self, rectangles):
         """

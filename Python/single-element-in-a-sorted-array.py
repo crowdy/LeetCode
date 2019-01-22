@@ -21,7 +21,7 @@ class Solution(object):
         """
         left, right = 0, len(nums)-1
         while left <= right:
-            mid = left + (right - left) / 2
+            mid = left + (right - left) // 2
             if not (mid%2 == 0 and mid+1 < len(nums) and \
                     nums[mid] == nums[mid+1]) and \
                not (mid%2 == 1 and nums[mid] == nums[mid-1]):

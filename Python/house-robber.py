@@ -20,7 +20,7 @@ class Solution:
             return num[0]
         
         num_i, num_i_1 = max(num[1], num[0]), num[0]
-        for i in xrange(2, len(num)):
+        for i in range(2, len(num)):
             num_i_1, num_i_2 = num_i, num_i_1
             num_i = max(num[i] + num_i_2, num_i_1);
         
@@ -38,4 +38,4 @@ class Solution:
 
 
 if __name__ == '__main__':
-        print Solution().rob([8,4,8,5,9,6,5,4,4,10])
+        print(Solution().rob([8,4,8,5,9,6,5,4,4,10])

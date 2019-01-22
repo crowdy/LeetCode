@@ -7,6 +7,8 @@
 # For example, the 32-bit integer '11' has binary representation 00000000000000000000000000001011, 
 # so the function should return 3.
 #
+
+
 class Solution:
     # @param n, an integer
     # @return an integer
@@ -18,4 +20,4 @@ class Solution:
         return result
 
 if __name__ == '__main__':
-  print Solution().hammingWeight(11)
+    print(Solution().hammingWeight(11))

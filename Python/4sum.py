@@ -17,6 +17,9 @@
 #
 
 # Two pointer solution. (1356ms)
+import collections
+
+
 class Solution(object):
     def fourSum(self, nums, target):
         """
@@ -26,10 +29,10 @@ class Solution(object):
         """
         nums.sort()
         res = []
-        for i in xrange(len(nums) - 3):
+        for i in range(len(nums) - 3):
             if i and nums[i] == nums[i - 1]:
                 continue
-            for j in xrange(i + 1, len(nums) - 2):
+            for j in range(i + 1, len(nums) - 2):
                 if j != i + 1 and nums[j] == nums[j - 1]:
                     continue
                 sum = target - nums[i] - nums[j]
@@ -61,8 +64,8 @@ class Solution2(object):
         :rtype: List[List[int]]
         """
         nums, result, lookup = sorted(nums), [], collections.defaultdict(list)
-        for i in xrange(0, len(nums) - 1):
-            for j in xrange(i + 1, len(nums)): 
+        for i in range(0, len(nums) - 1):
+            for j in range(i + 1, len(nums)):
                 is_duplicated = False
                 for [x, y] in lookup[nums[i] + nums[j]]:
                     if nums[x] == nums[i]:
@@ -71,8 +74,8 @@ class Solution2(object):
                 if not is_duplicated:
                     lookup[nums[i] + nums[j]].append([i, j])
         ans = {}
-        for c in xrange(2, len(nums)):
-            for d in xrange(c+1, len(nums)):
+        for c in range(2, len(nums)):
+            for d in range(c+1, len(nums)):
                 if target - nums[c] - nums[d] in lookup:
                     for [a, b] in lookup[target - nums[c] - nums[d]]:
                         if b < c:
@@ -94,8 +97,8 @@ class Solution3(object):
         :rtype: List[List[int]]
         """
         nums, result, lookup = sorted(nums), [], collections.defaultdict(list)
-        for i in xrange(0, len(nums) - 1):
-            for j in xrange(i + 1, len(nums)): 
+        for i in range(0, len(nums) - 1):
+            for j in range(i + 1, len(nums)):
                 lookup[nums[i] + nums[j]].append([i, j])
 
         for i in lookup.keys():
@@ -112,4 +115,4 @@ class Solution3(object):
 
 if __name__ == '__main__':
     result = Solution().fourSum([1, 0, -1, 0, -2, 2], 0)
-    print result
+    print(result)

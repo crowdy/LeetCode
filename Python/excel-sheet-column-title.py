@@ -13,6 +13,7 @@
 #     27 -> AA
 #     28 -> AB 
 
+
 class Solution(object):
     def convertToTitle(self, n):
         """
@@ -20,14 +21,14 @@ class Solution(object):
         :rtype: str
         """
         result, dvd = "", n
-        
+
         while dvd:
             result += chr((dvd - 1) % 26 + ord('A'))
-            dvd = (dvd - 1) / 26
-        
+            dvd = (dvd - 1) // 26
+
         return result[::-1]
 
 
 if __name__ == "__main__":
-    for i in xrange(1, 29):
-        print Solution().convertToTitle(i)
+    for i in range(1, 29):
+        print(Solution().convertToTitle(i))

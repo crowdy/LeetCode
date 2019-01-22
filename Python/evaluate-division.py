@@ -22,6 +22,8 @@
 #
 # The input is always valid. You may assume that
 # evaluating the queries will result in no division by zero and there is no contradiction.
+import collections
+
 
 class Solution(object):
     def calcEquation(self, equations, values, query):
@@ -31,6 +33,7 @@ class Solution(object):
         :type query: List[List[str]]
         :rtype: List[float]
         """
+
         def check(up, down, lookup, visited):
             if up in lookup and down in lookup[up]:
                 return (True, lookup[up][down])
@@ -46,7 +49,7 @@ class Solution(object):
         for i, e in enumerate(equations):
             lookup[e[0]][e[1]] = values[i]
             if values[i]:
-                lookup[e[1]][e[0]] = 1.0 / values[i]
+                lookup[e[1]][e[0]] = 1.0 // values[i]
 
         result = []
         for q in query:

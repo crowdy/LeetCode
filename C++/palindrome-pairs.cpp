@@ -54,10 +54,10 @@ public:
             manacher(words[i], &P);
             for (int j = 0; j < P.size(); ++j) {  // O(k)
                 if (j - P[j] == 1) {
-                    prefix.emplace(words[i].substr((j + P[j]) / 2), i);  // O(k)
+                    prefix.emplace(words[i].substr((j + P[j]) // 2), i);  // O(k)
                 }
                 if (j + P[j] == P.size() - 2) {
-                    suffix.emplace(words[i].substr(0, (j - P[j]) / 2), i);
+                    suffix.emplace(words[i].substr(0, (j - P[j]) // 2), i);
                 }
             }
         }

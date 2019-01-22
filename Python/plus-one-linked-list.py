@@ -2,10 +2,11 @@
 # Space: O(1)
 
 # Definition for singly-linked list.
-# class ListNode(object):
-#     def __init__(self, x):
-#         self.val = x
-#         self.next = None
+class ListNode(object):
+    def __init__(self, x):
+        self.val = x
+        self.next = None
+
 
 # Two pointers solution.
 class Solution(object):
@@ -46,6 +47,7 @@ class Solution2(object):
         :type head: ListNode
         :rtype: ListNode
         """
+
         def reverseList(head):
             dummy = ListNode(0)
             curr = head

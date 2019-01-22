@@ -13,6 +13,7 @@
 # Explanation: [0, 1] (or [1, 0]) is a longest contiguous subarray with equal number of 0 and 1.
 # Note: The length of the given binary array will not exceed 50,000.
 
+
 class Solution(object):
     def findMaxLength(self, nums):
         """
@@ -27,5 +28,5 @@ class Solution(object):
                 result = max(result, i - lookup[count])
             else:
                 lookup[count] = i
-        
+
         return result

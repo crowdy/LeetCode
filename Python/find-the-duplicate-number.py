@@ -48,7 +48,7 @@ class Solution2(object):
         left, right = 1, len(nums) - 1
 
         while left <= right:
-            mid = left + (right - left) / 2
+            mid = left + (right - left) // 2
             # Get count of num <= mid.
             count = 0
             for num in nums:

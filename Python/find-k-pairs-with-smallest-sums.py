@@ -33,6 +33,7 @@
 
 from heapq import heappush, heappop
 
+
 class Solution(object):
     def kSmallestPairs(self, nums1, nums2, k):
         """
@@ -49,6 +50,7 @@ class Solution(object):
             return pairs
 
         min_heap = []
+
         def push(i, j):
             if i < len(nums1) and j < len(nums2):
                 heappush(min_heap, [nums1[i] + nums2[j], i, j])

@@ -85,6 +85,6 @@ class Solution:
 if __name__ == "__main__":
     root = TreeNode(0)
     root.left = TreeNode(1)
-    print root
-    print Solution().recoverTree(root)
+    print(root
+    print(Solution().recoverTree(root)
     

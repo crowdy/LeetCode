@@ -27,9 +27,9 @@ class Solution(object):
         nums.sort()
         result = [[]]
         previous_size = 0
-        for i in xrange(len(nums)):
+        for i in range(len(nums)):
             size = len(result)
-            for j in xrange(size):
+            for j in range(size):
                 # Only union non-duplicate element or new union set.
                 if i == 0 or nums[i] != nums[i - 1] or j >= previous_size:
                     result.append(list(result[j]))
@@ -52,7 +52,7 @@ class Solution2(object):
         
         while i < count:
             cur = []
-            for j in xrange(len(nums)):
+            for j in range(len(nums)):
                 if i & 1 << j:
                     cur.append(nums[j])
             if cur not in result:
@@ -84,4 +84,4 @@ class Solution3(object):
 
    
 if __name__ == "__main__":
-    print Solution().subsetsWithDup([1, 2, 2])
+    print(Solution().subsetsWithDup([1, 2, 2])

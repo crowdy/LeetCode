@@ -8,12 +8,14 @@
 #         self.left = None
 #         self.right = None
 
+
 class Solution(object):
     def longestConsecutive(self, root):
         """
         :type root: TreeNode
         :rtype: int
         """
+
         def longestConsecutiveHelper(root):
             if not root:
                 return 0, 0
@@ -36,7 +38,8 @@ class Solution(object):
         self.max_len = 0
         longestConsecutiveHelper(root)
         return self.max_len
- 
+
+
 """
 Given a binary tree, you need to find the length of Longest Consecutive Path in Binary Tree.
 

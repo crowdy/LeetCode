@@ -12,7 +12,7 @@ class Solution(object):
         :type digits: List[int]
         :rtype: List[int]
         """
-        for i in reversed(xrange(len(digits))):
+        for i in reversed(range(len(digits))):
             if digits[i] == 9:
                 digits[i] = 0
             else:
@@ -20,6 +20,23 @@ class Solution(object):
                 return digits
         digits[0] = 1
         digits.append(0)
+
+
+class Solution:
+    """
+    :type digits: List[int]
+    :rtype: List[int]
+    """
+
+    def plusOne(self, digits):
+        carry = 1
+        for i in reversed(range(len(digits))):
+            digits[i] += carry
+            carry = digits[i] // 10
+            digits[i] %= 10
+
+        if carry:
+            digits = [1] + digits
         return digits
 
 
@@ -33,7 +50,7 @@ class Solution2(object):
         """
         result = digits[::-1]
         carry = 1
-        for i in xrange(len(result)):
+        for i in range(len(result)):
             result[i] += carry
             carry, result[i] = divmod(result[i], 10)
         if carry:
@@ -42,4 +59,4 @@ class Solution2(object):
 
 
 if __name__ == "__main__":
-    print Solution().plusOne([9, 9, 9, 9])
+    print(Solution().plusOne([9, 9, 9, 9]))

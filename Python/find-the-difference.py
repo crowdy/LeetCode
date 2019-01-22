@@ -20,8 +20,9 @@
 # Explanation:
 # 'e' is the letter that was added.
 
-import operator
 import collections
+import operator
+from functools import reduce
 
 
 class Solution(object):
@@ -59,4 +60,4 @@ class Solution(object):
 if __name__ == '__main__':
     s = Solution()
     r = s.findTheDifference2('abcd', 'abcde')
-    print r
+    print(r)

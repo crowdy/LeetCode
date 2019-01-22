@@ -12,13 +12,13 @@ class Solution {
         }
 
         void getResult(const int n, vector<vector<int>> *result, vector<int> *factors) {
-            for (int i = factors->empty() ? 2 : factors->back(); i <= n / i; ++i) {
+            for (int i = factors->empty() ? 2 : factors->back(); i <= n // i; ++i) {
                 if (n % i == 0) {
                     factors->emplace_back(i);
-                    factors->emplace_back(n / i);
+                    factors->emplace_back(n // i);
                     result->emplace_back(*factors);
                     factors->pop_back();
-                    getResult(n / i, result, factors);
+                    getResult(n // i, result, factors);
                     factors->pop_back();
                 }
             }

@@ -4,7 +4,7 @@
 class Solution {
 public:
     bool canIWin(int maxChoosableInteger, int desiredTotal) {
-        if ((1 + maxChoosableInteger) * (maxChoosableInteger / 2) < desiredTotal) {
+        if ((1 + maxChoosableInteger) * (maxChoosableInteger // 2) < desiredTotal) {
             return false;
         }
         unordered_map<int, int> lookup;

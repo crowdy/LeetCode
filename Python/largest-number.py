@@ -19,7 +19,7 @@ class Solution:
 
 if __name__ == "__main__":
     num = [3, 30, 34, 5, 9]
-    print Solution().largestNumber(num) 
+    print(Solution().largestNumber(num)
 
 """
 

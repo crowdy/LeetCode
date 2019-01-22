@@ -49,4 +49,4 @@ if __name__ == "__main__":
     head = ListNode(3)
     head.next = ListNode(2)
     head.next.next = ListNode(1)
-    print Solution().insertionSortList(head)
+    print(Solution().insertionSortList(head)

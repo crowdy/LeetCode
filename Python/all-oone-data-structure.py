@@ -12,10 +12,12 @@
 # GetMinKey() - Returns one of the keys with minimal value. If no element exists, return an empty string "".
 # Challenge: Perform all these in O(1) time complexity.
 
+
 class Node(object):
     """
     double linked list node
     """
+
     def __init__(self, value, keys):
         self.value = value
         self.keys = keys
@@ -39,22 +41,21 @@ class LinkedList(object):
 
     def empty(self):
         return self.head.next is self.tail
-    
+
     def begin(self):
         return self.head.next
 
     def end(self):
         return self.tail
-    
+
     def front(self):
         return self.head.next
-    
+
     def back(self):
         return self.tail.prev
 
 
 class AllOne(object):
-
     def __init__(self):
         """
         Initialize your data structure here.
@@ -70,10 +71,10 @@ class AllOne(object):
         """
         if key not in self.bucket_of_key:
             self.bucket_of_key[key] = self.buckets.insert(self.buckets.begin(), Node(0, set([key])))
-            
+
         bucket, next_bucket = self.bucket_of_key[key], self.bucket_of_key[key].next
-        if next_bucket is self.buckets.end() or next_bucket.value > bucket.value+1:
-            next_bucket = self.buckets.insert(next_bucket, Node(bucket.value+1, set()))
+        if next_bucket is self.buckets.end() or next_bucket.value > bucket.value + 1:
+            next_bucket = self.buckets.insert(next_bucket, Node(bucket.value + 1, set()))
         next_bucket.keys.add(key)
         self.bucket_of_key[key] = next_bucket
 
@@ -93,8 +94,8 @@ class AllOne(object):
         bucket, prev_bucket = self.bucket_of_key[key], self.bucket_of_key[key].prev
         self.bucket_of_key.pop(key, None)
         if bucket.value > 1:
-            if bucket is self.buckets.begin() or prev_bucket.value < bucket.value-1:
-                prev_bucket = self.buckets.insert(bucket, Node(bucket.value-1, set()))
+            if bucket is self.buckets.begin() or prev_bucket.value < bucket.value - 1:
+                prev_bucket = self.buckets.insert(bucket, Node(bucket.value - 1, set()))
             prev_bucket.keys.add(key)
             self.bucket_of_key[key] = prev_bucket
 

@@ -9,7 +9,7 @@ public:
            return false;
        }
        
-       vector<bool> dp(sum / 2 + 1);
+       vector<bool> dp(sum // 2 + 1);
        dp[0]  = true;
        for (const auto& num : nums) {
            for (int i = 1; i < dp.size(); ++i) {

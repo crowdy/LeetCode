@@ -15,6 +15,8 @@
 # Note:
 # The input strings only contain lower case letters.
 # The length of both given strings is in range [1, 10,000].
+import collections
+
 
 class Solution(object):
     def checkInclusion(self, s1, s2):
@@ -25,7 +27,7 @@ class Solution(object):
         """
         counts = collections.Counter(s1)
         l = len(s1)
-        for i in xrange(len(s2)):
+        for i in range(len(s2)):
             if counts[s2[i]] > 0:
                 l -= 1
             counts[s2[i]] -= 1

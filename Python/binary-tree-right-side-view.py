@@ -21,6 +21,7 @@ class TreeNode:
         self.left = None
         self.right = None
 
+
 class Solution:
     # @param root, a tree node
     # @return a list of integers
@@ -28,16 +29,17 @@ class Solution:
         result = []
         self.rightSideViewDFS(root, 1, result)
         return result
-    
+
     def rightSideViewDFS(self, node, depth, result):
         if not node:
             return
-        
+
         if depth > len(result):
             result.append(node.val)
-        
-        self.rightSideViewDFS(node.right, depth+1, result)
-        self.rightSideViewDFS(node.left, depth+1, result)
+
+        self.rightSideViewDFS(node.right, depth + 1, result)
+        self.rightSideViewDFS(node.left, depth + 1, result)
+
 
 # BFS solution
 # Time:  O(n)
@@ -48,7 +50,7 @@ class Solution2:
     def rightSideView(self, root):
         if root is None:
             return []
-            
+
         result, current = [], [root]
         while current:
             next_level = []
@@ -60,8 +62,9 @@ class Solution2:
                 if i == len(current) - 1:
                     result.append(node.val)
             current = next_level
-            
+
         return result
+
 
 if __name__ == "__main__":
     root = TreeNode(1)
@@ -70,4 +73,4 @@ if __name__ == "__main__":
     root.left.right = TreeNode(5)
     root.right.right = TreeNode(4)
     result = Solution().rightSideView(root)
-    print result
+    print(result)

@@ -30,7 +30,7 @@ class Solution(object):
         m, n = len(matrix), len(matrix[0])
         left, right = 0, m * n
         while left < right:
-            mid = left + (right - left) / 2
+            mid = left + (right - left) // 2
             if matrix[mid / n][mid % n] >= target:
                 right = mid
             else:
@@ -41,7 +41,7 @@ class Solution(object):
 
 if __name__ == "__main__":
     matrix = [[1, 3, 5, 7], [10, 11, 16, 20], [23, 30, 34, 50]]
-    print Solution().searchMatrix(matrix, 3)
+    print(Solution().searchMatrix(matrix, 3))
 
 """
     서치매트릭스(매트릭스, 타겟)

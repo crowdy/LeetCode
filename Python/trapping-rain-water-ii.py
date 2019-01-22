@@ -20,6 +20,7 @@
 
 from heapq import heappush, heappop
 
+
 class Solution(object):
     def trapRainWater(self, heightMap):
         """
@@ -33,25 +34,25 @@ class Solution(object):
         if not n:
             return 0
 
-        is_visited = [[False for i in xrange(n)] for j in xrange(m)]
-        
+        is_visited = [[False for i in range(n)] for j in range(m)]
+
         heap = []
-        for i in xrange(m):
+        for i in range(m):
             heappush(heap, [heightMap[i][0], i, 0])
             is_visited[i][0] = True
-            heappush(heap, [heightMap[i][n-1], i, n-1])
-            is_visited[i][n-1] = True
-        for j in xrange(n):
+            heappush(heap, [heightMap[i][n - 1], i, n - 1])
+            is_visited[i][n - 1] = True
+        for j in range(n):
             heappush(heap, [heightMap[0][j], 0, j])
             is_visited[0][j] = True
-            heappush(heap, [heightMap[m-1][j], m-1, j])
-            is_visited[m-1][j] = True
+            heappush(heap, [heightMap[m - 1][j], m - 1, j])
+            is_visited[m - 1][j] = True
 
         trap = 0
         while heap:
             height, i, j = heappop(heap)
-            for (dx, dy) in [(1,0), (-1,0), (0,1), (0,-1)]:
-                x, y = i+dx, j+dy
+            for (dx, dy) in [(1, 0), (-1, 0), (0, 1), (0, -1)]:
+                x, y = i + dx, j + dy
                 if 0 <= x < m and 0 <= y < n and not is_visited[x][y]:
                     trap += max(0, height - heightMap[x][y])
                     heappush(heap, [max(height, heightMap[x][y]), x, y])

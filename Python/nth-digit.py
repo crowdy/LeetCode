@@ -26,6 +26,7 @@
 # The 11th digit of the sequence 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11,
 # ... is a 0, which is part of the number 10.
 
+
 class Solution(object):
     def findNthDigit(self, n):
         """
@@ -33,13 +34,13 @@ class Solution(object):
         :rtype: int
         """
         digit_len = 1
-        while n > digit_len * 9 * (10 ** (digit_len-1)):
-            n -= digit_len  * 9 * (10 ** (digit_len-1))
+        while n > digit_len * 9 * (10 ** (digit_len - 1)):
+            n -= digit_len * 9 * (10 ** (digit_len - 1))
             digit_len += 1
 
-        num = 10 ** (digit_len-1) + (n-1)/digit_len
+        num = 10 ** (digit_len - 1) + (n - 1) // digit_len
 
-        nth_digit = num / (10 ** ((digit_len-1) - ((n-1)%digit_len)))
+        nth_digit = num // (10 ** ((digit_len - 1) - ((n - 1) % digit_len)))
         nth_digit %= 10
 
         return nth_digit

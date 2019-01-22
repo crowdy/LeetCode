@@ -17,7 +17,7 @@ class Solution(object):
 
         result = []
         children = collections.defaultdict(set)
-        for i in xrange(len(pid)):
+        for i in range(len(pid)):
             children[ppid[i]].add(pid[i])
         killAll(kill, children, result)
         return result
@@ -41,7 +41,7 @@ class Solution2(object):
 
         result = []
         children = collections.defaultdict(set)
-        for i in xrange(len(pid)):
+        for i in range(len(pid)):
             children[ppid[i]].add(pid[i])
         q = collections.deque()
         q.append(kill)

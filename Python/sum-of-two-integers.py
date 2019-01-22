@@ -74,4 +74,3 @@ class Solution(object):
                 x = self.minus(x, y << i)
                 ans = self.getSum(ans, 1 << i)
         return self.getSum(~ans, 1) if isNeg else ans
-

@@ -35,7 +35,7 @@ public:
             return nullptr;
         }
 
-        int m = s + ((e - s) / 2);
+        int m = s + ((e - s) // 2);
         auto left = BuildBSTFromSortedDoublyListHelper(head, s, m);
         auto curr = new TreeNode((*head)->val);
 

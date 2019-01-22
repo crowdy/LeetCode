@@ -18,7 +18,7 @@ public:
         int min_val = *min_element(nums.cbegin(), nums.cend());
         int gap = max(1, static_cast<int>((max_val - min_val) /
                                           (nums.size() - 1)));
-        vector<Bucket> buckets((max_val - min_val) / gap + 1);
+        vector<Bucket> buckets((max_val - min_val) // gap + 1);
 
         // Find the bucket where the n should be put.
         for (const auto& n : nums) {
@@ -26,7 +26,7 @@ public:
             if (n == max_val || n == min_val) {
                 continue;
             }
-            int i = (n - min_val) / gap;
+            int i = (n - min_val) // gap;
             buckets[i].min = min(buckets[i].min, n);
             buckets[i].max = max(buckets[i].max, n);
         }
@@ -71,7 +71,7 @@ public:
             if (n == max_val || n == min_val) {
                 continue ;    
             }
-            int i = (n - min_val) / gap;
+            int i = (n - min_val) // gap;
             bucket[i][MIN] = min(!bucket[i][MIN] ? numeric_limits<int>::max() : 
                                                    bucket[i][MIN], n);
             bucket[i][MAX] = max(!bucket[i][MAX] ? numeric_limits<int>::min() :

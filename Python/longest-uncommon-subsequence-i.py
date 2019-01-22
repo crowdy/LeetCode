@@ -23,6 +23,7 @@
 # Both strings' lengths will not exceed 100.
 # Only letters from a ~ z will appear in input strings.
 
+
 class Solution(object):
     def findLUSlength(self, a, b):
         """

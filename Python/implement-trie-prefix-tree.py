@@ -7,15 +7,15 @@
 # You may assume that all inputs are consist of lowercase letters a-z.
 #
 
+
 class TrieNode:
     # Initialize your data structure here.
     def __init__(self):
         self.is_string = False
         self.leaves = {}
-        
+
 
 class Trie:
-
     def __init__(self):
         self.root = TrieNode()
 
@@ -37,9 +37,10 @@ class Trie:
         node = self.childSearch(word)
         if node:
             return node.is_string
-        return False        
+        return False
 
-    # @param {string} prefix
+        # @param {string} prefix
+
     # @return {boolean}
     # Returns if there is any word in the trie
     # that starts with the given prefix.

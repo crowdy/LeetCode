@@ -41,6 +41,8 @@
 # [4,6,8,10]
 # [2,4,6,8,10]
 # [2,6,10]
+import collections
+
 
 class Solution(object):
     def numberOfArithmeticSlices(self, A):
@@ -49,9 +51,9 @@ class Solution(object):
         :rtype: int
         """
         result = 0
-        dp = [collections.defaultdict(int) for i in xrange(len(A))]
-        for i in xrange(1, len(A)):
-            for j in xrange(i):
+        dp = [collections.defaultdict(int) for i in range(len(A))]
+        for i in range(1, len(A)):
+            for j in range(i):
                 diff = A[i]-A[j]
                 dp[i][diff] += 1
                 if diff in dp[j]:

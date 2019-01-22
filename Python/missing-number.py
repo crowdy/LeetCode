@@ -11,6 +11,9 @@
 # Your algorithm should run in linear runtime complexity. 
 # Could you implement it using only constant extra space complexity?
 #
+import operator
+from functools import reduce
+
 
 class Solution(object):
     def missingNumber(self, nums):
@@ -18,10 +21,10 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        return reduce(operator.xor, nums, \
-                      reduce(operator.xor, xrange(len(nums) + 1)))
+        return reduce(operator.xor, nums,
+                      reduce(operator.xor, range(len(nums) + 1)))
 
 
 class Solution2(object):
     def missingNumber(self, nums):
-        return sum(xrange(len(nums)+1)) - sum(nums)
+        return sum(range(len(nums)+1)) - sum(nums)

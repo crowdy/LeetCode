@@ -12,6 +12,7 @@
 # return [3, 4].
 #
 
+
 class Solution(object):
     def searchRange(self, nums, target):
         """
@@ -26,11 +27,11 @@ class Solution(object):
         # Find the first index where target < nums[idx]
         right = self.binarySearch(lambda x, y: x > y, nums, target)
         return [left, right - 1]
-    
+
     def binarySearch(self, compare, nums, target):
         left, right = 0, len(nums)
         while left < right:
-            mid = left + (right - left) / 2
+            mid = left + (right - left) // 2
             if compare(nums[mid], target):
                 right = mid
             else:
@@ -40,7 +41,7 @@ class Solution(object):
     def binarySearch2(self, compare, nums, target):
         left, right = 0, len(nums) - 1
         while left <= right:
-            mid = left + (right - left) / 2
+            mid = left + (right - left) // 2
             if compare(nums[mid], target):
                 right = mid - 1
             else:
@@ -50,7 +51,7 @@ class Solution(object):
     def binarySearch3(self, compare, nums, target):
         left, right = -1, len(nums)
         while left + 1 < right:
-            mid = left + (right - left) / 2
+            mid = left + (right - left) // 2
             if compare(nums[mid], target):
                 right = mid
             else:
@@ -59,15 +60,14 @@ class Solution(object):
 
 
 if __name__ == "__main__":
-    print Solution().searchRange([2, 2], 3)
-    print Solution().searchRange([5, 7, 7, 8, 8, 10], 8)
+    print(Solution().searchRange([2, 2], 3))
+    print(Solution().searchRange([5, 7, 7, 8, 8, 10], 8))
 
+    """
+    compare 함수를 파라메터로 넘기지 않는다면?
+        찾기상위경계인덱스 함수라던지
+        찾기하위경계인덱스 함수를 각각 구현해야 한다.
     
-"""
-compare 함수를 파라메터로 넘기지 않는다면?
-    찾기상위경계인덱스 함수라던지
-    찾기하위경계인덱스 함수를 각각 구현해야 한다.
-
-    하위인덱스를 찾으려면 크거나 **같으면** 오른쪽의 절반씩 가보고, 반대면 왼쪽을 하나씩 늘려본다.
-    상위인덱스를 찾으려면 작거나 **같으면** 왼쪽의 절반씩 가보고, 반대면 오른쪽을 하나씩 줄여본다.
-"""
+        하위인덱스를 찾으려면 크거나 **같으면** 오른쪽의 절반씩 가보고, 반대면 왼쪽을 하나씩 늘려본다.
+        상위인덱스를 찾으려면 작거나 **같으면** 왼쪽의 절반씩 가보고, 반대면 오른쪽을 하나씩 줄여본다.
+    """

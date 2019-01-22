@@ -10,10 +10,9 @@ class Solution(object):
         if a < 2:
             return a
         result, mul = 0, 1
-        for i in reversed(xrange(2, 10)):
+        for i in reversed(range(2, 10)):
             while a % i == 0:
-                a /= i
-                result = mul*i + result
+                a //= i
+                result = mul * i + result
                 mul *= 10
-        return  result if a == 1 and result < 2**31 else 0
-  
+        return result if a == 1 and result < 2 ** 31 else 0

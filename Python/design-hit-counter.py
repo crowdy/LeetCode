@@ -3,8 +3,8 @@
 
 from collections import deque
 
-class HitCounter(object):
 
+class HitCounter(object):
     def __init__(self):
         """
         Initialize your data structure here.

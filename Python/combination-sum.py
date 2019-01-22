@@ -16,6 +16,7 @@
 # [2, 2, 3] 
 #
 
+
 class Solution:
     # @param candidates, a list of integers
     # @param target, integer
@@ -24,7 +25,7 @@ class Solution:
         result = []
         self.combinationSumRecu(sorted(candidates), result, 0, [], target)
         return result
-    
+
     def combinationSumRecu(self, candidates, result, start, intermediate, target):
         if target == 0:
             result.append(list(intermediate))
@@ -34,7 +35,8 @@ class Solution:
             intermediate.pop()
             start += 1
 
+
 if __name__ == "__main__":
     candidates, target = [2, 3, 6, 7], 7
-    result = Solution().combinationSum(candidates, target)     
-    print result       
+    result = Solution().combinationSum(candidates, target)
+    print(result)

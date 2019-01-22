@@ -45,8 +45,8 @@ class Solution(object):
         hull = []
         points.sort(key=lambda p: (p.x, p.y))
 
-        for i in itertools.chain(xrange(len(points)), \
-                                 reversed(xrange(len(points)))):
+        for i in itertools.chain(range(len(points)), \
+                                 reversed(range(len(points)))):
             while len(hull) >= 2 and \
                   orientation(hull[-2], hull[-1],  points[i]) > 0:
                 hull.pop()

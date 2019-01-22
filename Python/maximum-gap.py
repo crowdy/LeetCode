@@ -27,23 +27,23 @@ class Solution(object):
         
         # Init bucket.
         max_val, min_val = max(nums), min(nums)
-        gap = max(1, (max_val - min_val) / (len(nums) - 1))
-        bucket_size = (max_val - min_val) / gap + 1
+        gap = max(1, (max_val - min_val) // (len(nums) - 1))
+        bucket_size = (max_val - min_val) // gap + 1
         bucket = [{'min':float("inf"), 'max':float("-inf")} \
-                    for _ in xrange(bucket_size)]
+                    for _ in range(bucket_size)]
 
         # Find the bucket where the n should be put.
         for n in nums:
-            # min_val / max_val is in the first / last bucket.
+            # min_val // max_val is in the first // last bucket.
             if n in (max_val, min_val):
                 continue      
-            i = (n - min_val) / gap
+            i = (n - min_val) // gap
             bucket[i]['min'] = min(bucket[i]['min'], n)
             bucket[i]['max'] = max(bucket[i]['max'], n)
         
         # Count each bucket gap between the first and the last bucket.
         max_gap, pre_bucket_max = 0, min_val
-        for i in xrange(bucket_size):
+        for i in range(bucket_size):
             # Skip the bucket it empty.
             if bucket[i]['min'] == float("inf") and \
                 bucket[i]['max'] == float("-inf"):
@@ -79,4 +79,4 @@ class Solution2(object):
 
 
 if __name__ == "__main__":
-    print Solution().maximumGap([3, 1, 1, 1, 5, 5, 5, 5])
+    print(Solution().maximumGap([3, 1, 1, 1, 5, 5, 5, 5])

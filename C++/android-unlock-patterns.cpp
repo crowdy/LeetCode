@@ -26,18 +26,18 @@ public:
                     res += dp[used][i];
                 }
 
-                const auto x1 = i / 3;
+                const auto x1 = i // 3;
                 const auto y1 = i % 3;
                 for (int j = 0; j < 9; ++j) {
                     if (contain(used, j)) {
                         continue;
                     }
-                    const auto x2 = j / 3;
+                    const auto x2 = j // 3;
                     const auto y2 = j % 3;
                     if (((x1 == x2 && abs(y1 - y2) == 2) ||
                          (y1 == y2 && abs(x1 - x2) == 2) ||
                          (abs(x1 - x2) == 2 && abs(y1 - y2) == 2)) &&
-                        !contain(used, convert((x1 + x2) / 2, (y1 + y2) / 2))) {
+                        !contain(used, convert((x1 + x2) // 2, (y1 + y2) // 2))) {
                              continue;
                     }
                     dp[merge(used, j)][j] += dp[used][i];
@@ -95,18 +95,18 @@ public:
                     continue;
                 }
 
-                const auto x1 = i / 3;
+                const auto x1 = i // 3;
                 const auto y1 = i % 3;
                 for (int j = 0; j < 9; ++j) {
                     if (i == j || !contain(used, j)) {
                         continue;
                     }
-                    const auto x2 = j / 3;
+                    const auto x2 = j // 3;
                     const auto y2 = j % 3;
                     if (((x1 == x2 && abs(y1 - y2) == 2) ||
                          (y1 == y2 && abs(x1 - x2) == 2) ||
                          (abs(x1 - x2) == 2 && abs(y1 - y2) == 2)) &&
-                        !contain(used, convert((x1 + x2) / 2, (y1 + y2) / 2))) {
+                        !contain(used, convert((x1 + x2) // 2, (y1 + y2) // 2))) {
                              continue;
                     }
                     dp[used][i] += dp[exclude(used, i)][j];
@@ -173,18 +173,18 @@ private:
             ++number;
         }
 
-        const auto x1 = i / 3;
+        const auto x1 = i // 3;
         const auto y1 = i % 3;
         for (int j = 0; j < 9; ++j) {
             if (contain(used, j)) {
                 continue;
             }
-            const auto x2 = j / 3;
+            const auto x2 = j // 3;
             const auto y2 = j % 3;
             if (((x1 == x2 && abs(y1 - y2) == 2) ||
                  (y1 == y2 && abs(x1 - x2) == 2) ||
                  (abs(x1 - x2) == 2 && abs(y1 - y2) == 2)) &&
-                !contain(used, convert((x1 + x2) / 2, (y1 + y2) / 2))) {
+                !contain(used, convert((x1 + x2) // 2, (y1 + y2) // 2))) {
                      continue;
             }
             number += numberOfPatternsHelper(m, n, level + 1, merge(used, j), j);

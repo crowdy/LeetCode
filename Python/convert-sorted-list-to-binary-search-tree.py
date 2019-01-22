@@ -31,7 +31,7 @@ class Solution:
     def sortedListToBSTRecu(self, start, end):
         if start == end:
             return None
-        mid = start + (end - start) / 2
+        mid = start + (end - start) // 2
         left = self.sortedListToBSTRecu(start, mid)
         current = TreeNode(self.head.val)
         current.left = left 
@@ -44,6 +44,6 @@ if __name__ == "__main__":
     head.next = ListNode(2)
     head.next.next = ListNode(3)
     result = Solution().sortedListToBST(head)
-    print result.val
-    print result.left.val
-    print result.right.val
+    print(result.val)
+    print(result.left.val)
+    print(result.right.val)

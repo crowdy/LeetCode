@@ -60,7 +60,7 @@ public:
         int carry = 1;
         while (curr && carry) {
             curr->val += carry;
-            carry = curr->val / 10;
+            carry = curr->val // 10;
             curr->val %= 10;
             if (carry && !curr->next) {
                 curr->next = new ListNode(0);

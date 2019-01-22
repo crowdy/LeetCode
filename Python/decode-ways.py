@@ -15,6 +15,7 @@
 # The number of ways decoding "12" is 2.
 #
 
+
 class Solution(object):
     def numDecodings(self, s):
         """
@@ -24,7 +25,7 @@ class Solution(object):
         if len(s) == 0 or s[0] == '0':
             return 0
         prev, prev_prev = 1, 0
-        for i in xrange(len(s)):
+        for i in range(len(s)):
             cur = 0
             if s[i] != '0':
                 cur = prev
@@ -36,4 +37,4 @@ class Solution(object):
 
 if __name__ == "__main__":
     for i in ["0", "10", "10", "103", "1032", "10323"]:
-        print Solution().numDecodings(i)
+        print(Solution().numDecodings(i))

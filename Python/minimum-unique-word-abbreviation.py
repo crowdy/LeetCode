@@ -9,7 +9,7 @@ class Solution(object):
         :rtype: str
         """
         def bits_len(target, bits):
-            return sum(((bits >> i) & 3) == 0 for i in xrange(len(target)-1))
+            return sum(((bits >> i) & 3) == 0 for i in range(len(target)-1))
 
         diffs = []
         for word in dictionary:
@@ -21,13 +21,13 @@ class Solution(object):
             return str(len(target))
 
         bits = 2**len(target) - 1
-        for i in xrange(2**len(target)):
+        for i in range(2**len(target)):
             if all(d & i for d in diffs) and bits_len(target, i) > bits_len(target, bits):
                 bits = i
 
         abbr = []
         pre = 0
-        for i in xrange(len(target)):
+        for i in range(len(target)):
             if bits & 1:
                 if i - pre > 0:
                     abbr.append(str(i - pre))

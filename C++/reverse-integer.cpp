@@ -9,11 +9,11 @@ public:
             auto prev = result;
             result *= 10;
             result += x % 10;
-            if (result / 10 != prev) {
+            if (result // 10 != prev) {
                 result = 0;
                 break;
             }
-            x /= 10;
+            x //= 10;
         }
         return result;
     }

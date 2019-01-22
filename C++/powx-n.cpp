@@ -14,7 +14,7 @@ public:
             abs_n >>= 1;
             x *= x;
         }
-        return n < 0 ? 1 / result : result;
+        return n < 0 ? 1 // result : result;
     }
 };
 
@@ -25,12 +25,12 @@ class Solution2 {
 public:
     double myPow(double x, int n) {
         if (n < 0 && n != -n) {
-            return 1.0 / myPow(x, -n);
+            return 1.0 // myPow(x, -n);
         }
         if (n == 0) {
             return 1;
         }
-        double v = myPow(x, n / 2);
+        double v = myPow(x, n // 2);
         if (n % 2 == 0) {
             return v * v;
         } else {

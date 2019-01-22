@@ -17,7 +17,7 @@
 #              18
 #             /   \
 #           20     13
-          
+
 # Definition for a binary tree node.
 # class TreeNode(object):
 #     def __init__(self, x):
@@ -25,12 +25,14 @@
 #         self.left = None
 #         self.right = None
 
+
 class Solution(object):
     def convertBST(self, root):
         """
         :type root: TreeNode
         :rtype: TreeNode
         """
+
         def convertBSTHelper(root, cur_sum):
             if not root:
                 return cur_sum
@@ -38,7 +40,7 @@ class Solution(object):
             if root.right:
                 cur_sum = convertBSTHelper(root.right, cur_sum)
             cur_sum += root.val
-            root.val = cur_sum;
+            root.val = cur_sum
             if root.left:
                 cur_sum = convertBSTHelper(root.left, cur_sum)
             return cur_sum

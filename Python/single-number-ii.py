@@ -46,7 +46,7 @@ class Solution4(object):
         :type nums: List[int]
         :rtype: int
         """
-        return (sum(set(nums)) * 3 - sum(nums)) / 2
+        return (sum(set(nums)) * 3 - sum(nums)) // 2
 
 
 #  every element appears 4 times except for one with 2 times
@@ -61,4 +61,4 @@ class SolutionEX(object):
         return two
 
 if __name__ == "__main__":
-    print Solution().singleNumber([1, 1, 1, 2, 2, 2, 3])
+    print(Solution().singleNumber([1, 1, 1, 2, 2, 2, 3]))

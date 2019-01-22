@@ -1,6 +1,7 @@
 # Time:  O(n)
 # Space: O(1)
 
+
 class Solution:
     # @param {string[]} words
     # @param {string} word1

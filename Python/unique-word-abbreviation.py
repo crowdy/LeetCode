@@ -2,6 +2,7 @@
 #        lookup: O(1)
 # Space: O(k), k is number of unique words.
 
+
 class ValidWordAbbr(object):
     def __init__(self, dictionary):
         """

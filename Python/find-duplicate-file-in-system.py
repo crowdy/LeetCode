@@ -44,6 +44,8 @@
 # 4. What is the time complexity of your modified solution?
 #   What is the most time-consuming part and memory consuming part of it? How to optimize?
 # 5. How to make sure the duplicated files you find are not false positive?
+import collections
+
 
 class Solution(object):
     def findDuplicate(self, paths):
@@ -53,14 +55,14 @@ class Solution(object):
         """
         files = collections.defaultdict(list)
         for path in paths:
-           s = path.split(" ")
-           for i in xrange(1,len(s)):
-               file_name = s[0] + "/" + s[i][0:s[i].find("(")]
-               file_content = s[i][s[i].find("(")+1:s[i].find(")")]
-               files[file_content].append(file_name)
+            s = path.split(" ")
+            for i in range(1, len(s)):
+                file_name = s[0] + "/" + s[i][0:s[i].find("(")]
+                file_content = s[i][s[i].find("(") + 1:s[i].find(")")]
+                files[file_content].append(file_name)
 
         result = []
-        for file_content, file_names in files.iteritems():
-            if len(file_names)>1:
+        for file_content, file_names in files:
+            if len(file_names) > 1:
                 result.append(file_names)
         return result

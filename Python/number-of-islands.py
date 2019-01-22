@@ -30,12 +30,15 @@ class Solution:
             return 0
     
         row = len(grid)
-        col = len(grid[0])          
+
+        col = len(grid[0])
+        used = [[False for j in range(col)] for i in range(row)]
+    
         count = 0
-        for i in xrange(row):
-            for j in xrange(col):
-                if grid[i][j] == '1':
-                    self.dfs(grid, row, col, i, j)
+        for i in range(row):
+            for j in range(col):
+                if grid[i][j] == '1' and not used[i][j]:
+                    self.dfs(grid, used, row, col, i, j)
                     count += 1
         return count
 

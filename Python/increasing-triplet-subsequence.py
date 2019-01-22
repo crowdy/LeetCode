@@ -16,6 +16,7 @@
 
 # Given [5, 4, 3, 2, 1],
 # return false.
+import bisect
 
 
 class Solution(object):
@@ -34,6 +35,7 @@ class Solution(object):
                 return True
         return False
 
+
 # Time:  O(n * logk)
 # Space: O(k)
 # Generalization of k-uplet.
@@ -43,6 +45,7 @@ class Solution_Generalization(object):
         :type nums: List[int]
         :rtype: bool
         """
+
         def increasingKUplet(nums, k):
             inc = [float('inf')] * (k - 1)
             for num in nums:

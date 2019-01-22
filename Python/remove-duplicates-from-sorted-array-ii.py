@@ -16,7 +16,7 @@ class Solution:
     def removeDuplicates(self, A):
         if not A:
             return 0
-        
+
         last, i, same = 0, 1, False
         while i < len(A):
             if A[last] != A[i] or not same:
@@ -24,11 +24,12 @@ class Solution:
                 last += 1
                 A[last] = A[i]
             i += 1
-            
+
         return last + 1
 
+
 if __name__ == "__main__":
-    print Solution().removeDuplicates([1, 1, 1, 2, 2, 3])
+    print(Solution().removeDuplicates([1, 1, 1, 2, 2, 3]))
 
 """
 1. Can I think for a second?

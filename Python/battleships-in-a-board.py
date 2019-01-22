@@ -35,9 +35,9 @@ class Solution(object):
             return 0
 
         cnt = 0
-        for i in xrange(len(board)):
-            for j in xrange(len(board[0])):
+        for i in range(len(board)):
+            for j in range(len(board[0])):
                 cnt += int(board[i][j] == 'X' and \
-                       (i == 0 or board[i - 1][j] != 'X') and \
-                       (j == 0 or board[i][j - 1] != 'X'))
+                           (i == 0 or board[i - 1][j] != 'X') and \
+                           (j == 0 or board[i][j - 1] != 'X'))
         return cnt

@@ -7,6 +7,7 @@
 # For example, given the range [5, 7], you should return 4.
 #
 
+
 class Solution:
     # @param m, an integer
     # @param n, an integer
@@ -16,16 +17,18 @@ class Solution:
             n &= n - 1
         return n
 
+
 class Solution2:
     # @param m, an integer
     # @param n, an integer
     # @return an integer
     def rangeBitwiseAnd(self, m, n):
-        i, diff = 0, n-m
+        i, diff = 0, n - m
         while diff:
             diff >>= 1
             i += 1
-        return n&m >> i << i
+        return n & m >> i << i
+
 
 if __name__ == '__main__':
-    print Solution().rangeBitwiseAnd(5, 7)
+    print(Solution().rangeBitwiseAnd(5, 7))

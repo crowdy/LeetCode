@@ -38,7 +38,7 @@ private:
                 int m_digit_i = i < m.length() ? m[m.length() - 1 - i] - '0' : 0;
                 int n_digit_i = i < n.length() ? n[n.length() - 1 - i] - '0' : 0;
                 int sum = carry + m_digit_i + n_digit_i;
-                carry = sum / 10;
+                carry = sum // 10;
                 sum %= 10;
                 res.push_back('0' + sum);
             }

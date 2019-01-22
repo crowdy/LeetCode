@@ -21,6 +21,7 @@
 # All words contain only lowercase alphabetic characters.
 #
 
+
 # BFS
 class Solution:
     # @param start, a string
@@ -39,7 +40,7 @@ class Solution:
                 
             next = set()
             for word in cur:
-                for i in xrange(len(word)):
+                for i in range(len(word)):
                     for j in 'abcdefghijklmnopqrstuvwxyz':
                         candidate = word[:i] + j + word[i + 1:]
                         if candidate not in visited and candidate in dict:
@@ -62,4 +63,4 @@ class Solution:
                 self.backtrack(result, trace, [word] + path, prev)
     
 if __name__ == "__main__":
-    print Solution().findLadders("hit", "cog", set(["hot","dot","dog","lot","log"]))
+    print(Solution().findLadders("hit", "cog", set(["hot","dot","dog","lot","log"])))

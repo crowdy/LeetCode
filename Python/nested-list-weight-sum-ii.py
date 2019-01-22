@@ -5,7 +5,7 @@
 # This is the interface that allows for creating nested lists.
 # You should not implement it, or speculate about its implementation
 # """
-#class NestedInteger(object):
+# class NestedInteger(object):
 #    def isInteger(self):
 #        """
 #        @return True if this NestedInteger holds a single integer, rather than a nested list.
@@ -26,12 +26,14 @@
 #        :rtype List[NestedInteger]
 #        """
 
+
 class Solution(object):
     def depthSumInverse(self, nestedList):
         """
         :type nestedList: List[NestedInteger]
         :rtype: int
         """
+
         def depthSumInverseHelper(list, depth, result):
             if len(result) < depth + 1:
                 result.append(0)
@@ -40,12 +42,12 @@ class Solution(object):
             else:
                 for l in list.getList():
                     depthSumInverseHelper(l, depth + 1, result)
-                    
+
         result = []
         for list in nestedList:
             depthSumInverseHelper(list, 0, result)
 
         sum = 0
-        for i in reversed(xrange(len(result))):
+        for i in reversed(range(len(result))):
             sum += result[i] * (len(result) - i)
         return sum

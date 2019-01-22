@@ -68,8 +68,8 @@ class Solution(object):
                 board[row][col] = 'X'
             else:
                 count = 0
-                for i in xrange(-1, 2):
-                    for j in xrange(-1, 2):
+                for i in range(-1, 2):
+                    for j in range(-1, 2):
                         if i == 0 and j == 0:
                             continue
                         r, c = row + i, col + j
@@ -82,8 +82,8 @@ class Solution(object):
                     board[row][col] = chr(count + ord('0'))
                 else:
                     board[row][col] = 'B'
-                    for i in xrange(-1, 2):
-                        for j in xrange(-1, 2):
+                    for i in range(-1, 2):
+                        for j in range(-1, 2):
                             if i == 0 and j == 0:
                                 continue
                             r, c = row + i, col + j
@@ -110,8 +110,8 @@ class Solution2(object):
             board[row][col] = 'X'
         else:
             count = 0
-            for i in xrange(-1, 2):
-                for j in xrange(-1, 2):
+            for i in range(-1, 2):
+                for j in range(-1, 2):
                     if i == 0 and j == 0:
                         continue
                     r, c = row + i, col + j
@@ -124,8 +124,8 @@ class Solution2(object):
                 board[row][col] = chr(count + ord('0'))
             else:
                 board[row][col] = 'B'
-                for i in xrange(-1, 2):
-                    for j in xrange(-1, 2):
+                for i in range(-1, 2):
+                    for j in range(-1, 2):
                         if i == 0 and j == 0:
                             continue
                         r, c = row + i, col + j

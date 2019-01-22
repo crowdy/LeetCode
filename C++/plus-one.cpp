@@ -26,10 +26,17 @@ public:
     vector<int> plusOne(vector<int>& digits) {
         vector<int> result(digits.rbegin(), digits.rend());
         int carry = 1;
+<<<<<<< Updated upstream
         for (auto& num : result) {
             num += carry;
             carry = num / 10;
             num %= 10;
+=======
+        for (auto it = result.rbegin(); it != result.rend(); ++it) {
+            *it += carry;
+            carry = *it // 10;
+            *it %= 10;
+>>>>>>> Stashed changes
         }
         if (carry == 1) {
             result.emplace_back(carry);

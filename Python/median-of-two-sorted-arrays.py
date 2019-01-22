@@ -1,6 +1,6 @@
 # Time:  O(log(min(m, n)))
 # Space: O(1)
- 
+
 # There are two sorted arrays nums1 and nums2 of size m and n respectively.
 # Find the median of the two sorted arrays.
 # The overall run time complexity should be O(log (m+n)).
@@ -13,20 +13,20 @@ class Solution(object):
         :rtype: float
         """
         len1, len2 = len(nums1), len(nums2)
-        if (len1 + len2) % 2 == 1: 
-            return self.getKth(nums1, nums2, (len1 + len2)/2 + 1)
+        if (len1 + len2) % 2 == 1:
+            return self.getKth(nums1, nums2, (len1 + len2) // 2 + 1)
         else:
-            return (self.getKth(nums1, nums2, (len1 + len2)/2) + \
-                    self.getKth(nums1, nums2, (len1 + len2)/2 + 1)) * 0.5
+            return (self.getKth(nums1, nums2, (len1 + len2) // 2) +
+                    self.getKth(nums1, nums2, (len1 + len2) // 2 + 1)) * 0.5
 
     def getKth(self, A, B, k):
         m, n = len(A), len(B)
         if m > n:
             return self.getKth(B, A, k)
 
-        left, right = 0, m    
+        left, right = 0, m
         while left < right:
-            mid = left + (right - left) / 2
+            mid = left + (right - left) // 2
             if 0 <= k - 1 - mid < n and A[mid] >= B[k - 1 - mid]:
                 right = mid
             else:
@@ -49,16 +49,16 @@ class Solution_Generic(object):
         :rtype: float
         """
         len1, len2 = len(nums1), len(nums2)
-        if (len1 + len2) % 2 == 1: 
-            return self.getKth([nums1, nums2], (len1 + len2)/2 + 1)
+        if (len1 + len2) % 2 == 1:
+            return self.getKth([nums1, nums2], (len1 + len2) // 2 + 1)
         else:
-            return (self.getKth([nums1, nums2], (len1 + len2)/2) + \
-                    self.getKth([nums1, nums2], (len1 + len2)/2 + 1)) * 0.5
+            return (self.getKth([nums1, nums2], (len1 + len2) // 2) +
+                    self.getKth([nums1, nums2], (len1 + len2) // 2 + 1)) * 0.5
 
     def getKth(self, arrays, k):
         def binary_search(array, left, right, target, compare):
             while left <= right:
-                mid = left + (right - left) / 2
+                mid = left + (right - left) // 2
                 if compare(array, mid, target):
                     right = mid - 1
                 else:
@@ -69,7 +69,7 @@ class Solution_Generic(object):
             res = 0
             for array in arrays:
                 if array:
-                    res += len(array) - binary_search(array, 0, len(array) - 1, num, \
+                    res += len(array) - binary_search(array, 0, len(array) - 1, num,
                                                       lambda array, x, y: array[x] > y)
             return res < target
 
@@ -83,6 +83,5 @@ class Solution_Generic(object):
 
 
 if __name__ == "__main__":
-    print Solution().findMedianSortedArrays([1, 3, 5, 7], [2, 4, 6])
-    print Solution().findMedianSortedArrays([1, 3, 5], [2, 4, 6])
- 
+    print(Solution().findMedianSortedArrays([1, 3, 5, 7], [2, 4, 6]))
+    print(Solution().findMedianSortedArrays([1, 3, 5], [2, 4, 6]))

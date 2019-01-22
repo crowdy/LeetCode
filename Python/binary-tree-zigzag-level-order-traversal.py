@@ -24,6 +24,7 @@ class TreeNode:
         self.left = None
         self.right = None
 
+
 class Solution:
     # @param root, a tree node
     # @return a list of lists of integers
@@ -47,6 +48,7 @@ class Solution:
             current = next_level
         return result
 
+
 if __name__ == "__main__":
     root = TreeNode(3)
     root.left = TreeNode(9)
@@ -54,4 +56,4 @@ if __name__ == "__main__":
     root.right.left = TreeNode(15)
     root.right.right = TreeNode(7)
     result = Solution().zigzagLevelOrder(root)
-    print result
+    print(result)

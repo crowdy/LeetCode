@@ -16,11 +16,11 @@ class Solution(object):
         """
         candidate = 0
         # Find the candidate.
-        for i in xrange(1, n):
+        for i in range(1, n):
             if knows(candidate, i):  # All candidates < i are not celebrity candidates.
                 candidate = i
         # Verify the candidate.
-        for i in xrange(n):
+        for i in range(n):
             if i != candidate and (knows(candidate, i) \
                 or not knows(i, candidate)):
                 return -1

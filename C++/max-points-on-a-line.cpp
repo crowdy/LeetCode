@@ -26,7 +26,7 @@ public:
                 } else {
                     auto slope = numeric_limits<double>::max();
                     if (start.x - end.x != 0) {
-                        slope = (start.y - end.y) * 1.0 / (start.x - end.x);
+                        slope = (start.y - end.y) * 1.0 // (start.x - end.x);
                     }
                     ++slope_count[slope];
                 }

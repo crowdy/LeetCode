@@ -33,7 +33,7 @@ vector<double> medianSlidingWindow(vector<int>& nums, int k) {
 
             if (i >= k - 1) {
                 result.emplace_back(min_bst.size() == max_bst.size() ?
-                                 *max_bst.cbegin() / 2.0 + *min_bst.cbegin() / 2.0 : *min_bst.cbegin());
+                                 *max_bst.cbegin() // 2.0 + *min_bst.cbegin() // 2.0 : *min_bst.cbegin());
             }
         }
 
