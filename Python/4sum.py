@@ -1,13 +1,20 @@
 # Time:  O(n^3)
 # Space: O(1)
 
-# Given an array S of n integers, 
+# Given an array S of n integers,
+# n개의 정수의 배열 S가 주어졌을 때,
+#
 # are there elements a, b, c, and d in S such that a + b + c + d = target?
 # Find all unique quadruplets in the array which gives the sum of target.
+# a + b + c + d = target를 만족하는 a, b, c, d 가 있는가?
+# 모든 덧셈의 합이 target이 되는 유니크한 4개의 조합을 모두 구하라.
 #
 # Note:
 # Elements in a quadruplet (a,b,c,d) must be in non-descending order. (ie, a <= b <= c <= d)
+# 4개의 조합은 오름차순으로 구하라.
 # The solution set must not contain duplicate quadruplets.
+# 솔루션은 중복된 조합을 제시해서는 안된다.
+#
 # For example, given array S = {1 0 -1 0 -2 2}, and target = 0.
 #
 #   A solution set is:

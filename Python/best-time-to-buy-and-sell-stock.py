@@ -3,11 +3,14 @@
 #
 # Say you have an array for which the ith element 
 # is the price of a given stock on day i.
-#
+# i번째 요소가 i 번째 날의 주가인 배열을 가지고 있다고 하자.
+# 
 # If you were only permitted to complete at most one transaction 
 # (ie, buy one and sell one share of the stock), 
 # design an algorithm to find the maximum profit.
 #
+# 만약 딱 한번만 거래를 할 수 있다고 한다면 (즉, 한 번만 사고, 한 번만 팔 수 있다),
+# 최대의 이익을 구하는 알고리즘을 디자인하라
 
 
 class Solution:

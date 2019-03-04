@@ -2,11 +2,14 @@
 # Space: O(n)
 #
 # Implement a basic calculator to evaluate a simple expression string.
+# 식을 계산하는 간단한 계산기를 구현하라.
 #
 # The expression string contains only non-negative integers, +, -, *, / 
 # operators and empty spaces . The integer division should truncate toward zero.
+# 식은 양의 정수와 +, -, *, / 공백으로 이루어져 있다. 정수의 나눗셈은 소수부분을 버린다.
 #
 # You may assume that the given expression is always valid.
+# 식은 항상 유효하다고 가정해도 좋다.
 #
 # Some examples:
 # "3+2*2" = 7

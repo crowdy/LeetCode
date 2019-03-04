@@ -2,6 +2,7 @@
 # Space: O(1)
 
 # Given an integer, return its base 7 string representation.
+# 정수가 주어졌을 때, 7진수 문자열을 구하라
 #
 # Example 1:
 # Input: 100

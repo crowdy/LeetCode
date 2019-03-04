@@ -3,6 +3,7 @@
 #
 # Say you have an array for which the ith element is 
 # the price of a given stock on day i.
+# i번째 요소가 i 번째 날의 주가인 배열을 가지고 있다고 하자.
 #
 # Design an algorithm to find the maximum profit. 
 # You may complete as many transactions as you like 

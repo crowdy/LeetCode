@@ -2,6 +2,7 @@
 # Space: O(h), h is height of binary tree
 #
 # Given a binary tree, determine if it is height-balanced.
+# 바이너리 트리가 주어졌을 때, height-balanced tree 인 지 판단하라.
 #
 # For this problem, a height-balanced binary tree is defined as a binary tree 
 # in which the depth of the two subtrees of every node never differ by more than 1.

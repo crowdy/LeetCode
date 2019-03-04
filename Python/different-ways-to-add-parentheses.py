@@ -7,7 +7,8 @@
 # Given a string of numbers and operators, return all possible
 # results from computing all the different possible ways to
 # group numbers and operators. The valid operators are +, - and *.
-#
+# 수와 연산자의 문자열이 주어졌을 때, 수와 연산자를 그룹지을 수 있는 여러 경우의 가능한 모든 결과를 구하라.
+# 유효한 연산자는 + - * 이다.
 #
 # Example 1
 # Input: "2-1-1".
@@ -28,6 +29,7 @@
 # Output: [-34, -14, -10, -10, 10]
 #
 import operator
+import re
 
 
 class Solution:
